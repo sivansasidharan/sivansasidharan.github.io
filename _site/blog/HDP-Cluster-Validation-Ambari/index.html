@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>TECHNOLOGY PRÉCIS!</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="http://localhost:4000//" class="logo"><strong>TECHNOLOGY PRÉCIS!</strong> <span>by Sivan Sasidharan</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+        
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000//">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/all_posts/">WriteUps</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/freferences/">References</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/generic/">Experience</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/landingnews/">News Feeds</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/zlanding/">Webinars</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="#" class="button special fit">Get Started</a></li>
+		<li><a href="#" class="button fit">Log In</a></li>
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<header class="major">
+			<h1>Cluster Validation - Ambari - HDP</h1>
+		</header>
+		
+		<p><p>For every PS engagement that involves installation, upgrade, or migration, it is your responsibility to ensure that the installation validation checklist is completely executed.This will ensure:</p>
+<ul>
+  <li>Proper configuration of the cluster</li>
+  <li>Increased customer satisfaction</li>
+  <li>Decreased volume to the Technical Support team</li>
+</ul>
+
+<blockquote>
+  <p>The Importance of the Checklist</p>
+</blockquote>
+
+<p>The installation validation checklist is a tool that you should refer to throughout the duration of your engagement.It was assembled by the Technical Support team and contains information and best practices gathered while working on multiple projects with multiple clients.The checklists provide information on key areas that you should focus on to ensure proper configuration of the components of your cluster. This will result in an operational Customer Environment.</p>
+
+<h4 id="ambari-checklist-items">Ambari Checklist Items</h4>
+
+<p>There are multiple items that should be checked to ensure that Ambari is configured properly. The table below provides the key areas of focus, along with the rationale behind them:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><strong>Checklist Item</strong></th>
+      <th style="text-align: left"><strong>Notes/Rationale</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Verify that the Ambari UI is up</strong></td>
+      <td style="text-align: left">It is important to check if the Ambari UI is accessible and responsive. For additional details, refer to the section of this lesson titled, “Verifying that the Ambari UI is Up.”</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Verify that all services Start/Stop and that the smoke test passes</strong></td>
+      <td style="text-align: left">It is important to verify that all services are in “Green” status. Perform the following actions:In the Ambari UI, verify that all services are in the “Green” statusFor each service, run the service check, all should return a “Green” statusIf any of the services do not return a “Green” status, examine the logs for potential issues. If the cause of the issue is still unclear, open a support case.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Verify that the live number DN and NM are matched to the NN and RM UI</strong></td>
+      <td style="text-align: left">Information presented by Ambari and by NN/RM UIs should match the real status for running DN/NM processes.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Verify that there are no nodes with lost heartbeats or other errors</strong></td>
+      <td style="text-align: left">A lost heartbeat may be the reason for false alarms. They can be caused by several factors, including:A slow networkNodes overloading (specifically an Ambari server node overload)An actual node being downAn Ambari agent process being down</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Verify that unneeded nodes are removed</strong></td>
+      <td style="text-align: left">If a node is dead and cannot be revived or if the node is decommissioned, it should be removed from Ambari to avoid any confusion and/or false alerts.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Verify that Ambari is upgraded to the latest stable release</strong></td>
+      <td style="text-align: left">Ambari should be on the latest release certified for running the HDP stack. For additional details, refer to the section of this lesson titled, “Verifying that Ambari is Upgraded to the Lastest Stable Release.”</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Verify that all graphs are working as expected in the Ambari UI</strong></td>
+      <td style="text-align: left">If the graphs are not present, this may be due to:An incorrect name resolutionWrong network interface bindings</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Verify that Nagios or Ganglia alerts are resolved</strong></td>
+      <td style="text-align: left">These alerts should be resolved because they are an indication that there are issues in the cluster.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Verify that any customizations during the install process are documented</strong></td>
+      <td style="text-align: left">Be sure to document any customizations so to that the support team is aware of changes to LDAP, proxies, HTTPS, etc.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h4 id="verifying-that-the-ambari-ui-is-up">Verifying that the Ambari UI is up</h4>
+<p>In addition to verifying the other items on the checklist, it is important to check if the Ambari UI is accessible and responsive. Below are the actions you should take to ensure that the UI is functioning properly:
+First, go to http://<ambari-server-host>:8080; you should see a login dialog. If you do not see the login dialog, use the table below to troubleshoot the issue:</ambari-server-host></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><strong>If…</strong></th>
+      <th style="text-align: left"><strong>Then…</strong></th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">There is no response when you try to access the UI</td>
+      <td style="text-align: left">SSH into the Ambari server node and verify that the server is running using: </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Netstat –apnl</td>
+      <td style="text-align: left">grep 8080, ps –ef</td>
+      <td>grep Ambari</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">The process is running but listening on the wrong host name</td>
+      <td style="text-align: left">Adjust the name resolution</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">The process is not running</td>
+      <td style="text-align: left">Start the process</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">The process is running (and on the right port) but not responding</td>
+      <td style="text-align: left">Restart the process</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">There is still no response after the restart</td>
+      <td style="text-align: left">Examine the log files</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">The log files do not reveal any information related to potential issues</td>
+      <td style="text-align: left">Open a support case and engage the Ambari development team</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="verifying-that-ambari-is-upgraded-to-the-latest-stable-release">Verifying that Ambari is Upgraded to the Latest Stable Release</h3>
+<p>Ambari should be on the latest release certified by the HDP stack. Please refer to the table below:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><strong>Ambari</strong></th>
+      <th style="text-align: left"><strong>HDP 2.2</strong></th>
+      <th style="text-align: left"><strong>HDP 2.1</strong></th>
+      <th style="text-align: left"><strong>HDP 2.0</strong></th>
+      <th style="text-align: left"><strong>HDP 1.3</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">1.7.0</td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">X</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">1.6.1</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">X</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">1.6.0</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">X</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">1.5.1</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">X</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">1.5.0</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">X</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">1.4.4.23</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">X</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">1.4.3.38</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">X</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">1.4.2.104</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">X</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">1.4.1.61</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">X</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">1.4.1.25</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">X</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">1.2.3.17</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">X</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>Ambari 1.7x does not install Accumulo, Hue, Ranger or Solr services for the HDP 2.2 Stack</li>
+  <li>Ambari 1.7x does not install Accumulo, Hue, Knox or Solr services for the HDP 2.1 Stack</li>
+  <li>Ambari 1.7.x does not install Hue for the HDP 2.0 Stack</li>
+</ul>
+
+<hr />
+
+</p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/sivan.consult@gmail.com" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a href="#">sivan.consult@gmail.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>+91-999-545-5746</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    Karyavattam<br />
+					
+					
+					    Trivandrum,
+					
+					
+					    Kerala 
+					
+					
+					    695581<br />
+					
+					
+					    India
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+				<li><a href="https://twitter.com/sivansasidharan" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+				
+				
+				
+				<li><a href="https:facebook.com/sivansasidharan" class="icon alt fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+				
+				
+				
+				
+				
+				
+				<li><a href="https://github.com/sivansasidharan/" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+				
+				
+				
+				<li><a href="https://www.linkedin.com/in/sivansasidharan/" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; TECHNOLOGY PRÉCIS!   by Sivan Sasidharan</li>
+				<li>Design: HTML5 UP</li>
+				<li>Powered by: Jekyll & GitHub</li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="http://localhost:4000/assets/js/jquery.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrolly.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrollex.min.js"></script>
+	<script src="http://localhost:4000/assets/js/skel.min.js"></script>
+	<script src="http://localhost:4000/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="http://localhost:4000/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="http://localhost:4000/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

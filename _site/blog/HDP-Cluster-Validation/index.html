@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>TECHNOLOGY PRÉCIS!</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="http://localhost:4000//" class="logo"><strong>TECHNOLOGY PRÉCIS!</strong> <span>by Sivan Sasidharan</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+        
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000//">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/all_posts/">WriteUps</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/freferences/">References</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/generic/">Experience</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/landingnews/">News Feeds</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/zlanding/">Webinars</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="#" class="button special fit">Get Started</a></li>
+		<li><a href="#" class="button fit">Log In</a></li>
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<header class="major">
+			<h1>Cluster Validation General/OS - HDP</h1>
+		</header>
+		
+		<p><p>For every PS engagement that involves installation, upgrade, or migration, it is your responsibility to ensure that the installation validation checklist is completely executed.This will ensure:</p>
+<ul>
+  <li>Proper configuration of the cluster</li>
+  <li>Increased customer satisfaction</li>
+  <li>Decreased volume to the Technical Support team</li>
+</ul>
+
+<blockquote>
+  <p>The Importance of the Checklist
+The installation validation checklist is a tool that you should refer to throughout the duration of your engagement.It was assembled by the Technical Support team and contains information and best practices gathered while working on multiple projects with multiple clients.The checklists provide information on key areas that you should focus on to ensure proper configuration of the components of your cluster. This will result in an operational Customer Environment.</p>
+</blockquote>
+
+<h4 id="generalos-checklist-items">General/OS Checklist Items</h4>
+<p>There are multiple items that should be checked to ensure that the General/OS functionality of the cluster is configured properly. The table below provides the key areas that you should focus on, along with the rationale behind them:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Checklist Item</strong></th>
+      <th><strong>Notes/Rationale</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Validate that the customer has some type of log/retention/archival/deletion process in place</strong></td>
+      <td>Chron and the <a href="https://raw.githubusercontent.com/dstreev/hdp-utils/master/operations/hdp-log-archive.sh"><em>Log Archival Process Script</em></a> can be used to archive the HDP logs.</td>
+    </tr>
+    <tr>
+      <td><strong>Validate the cluster is set up with FQDNs</strong></td>
+      <td>This is important because Ambari uses FQDN internally. Use the command below to verify:hostname -f</td>
+    </tr>
+    <tr>
+      <td><strong>Validate that forward and Name resolution is set up consistently and is working as expected</strong></td>
+      <td>This is critical for Ambari and can be potentially critical for HDFS.</td>
+    </tr>
+    <tr>
+      <td><strong>Validate that all installation pre-requisites are met, including OS umask 022 (iptables, selinux, name resolution, and ntpd)</strong></td>
+      <td>Ambari cannot handle iptables. As a result, you must disable them before installation. The iptables can be re-enabled after the installation has been completed with all needed ports opened.</td>
+    </tr>
+    <tr>
+      <td><strong>Validate that * proxy hosts and users are setup properly in core-site.xml</strong></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>Validate that the mount is setup properly and uses the proper file system</strong></td>
+      <td>The recommended file system is XFS or EXT4. Refer to the <a href="https://wiki.hortonworks.com/display/PS/DRAFT+-+HDP+Tuning"><em>HDP Tuning Document</em></a> for mount options.</td>
+    </tr>
+    <tr>
+      <td><strong>Validate that Hive, Ambari, and Oozie Databases and local directories have enough space to grow</strong></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>Verify that user limits are set up with high enough numbers</strong></td>
+      <td>Refer to the <a href="https://wiki.hortonworks.com/display/PS/DRAFT+-+HDP+Tuning"><em>HDP Tuning Document</em></a>.</td>
+    </tr>
+    <tr>
+      <td><strong>Verify that all users are created consistently on all nodes</strong></td>
+      <td>This is mandatory for HDFS and YARN functionality.</td>
+    </tr>
+    <tr>
+      <td><strong>Verify that IPv6 and THP are disabled</strong></td>
+      <td>See next section in this topic.</td>
+    </tr>
+    <tr>
+      <td><strong>Verify that no custom jars are present in the system</strong></td>
+      <td>Nodes should be cleanly re-imaged and not reused after manual cleaning.</td>
+    </tr>
+    <tr>
+      <td><strong>Verify that HDP init.d and other unsupported scripts are disabled and removed</strong></td>
+      <td>Init.d scripts are supposed to be working and supported in HDP 2.2.</td>
+    </tr>
+    <tr>
+      <td><strong>Verify that all unsupported CDH and HDP 1.x configurations</strong></td>
+      <td>Nodes should be cleanly re-imaged, not reused after manual cleaning.</td>
+    </tr>
+    <tr>
+      <td><strong>Verify that there are no dropped packets, network errors or overruns on interfaces</strong></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>Verify that Rack Topology is set up</strong></td>
+      <td>Rack topology is important and should be set up as soon as possible after the cluster is initialized. If it is set up later, you will not be protected from Rack failures.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="verifying-that-ipv6-and-thp-are-disabled">Verifying that IPv6 and THP are disabled</h4>
+
+<p>Below are the steps required to disable THP. Please note that in the following instructions, defrag_file_pathname depends on the operating system:</p>
+
+<ul>
+  <li>Red Hat/CentOS: /sys/kernel/mm/redhat_transparent_hugepage/defrag</li>
+  <li>Ubuntu/Debian/OEL/SLES: /sys/kernel/mm/transparent_hugepage/defrag</li>
+</ul>
+
+<p>To determine if transparent hugepage compaction is enabled, run the following commands and check the output:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="err">$</span> <span class="nt">cat</span> <span class="nt">defrag_file_pathname</span></code></pre></figure>
+
+<ul>
+  <li>[always] never means that transparent hugepage compaction is enabled</li>
+  <li>always [never] means that transparent hugepage compaction is disabled</li>
+</ul>
+
+<p>You can also disable transparent hugepage compaction interactively (the settings do not persist over a reboot).</p>
+
+<p>To disable transparent hugepage compaction, add the following command to /ect/rc.local:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">echo</span> <span class="nt">never</span> <span class="o">&gt;</span> <span class="nt">defrag_file_pathname</span> </code></pre></figure>
+
+<p>Use the following command to disable transparent hugepage compaction temporarily as root:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">echo</span> <span class="s2">'never'</span> <span class="o">&gt;</span> <span class="nt">defrag_file_pathname</span> </code></pre></figure>
+
+<p>Use the following command to disable transparent hugepage compaction temporarily using sudo:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="err">$</span> <span class="nt">sudo</span> <span class="nt">sh</span> <span class="nt">-c</span> <span class="s1">"echo 'never' &gt; defrag_file_pathname"</span></code></pre></figure>
+
+<hr />
+</p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/sivan.consult@gmail.com" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a href="#">sivan.consult@gmail.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>+91-999-545-5746</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    Karyavattam<br />
+					
+					
+					    Trivandrum,
+					
+					
+					    Kerala 
+					
+					
+					    695581<br />
+					
+					
+					    India
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+				<li><a href="https://twitter.com/sivansasidharan" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+				
+				
+				
+				<li><a href="https:facebook.com/sivansasidharan" class="icon alt fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+				
+				
+				
+				
+				
+				
+				<li><a href="https://github.com/sivansasidharan/" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+				
+				
+				
+				<li><a href="https://www.linkedin.com/in/sivansasidharan/" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; TECHNOLOGY PRÉCIS!   by Sivan Sasidharan</li>
+				<li>Design: HTML5 UP</li>
+				<li>Powered by: Jekyll & GitHub</li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="http://localhost:4000/assets/js/jquery.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrolly.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrollex.min.js"></script>
+	<script src="http://localhost:4000/assets/js/skel.min.js"></script>
+	<script src="http://localhost:4000/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="http://localhost:4000/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="http://localhost:4000/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

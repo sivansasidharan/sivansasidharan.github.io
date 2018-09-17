@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>TECHNOLOGY PRÉCIS!</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="http://localhost:4000//" class="logo"><strong>TECHNOLOGY PRÉCIS!</strong> <span>by Sivan Sasidharan</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+        
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000//">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/all_posts/">WriteUps</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/freferences/">References</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/generic/">Experience</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/landingnews/">News Feeds</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/zlanding/">Webinars</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="#" class="button special fit">Get Started</a></li>
+		<li><a href="#" class="button fit">Log In</a></li>
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<header class="major">
+			<h1>Cluster Validation - HDFS - HDP</h1>
+		</header>
+		
+		<p><p>For every PS engagement that involves installation, upgrade, or migration, it is your responsibility to ensure that the installation validation checklist is completely executed.This will ensure:</p>
+<ul>
+  <li>Proper configuration of the cluster</li>
+  <li>Increased customer satisfaction</li>
+  <li>Decreased volume to the Technical Support team</li>
+</ul>
+
+<blockquote>
+  <p>The Importance of the Checklist</p>
+</blockquote>
+
+<p>The installation validation checklist is a tool that you should refer to throughout the duration of your engagement.It was assembled by the Technical Support team and contains information and best practices gathered while working on multiple projects with multiple clients.The checklists provide information on key areas that you should focus on to ensure proper configuration of the components of your cluster. This will result in an operational Customer Environment.</p>
+
+<h4 id="hdfs-checklist-items">HDFS Checklist Items</h4>
+
+<p>There are multiple items that should be checked to ensure that HDFS is configured properly. The table below provides the key areas of focus along with the rationale behind them:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Checklist Item</th>
+      <th>Notes/Rationale</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Verify that TestDFSIO has targeted 10% of live nodes</td>
+      <td>Refer to the section below , “Running TestDFSIO.”</td>
+    </tr>
+    <tr>
+      <td>Put 1 GB of data into HDFS</td>
+      <td>This should take approximately 10-17 seconds depending on the infrastructure. Perform this several times to see if the resulting times vary. You can run the following commands:mkfile 1g testfile</td>
+    </tr>
+    <tr>
+      <td>hadoop fs –put testfile /tmp</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Verify the NameNode, DataNode, and JournalNode memory settings</td>
+      <td>Young generation (Namenode new generation size) should be set up with 1/8 of total heap size. Refer to the Memory Sizing Document  located in the Hortonworks Wiki.</td>
+    </tr>
+    <tr>
+      <td>Verify that young generation should be set up with 1/8 of total heap size</td>
+      <td>In general, this is a good starting point.</td>
+    </tr>
+    <tr>
+      <td>Validate that log, data, and metadata mounts have enough room to grow</td>
+      <td>Log directories should NOT (if possible) be on the same mount as the root OS. Create a separate partition for logs and check the partition to ensure at least a few gigs of space are available. Consider providing the hdp-log-archive.sh  script to the operations team for log maintenance.</td>
+    </tr>
+    <tr>
+      <td>Verify ulimits for all service users</td>
+      <td>Be sure to make sure that ulimits for root are set up correctly for secure clusters. Limits should be set to the following value for users, hdfs, MR, YARN, HBASE and root (in a secure cluster only):</td>
+    </tr>
+    <tr>
+      <td>- nofile 32768</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>- nproc 65536</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>You can modify the ulimit -l value that the DataNode runs with. This value is usually configured in /etc/security/limits.conf</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Configure the open fd ulimit</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>- the default of 1024 is too low</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>- use 16K for datanodes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>- use 64K for masternodes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Verify that user groups, IDs, and home directories are set up uniformly on all nodes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>If the NFS Gateway is used, verify that it was mounted with soft mount</td>
+      <td>The scratch directory needs to have enough room and at least 3 GB of memory.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>You should have multiple redundant directories for namenode metadata:</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>- one of the the dfs.name.dir should be NFS</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>- NFS softmount - tcp,soft,intr, timeo=20, retrans=5</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Verify that all relevant mounts are used for dfs.data.dir property</td>
+      <td>For example, this should not be set to /tmp or /var/log. Also, check if you have more than 12 mounts for DataNode directories, and that you have configured DataNode volume failure toleration to be at least 2.</td>
+    </tr>
+    <tr>
+      <td>Verify that configurations and environment variables are consistent on all nodes, especially if Ambari is not used</td>
+      <td>If Ambari is not setup, it is best to have all configurations managed by Puppet (Chef etc.) or have one “Master” copy distributed across all nodes.</td>
+    </tr>
+    <tr>
+      <td>Validate that the Hadoop Classpath is set up consistently on all nodes</td>
+      <td>Check this if Ambari is not setup. Below is an example for HDP 2.3</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>/usr/hdp/2.3.0.0-2557/hadoop/conf:/usr/hdp/2.3.0.0-2557/hadoop/lib/<em>:/usr/hdp/2.3.0.0-2557/hadoop/.//</em>:/usr/hdp/2.3.0.0-2557/hadoop-hdfs/./:/usr/hdp/2.3.0.0-2557/hadoop-hdfs/lib/<em>:/usr/hdp/2.3.0.0-2557/hadoop-hdfs/.//</em>:/usr/hdp/2.3.0.0-2557/hadoop-yarn/lib/<em>:/usr/hdp/2.3.0.0-2557/hadoop-yarn/.//</em>:/usr/hdp/2.3.0.0-2557/hadoop-mapreduce/lib/<em>:/usr/hdp/2.3.0.0-2557/hadoop-mapreduce/.//</em>:::/usr/share/java/mysql-connector-java.jar</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Verify that all unsupported CDH and HDP 1.x configurations are removed</td>
+      <td>Verify along with all remaining CDH and HDP1.x in the log and all CDH HDP1.x repositories.</td>
+    </tr>
+    <tr>
+      <td>Verify that transceivers and handler counts the NameNodes and DataNodes</td>
+      <td>Be sure to verify:dfs.datanode.max.transfer.threads is at least 4096The NameNode Handler count is equal to 128 for more than 100 DataNodesThe DataNode handler count is between 10 - 20</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="running-testdfsio">Running TestDFSIO</h4>
+
+<p>Below are the steps you should take to run TestDFSIO to target 10% of live nodes:</p>
+
+<ol>
+  <li>Run TestDFSIO in write mode and create data with the command:
+    <blockquote>
+      <p>yarn jar $YARN_EXAMPLES/hadoop-mapreduce-client-jobclient-2.1.0-beta-tests.jar TestDFSIO -write -nrFiles 10 -fileSize 1000</p>
+    </blockquote>
+  </li>
+  <li>Run TestDSFIO in read mode with the command:
+    <blockquote>
+      <p>yarn jar $YARN_EXAMPLES/hadoop-mapreduce-client-jobclient-2.1.0-beta-tests.jar TestDFSIO -read -nrFiles 10 -fileSize 1000</p>
+    </blockquote>
+  </li>
+  <li>Clean up the TestDFSIO data with the command:
+    <blockquote>
+      <p>yarn jar $YARN_EXAMPLES/hadoop-mapreduce-client-jobclient-2.1.0-beta-tests.jar TestDFSIO -clean</p>
+    </blockquote>
+  </li>
+</ol>
+
+<h4 id="points-to-rememnber">Points to rememnber</h4>
+
+<ol>
+  <li>The HDFS checklist should be completed to ensure optimal configuration of HDFS in the cluster</li>
+  <li>You should run TestDFSIO to target at least 10% of live nodes</li>
+</ol>
+
+<hr />
+
+</p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/sivan.consult@gmail.com" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a href="#">sivan.consult@gmail.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>+91-999-545-5746</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    Karyavattam<br />
+					
+					
+					    Trivandrum,
+					
+					
+					    Kerala 
+					
+					
+					    695581<br />
+					
+					
+					    India
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+				<li><a href="https://twitter.com/sivansasidharan" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+				
+				
+				
+				<li><a href="https:facebook.com/sivansasidharan" class="icon alt fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+				
+				
+				
+				
+				
+				
+				<li><a href="https://github.com/sivansasidharan/" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+				
+				
+				
+				<li><a href="https://www.linkedin.com/in/sivansasidharan/" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; TECHNOLOGY PRÉCIS!   by Sivan Sasidharan</li>
+				<li>Design: HTML5 UP</li>
+				<li>Powered by: Jekyll & GitHub</li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="http://localhost:4000/assets/js/jquery.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrolly.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrollex.min.js"></script>
+	<script src="http://localhost:4000/assets/js/skel.min.js"></script>
+	<script src="http://localhost:4000/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="http://localhost:4000/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="http://localhost:4000/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

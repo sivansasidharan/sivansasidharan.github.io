@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>TECHNOLOGY PRÉCIS!</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="http://localhost:4000//" class="logo"><strong>TECHNOLOGY PRÉCIS!</strong> <span>by Sivan Sasidharan</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+        
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000//">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/all_posts/">WriteUps</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/freferences/">References</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/generic/">Experience</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/landingnews/">News Feeds</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/zlanding/">Webinars</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="#" class="button special fit">Get Started</a></li>
+		<li><a href="#" class="button fit">Log In</a></li>
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<header class="major">
+			<h1>Data Modelling In Hadoop - Key Considerations</h1>
+		</header>
+		
+		<p><p>###Data Modelling In Hadoop</p>
+
+<p>A common term one hears in the context of Hadoop is Schema-on-Read. This simply refers to the fact that raw, unprocessed data can be loaded into Hadoop, with the structure imposed at processing time based on the requirements of the processing application.This is different from Schema-on-Write, which is generally used with traditional data management systems.When the application or structure of data is not as well understood, the agility provided by the Schema-on-Read pattern can provide invaluable insights on data not previously accessible.</p>
+
+<p>Relational databases and data warehouses are often a good fit for well-understood and frequently accessed queries and reports on high-value data. Increasingly, though, Hadoop is taking on many of these workloads, particularly for queries that need to operate on volumes of data that are not economically or technically practical to process with traditional systems.</p>
+
+<p>Although being able to store all of your raw data is a powerful feature, there are still many factors that you should take into consideration before dumping your data into Hadoop. These considerations include:</p>
+
+<blockquote>
+  <p>Data storage formats</p>
+</blockquote>
+
+<p>There are a number of file formats and compression formats supported on Hadoop.Each has particular strengths that make it better suited to specific applications. Additionally, although Hadoop provides the Hadoop Distributed File System (HDFS) for storing data, there are several commonly used systems implemented on top of HDFS, such as HBase for additional data access functionality and Hive for additional data management functionality. Such systems need to be taken into consideration as well.</p>
+
+<blockquote>
+  <p>Multitenancy</p>
+</blockquote>
+
+<p>It’s common for clusters to host multiple users, groups, and application types.Supporting multitenant clusters involves a number of important considerations when you are planning how data will be stored and managed.</p>
+
+<blockquote>
+  <p>Schema design</p>
+</blockquote>
+
+<p>Despite the schema-less nature of Hadoop, there are still important considerations to take into account around the structure of data stored in Hadoop. This includes directory structures for data loaded into HDFS as well as the output of data processing and analysis. This also includes the schemas of objects stored in systems such as HBase and Hive.</p>
+
+<blockquote>
+  <p>Metadata management</p>
+</blockquote>
+
+<p>As with any data management system, metadata related to the stored data is often as important as the data itself. Understanding and making decisions related to metadata management are critical.</p>
+
+<p><em>Another important factor when making storage decisions with Hadoop is security and its associated considerations. This includes decisions around authentication, fine-grained access control, and encryption—both for data on the wire and data at rest.</em></p>
+
+<p><em>Reference -</em>
+<a href="http://blog.cloudera.com">Cloudera</a> | 
+<a href="http://hortonworks.com">Hortonworks</a> | 
+<a href="http://shop.oreilly.com/product/0636920033196.do">O’Reilly - Hadoop Application Architectures</a></p>
+
+</p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/sivan.consult@gmail.com" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a href="#">sivan.consult@gmail.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>+91-999-545-5746</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    Karyavattam<br />
+					
+					
+					    Trivandrum,
+					
+					
+					    Kerala 
+					
+					
+					    695581<br />
+					
+					
+					    India
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+				<li><a href="https://twitter.com/sivansasidharan" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+				
+				
+				
+				<li><a href="https:facebook.com/sivansasidharan" class="icon alt fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+				
+				
+				
+				
+				
+				
+				<li><a href="https://github.com/sivansasidharan/" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+				
+				
+				
+				<li><a href="https://www.linkedin.com/in/sivansasidharan/" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; TECHNOLOGY PRÉCIS!   by Sivan Sasidharan</li>
+				<li>Design: HTML5 UP</li>
+				<li>Powered by: Jekyll & GitHub</li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="http://localhost:4000/assets/js/jquery.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrolly.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrollex.min.js"></script>
+	<script src="http://localhost:4000/assets/js/skel.min.js"></script>
+	<script src="http://localhost:4000/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="http://localhost:4000/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="http://localhost:4000/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

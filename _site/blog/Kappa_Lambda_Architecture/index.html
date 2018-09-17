@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>TECHNOLOGY PRÉCIS!</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="http://localhost:4000//" class="logo"><strong>TECHNOLOGY PRÉCIS!</strong> <span>by Sivan Sasidharan</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+        
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000//">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/all_posts/">WriteUps</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/freferences/">References</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/generic/">Experience</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/landingnews/">News Feeds</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/zlanding/">Webinars</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="#" class="button special fit">Get Started</a></li>
+		<li><a href="#" class="button fit">Log In</a></li>
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<header class="major">
+			<h1>Kappa Architecture</h1>
+		</header>
+		
+		<p><h5 id="how-to-beat-the-cap-theorem----lambda-architecture">“How to beat the CAP theorem ?” - Lambda Architecture</h5>
+
+<p>Nathan Marz wrote a popular blog post describing an idea he called the <a href="http://nathanmarz.com/blog/how-to-beat-the-cap-theorem.html">Lambda Architecture</a>. The Lambda Architecture is an approach to building stream processing applications on top of MapReduce and Storm or similar systems which is widely accepted as of now.</p>
+
+<h5 id="how-does-it-look-like-">How does it look like ?</h5>
+
+<p><img src="/downloads/lambda.png" alt="Lambda Approach" /></p>
+
+<p>The Lambda Architecture is aimed at applications built around complex asynchronous transformations that need to run with low latency (a few seconds to a few hours). An immutable sequence of records is captured and fed into a batch system and a stream processing system in parallel and the transformation logic is implemented twice, once in the batch system and once in the stream processing system. Later we stitch together the results from both these systems at query time to produce the required answer.</p>
+
+<p>We can swap in various similar systems for Kafka, Storm, and Hadoop, and also use two different databases to store the output tables, one optimized for real time and the other optimized for batch updates.A lot of variations are possible.A simple usecase will be a news recommendation system that needs to crawl various news sources, process and normalize all the input, and then index, rank, and store it for serving.</p>
+
+<hr />
+
+<h5 id="pros--cons-of-lambda-architecture">Pros &amp; Cons of Lambda Architecture</h5>
+
+<p><strong>Pros</strong></p>
+
+<ol>
+  <li>The Lambda Architecture emphasizes retaining the input data unchanged.</li>
+  <li>It highlights the problem of reprocessing data - Reprocessing (processing input data over again to re-derive output) is one of the key challenges of stream processing : for e.g. during code change.</li>
+  <li>Emphasise that real-time processing is inherently approximate, less powerful, and more lossy than batch processing( with latency/availability trade-offs in stream processing)</li>
+  <li>The Lambda Architecture somehow “beats the CAP theorem” by allowing a mixture of different data systems with different trade-offs</li>
+</ol>
+
+<p><strong>Cons</strong></p>
+
+<ol>
+  <li>Maintaining code that needs to produce the same result in two complex distributed systems is painful : Programming in distributed frameworks like Storm and Hadoop is complex and also the code ends up being specifically engineered towards the framework it runs on.</li>
+  <li>Any new abstraction can only provide the features supported by the intersection of the two systems</li>
+  <li>The uber-framework walls off the rich ecosystem of tools and languages that makes Hadoop so powerful (Hive, Pig, Crunch, Cascading, Oozie, etc)</li>
+  <li>The operational burden of running and debugging two systems is going to be very high</li>
+</ol>
+
+<h5 id="questions-that-raise-are">Questions That Raise Are..</h5>
+
+<ol>
+  <li>why can’t the stream processing system just be improved to handle the full problem set in its target domain?</li>
+  <li>Why do you need to glue on another system?</li>
+  <li>Why can’t you do both real-time processing and also handle the reprocessing when code changes?</li>
+  <li>Stream processing systems already have a notion of parallelism; why not just handle reprocessing by increasing the parallelism and replaying history very, very fast?</li>
+</ol>
+
+<h4 id="what-is-kappa-architecture">What is “Kappa architecture”?</h4>
+
+<p><img src="/downloads/lambda1.png" alt="Lambda Architecture" />
+Figure 1. Lambda architecture. Figure courtesy of Ignacio Mulas Viela and Nicolas Seyvet.</p>
+
+<p>The Lambda architecture is composed of three layers: a batch layer, a real-time (or streaming) layer, and a serving layer. Both the batch and real-time layers receive a copy of the event, in parallel. The serving layer then aggregates and merges computation results from both layers into a complete answer.</p>
+
+<p>The batch layer (aka, historical layer) has two major tasks: managing historical data and re-computing results such as machine learning models. Computations are based on iterating over the entire historical data set. Since the data set can be large, this produces accurate results at the cost of high latency due to high computation time.</p>
+
+<p>The real-time layer( speed layer, streaming layer) provides low-latency results in near real-time fashion. It performs updates using incremental algorithms, thus significantly reducing computation costs, often at the expense of accuracy.</p>
+
+<p>The Kappa architecture simplifies the Lambda architecture by removing the batch layer and replacing it with a streaming layer.
+A batch is a data set with a start and an end (bounded), while a stream has no start or end and is infinite (unbounded). Because a batch is a bounded stream, one can conclude that batch processing is a subset of stream processing. Hence, the Lambda batch layer results can also be obtained by using a streaming engine. This simplification reduces the architecture to a single streaming engine capable of ingesting the needed volumes of data to handle both batch and real-time processing. Overall system complexity significantly decreases with Kappa architecture.</p>
+
+<p><img src="/downloads/kappa1.png" alt="Kappa Architecture" />
+Figure 2. Kappa architecture. Figure courtesy of Ignacio Mulas Viela and Nicolas Seyvet.</p>
+
+<p><strong>Main Principles of Kappa</strong></p>
+
+<ol>
+  <li>Everything is a stream: Batch operations become a subset of streaming operations. Hence, everything can be treated as a stream.</li>
+  <li>Immutable data sources: Raw data (data source) is persisted and views are derived, but a state can always be recomputed as the initial record is never changed.</li>
+  <li>Single analytics framework: Keep it short and simple (KISS) principle. A single analytics engine is required. Code, maintenance, and upgrades are considerably reduced.</li>
+  <li>Replay functionality: Computations and results can evolve by replaying the historical data from a stream.</li>
+</ol>
+
+<h5 id="building-the-analytics-pipeline">Building the Analytics Pipeline</h5>
+<p>TBD.</p>
+
+<h5 id="references">References</h5>
+<p><a href="https://www.oreilly.com/ideas/questioning-the-lambda-architecture">Questioning Lambda</a>
+<a href="http://nathanmarz.com/blog/how-to-beat-the-cap-theorem.html">CAP Theorem</a>
+<a href="http://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying">Real-Time-Unifying</a>
+<a href="http://samza.apache.org/learn/documentation/0.7.0/jobs/reprocessing.html">Samza</a>
+<a href="https://www.oreilly.com/ideas/applying-the-kappa-architecture-in-the-telco-industry?imm_mid=0e446a&amp;cmp=em-data-na-na-newsltr_20160601">Applying-the-Kappa-Architecture</a></p>
+</p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/sivan.consult@gmail.com" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a href="#">sivan.consult@gmail.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>+91-999-545-5746</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    Karyavattam<br />
+					
+					
+					    Trivandrum,
+					
+					
+					    Kerala 
+					
+					
+					    695581<br />
+					
+					
+					    India
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+				<li><a href="https://twitter.com/sivansasidharan" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+				
+				
+				
+				<li><a href="https:facebook.com/sivansasidharan" class="icon alt fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+				
+				
+				
+				
+				
+				
+				<li><a href="https://github.com/sivansasidharan/" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+				
+				
+				
+				<li><a href="https://www.linkedin.com/in/sivansasidharan/" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; TECHNOLOGY PRÉCIS!   by Sivan Sasidharan</li>
+				<li>Design: HTML5 UP</li>
+				<li>Powered by: Jekyll & GitHub</li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="http://localhost:4000/assets/js/jquery.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrolly.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrollex.min.js"></script>
+	<script src="http://localhost:4000/assets/js/skel.min.js"></script>
+	<script src="http://localhost:4000/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="http://localhost:4000/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="http://localhost:4000/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>TECHNOLOGY PRÉCIS!</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="http://localhost:4000//" class="logo"><strong>TECHNOLOGY PRÉCIS!</strong> <span>by Sivan Sasidharan</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+        
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000//">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/all_posts/">WriteUps</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/freferences/">References</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/generic/">Experience</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/landingnews/">News Feeds</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/zlanding/">Webinars</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="#" class="button special fit">Get Started</a></li>
+		<li><a href="#" class="button fit">Log In</a></li>
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<header class="major">
+			<h1>Apache Kudu</h1>
+		</header>
+		
+		<p><h4 id="apache-kudu">Apache Kudu</h4>
+<p><img src="/downloads/kudu_logo.png" alt="KUDU" />
+A new addition to the open source Apache Hadoop ecosystem, Apache Kudu (incubating) completes Hadoop’s storage layer which is specifically designed for use cases that require fast analytics on fast (rapidly changing) data.</p>
+
+<p>Kudu is Open Source software, licensed under the Apache 2.0 license. Currently, a limited-functionality version of Kudu is available as a Beta.</p>
+
+<blockquote>
+  <p>Why Kudu ?</p>
+</blockquote>
+
+<p>–&gt; Kudu provides a combination of fast inserts/updates and efficient columnar scans to enable multiple real-time analytic workloads across a single storage layer.</p>
+
+<p>–&gt; As a new complement to HDFS and Apache HBase, Kudu gives architects the flexibility to address a wider variety of use cases without exotic workarounds.</p>
+
+<p>–&gt; Kudu lowers query latency significantly for Apache Impala (incubating) and Apache Spark (initially, with other execution engines to come).</p>
+
+<blockquote>
+  <p>Overview</p>
+</blockquote>
+
+<p>1) A Simple Data Model</p>
+
+<p>A Kudu cluster stores tables that look just like tables you’re used to from relational (SQL) databases. A table can be as simple as an binary key and value, or as complex as a few hundred different strongly-typed attributes.Just like SQL, every table has a PRIMARY KEY made up of one or more columns.Rows can be efficiently read, updated, or deleted by their primary key.</p>
+
+<p>Kudu’s simple data model makes it breeze to port legacy applications or build new ones: no need to worry about how to encode your data into binary blobs or make sense of a huge database full of hard-to-interpret JSON. Tables are self-describing, so you can use standard tools like SQL engines or Spark to analyze your data.The data model is fully typed, so you don’t need to worry about binary encodings or exotic serialization. You can just store primitive types, like when you use JDBC or ODBC.</p>
+
+<p>2) Low-latency random access</p>
+
+<p>Kudu isn’t just a file format (unlike other storage), it’s a live storage system which supports low-latency millisecond-scale access to individual rows.Kudu’s APIs (Java or C++ APIs) can be used in conjunction with batch access for machine learning or analytics.Kudu isn’t designed to be an OLTP system, but if you have some subset of data which fits in memory, it offers competitive random access performance.</p>
+
+<p>3) Integration with the Hadoop Ecosystem</p>
+
+<p>Kudu is a good citizen on a Hadoop ecosystem : integrating it with other data processing frameworks is simple.You can stream data in from live real-time data sources using the Java client, and then process it immediately upon arrival using Spark, Impala, or MapReduce.</p>
+
+<p>You can even transparently join Kudu tables with data stored in other Hadoop storage such as HDFS or HBase.Kudu includes advanced in-process tracing capabilities, extensive metrics support, and even watchdog threads that helps in tracing &amp; debugging production issues must faster.</p>
+
+<blockquote>
+  <p>Architecture</p>
+</blockquote>
+
+<p><strong>Super-fast Columnar Storage</strong> - Kudu internally organizes its data by column rather than row. Columnar storage allows efficient encoding and compression. For example, a string field with only a few unique values can use only a few bits per row of storage. With techniques such as run-length encoding, differential encoding, and vectorized bit-packing, Kudu is as fast at reading the data as it is space-efficient at storing it.</p>
+
+<p>Columnar storage also dramatically reduces the amount of data IO required to service analytic queries. Using techniques such as lazy data materialization and predicate pushdown, Kudu can perform drill-down and needle-in-a-haystack queries over billions of rows and terabytes of data in seconds.</p>
+
+<p><strong>Distribution and Fault Tolerance</strong> - In order to scale out to large datasets and large clusters, Kudu splits tables into smaller units called tablets. This splitting can be configured on a per-table basis to be based on hashing, range partitioning, or a combination thereof. This allows the operator to easily trade off between parallelism for analytic workloads and high concurrency for more online ones.</p>
+
+<p>In order to keep your data safe and available at all times, Kudu uses the Raft consensus algorithm to replicate all operations for a given tablet. Raft(raft.github.io) ensures that every write is persisted by at least two nodes before responding to the client request, ensuring that no data is ever lost due to a machine failure.</p>
+
+<p>When machines do fail, replicas reconfigure themselves within a few seconds to maintain extremely high system availability.The use of majority consensus provides very low tail latencies even when some nodes may be stressed by concurrent workloads such as MapReduce jobs or heavy Impala queries.</p>
+
+<p><strong>Designed For Next Generation Hardware</strong> - Kudu is implemented in C++, so it can scale easily to large amounts of memory per node. And because key storage data structures are designed to be highly concurrent, it can scale easily to tens of cores. Kudu’s storage is designed to take advantage of the IO characteristics of solid state drives, and it includes an experimental cache implementation with an in-memory columnar execution path.</p>
+
+<h5 id="references">References</h5>
+<p><a href="http://getkudu.io/">Apache Kudu</a>
+<a href="https://blog.cloudera.com/blog/2015/09/kudu-new-apache-hadoop-storage-for-fast-analytics-on-fast-data/">Cloudera</a></p>
+</p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/sivan.consult@gmail.com" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a href="#">sivan.consult@gmail.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>+91-999-545-5746</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    Karyavattam<br />
+					
+					
+					    Trivandrum,
+					
+					
+					    Kerala 
+					
+					
+					    695581<br />
+					
+					
+					    India
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+				<li><a href="https://twitter.com/sivansasidharan" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+				
+				
+				
+				<li><a href="https:facebook.com/sivansasidharan" class="icon alt fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+				
+				
+				
+				
+				
+				
+				<li><a href="https://github.com/sivansasidharan/" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+				
+				
+				
+				<li><a href="https://www.linkedin.com/in/sivansasidharan/" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; TECHNOLOGY PRÉCIS!   by Sivan Sasidharan</li>
+				<li>Design: HTML5 UP</li>
+				<li>Powered by: Jekyll & GitHub</li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="http://localhost:4000/assets/js/jquery.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrolly.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrollex.min.js"></script>
+	<script src="http://localhost:4000/assets/js/skel.min.js"></script>
+	<script src="http://localhost:4000/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="http://localhost:4000/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="http://localhost:4000/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

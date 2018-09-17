@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>TECHNOLOGY PRÉCIS!</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="http://localhost:4000//" class="logo"><strong>TECHNOLOGY PRÉCIS!</strong> <span>by Sivan Sasidharan</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+        
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000//">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/all_posts/">WriteUps</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/freferences/">References</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/generic/">Experience</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/landingnews/">News Feeds</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/zlanding/">Webinars</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="#" class="button special fit">Get Started</a></li>
+		<li><a href="#" class="button fit">Log In</a></li>
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<header class="major">
+			<h1>Hadoop Technical Updates / 21-12-2015</h1>
+		</header>
+		
+		<p><h3 id="technical-updates">Technical Updates</h3>
+
+<p>TitanDB is a distributed graph database with pluggable storage backends. AWS has built a backend for the Amazon DynamoDB service.  This post describes how to use Titan and DynamoDB to perform shortest path queries and presents performance comparison across different storage models. It also shows some of the features that are unique to the setup, such as CloudWatch metrics for performance monitoring.</p>
+
+<p><a href="http://blogs.aws.amazon.com/bigdata/post/Tx3JO46NGMX3WAW/Performance-Tuning-Your-Titan-Graph-Database-on-AWS">TitanDB</a></p>
+
+<hr />
+
+<p>Apache NiFi 0.4.0 (more about the release below) adds support for interfacing with Syslog and HBase. This tutorial shows how to configure NiFi with an HBaseClient, a ListenSyslog source, and a HBase writer to store syslog JSON data to HBase. This is a nice tutorial of a real-world use case for NiFi, including suggestions for improving performance in order to productionize the setup.</p>
+
+<p><a href="https://blogs.apache.org/nifi/entry/storing_syslog_events_in_hbase">Apache NiFi</a></p>
+
+<hr />
+
+<p>The Cloudera blog has a post on some recent improvements to performance of Hadoop’s DistCP utility. The post describes how DistCP (a distributed copy within or across HDFS clusters) works, how performance is improved with HDFS snapshots, and how a new method of computing the list of files to copy can improve setup time. If you’ve worked with DistCP on a non-trivial HDFS, performance improvements are likely much welcomed.</p>
+
+<p><a href="http://blog.cloudera.com/blog/2015/12/distcp-performance-improvements-in-apache-hadoop/">Cloudera Blog</a></p>
+
+<hr />
+
+<p>The Confluent blog has a good introduction to Kafka Connect, the new framework for loading data into and out of Kafka. It shows how to use the JDBC driver to load row-level changes into Kafka without writing any custom code. From there, data is loaded into HDFS and made available via Hive. The post also discusses some of the advanced features, such as schema migration and partitioning.</p>
+
+<p><a href="http://www.confluent.io/blog/how-to-build-a-scalable-etl-pipeline-with-kafka-connect">Confluent Blog</a></p>
+
+<hr />
+
+<p>The Altiscale blog has a nice introduction to Apache Yetus, which provides automation for testing patches, producing api documentation, and generating release notes for software project. Yetus was originally part of the Hadoop project and is used by several other ecosystem projects.</p>
+
+<p><a href="https://www.altiscale.com/blog/apache-yetus-faster-more-reliable-software-development/">Altiscale Blog</a></p>
+
+<hr />
+
+<p>Apache Flink 0.10 added beta support for compatibility with Apache Storm. Using this support, a Storm topology can be run as-is on Flink (it must be converted to a Flink topology, though, which requires changes to a few lines of code). In addition, existing Storm Spouts and Bolts can be embedded inside of a Flink topology. This post describes the integration and gives examples of both features.</p>
+
+<p><a href="http://flink.apache.org/news/2015/12/11/storm-compatibility.html">Apache Flink</a></p>
+
+<hr />
+
+<p>Cloudera CDH 5.5 has support for Apache HTrace (incubating), which can provide granular details about timings of HDFS operations. This post describes how to setup HTrace and htraced (from Cloudera Labs) to record this information and view it with the included web front-end.</p>
+
+<p><a href="http://blog.cloudera.com/blog/2015/12/new-in-cloudera-labs-apache-htrace-incubating/">Cloudera CDH 5.5</a></p>
+
+<hr />
+
+<p>Region replicas are a relatively new feature of Apache HBase. By enabling them and specifying the correct flag at query time, HBase can delivery high availability of reads. This tutorial describes how to configure HBase for HA reads and gives a quick walkthrough of using the HBase CLI to create a table with replicas and query secondary regions.</p>
+
+<p><a href="https://developer.ibm.com/hadoop/blog/2015/12/02/hbase-read-ha/">IBM Developer Blog</a></p>
+
+<hr />
+
+<p><strong>Reference :</strong>
+<a href="http://hadoopweekly.com">Hadoop Weekly Publication</a></p>
+</p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/sivan.consult@gmail.com" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a href="#">sivan.consult@gmail.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>+91-999-545-5746</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    Karyavattam<br />
+					
+					
+					    Trivandrum,
+					
+					
+					    Kerala 
+					
+					
+					    695581<br />
+					
+					
+					    India
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+				<li><a href="https://twitter.com/sivansasidharan" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+				
+				
+				
+				<li><a href="https:facebook.com/sivansasidharan" class="icon alt fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+				
+				
+				
+				
+				
+				
+				<li><a href="https://github.com/sivansasidharan/" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+				
+				
+				
+				<li><a href="https://www.linkedin.com/in/sivansasidharan/" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; TECHNOLOGY PRÉCIS!   by Sivan Sasidharan</li>
+				<li>Design: HTML5 UP</li>
+				<li>Powered by: Jekyll & GitHub</li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="http://localhost:4000/assets/js/jquery.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrolly.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrollex.min.js"></script>
+	<script src="http://localhost:4000/assets/js/skel.min.js"></script>
+	<script src="http://localhost:4000/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="http://localhost:4000/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="http://localhost:4000/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

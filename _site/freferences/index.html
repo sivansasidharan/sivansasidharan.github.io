@@ -1,0 +1,1845 @@
+<!DOCTYPE html>
+<!--
+    Forty by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+  -->
+<html>
+
+  <head>
+	<title>TECHNOLOGY PRÉCIS!</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+  <body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="http://localhost:4000//" class="logo"><strong>TECHNOLOGY PRÉCIS!</strong> <span>by Sivan Sasidharan</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+        
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000//">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/all_posts/">WriteUps</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/freferences/">References</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/generic/">Experience</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/landingnews/">News Feeds</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/zlanding/">Webinars</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="#" class="button special fit">Get Started</a></li>
+		<li><a href="#" class="button fit">Log In</a></li>
+	</ul>
+</nav>
+ 
+    
+    <!-- Main -->
+    <div id="main" class="alt">
+
+      <!-- One -->
+                <h4 align="center">Quick References</h4>
+
+      <section id="one">
+	<div class="inner">
+
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/Hadoop_Technical_May/" title="Hadoop Technical Updates - May 2016">Hadoop Technical Updates - May 2016</a></h3>
+      <p>Hadoop Technical updates for May 2016</p>
+      <h6> Posted on : 2016-05-31 00:00:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><h3 id="technical-updates---may2016">Technical Updates - May2016</h3>
+
+<hr />
+<p>The DataTorrent blog has a post about fault tolerance for Apache Apex when consuming data from or writing data to files. Apex operates on unbounded streams, so there are some subtle but important details to consider. When using HDFS for output, there are additional complications due to the HDFS lease mechanisms. <a href="https://www.datatorrent.com/blog/fault-tolerant-file-processing/">Fault-Tolerance</a></p>
+
+<hr />
+
+<p>The Databricks blog has an overview of the upcoming performance improvements in Spark 2.0 as part of the new Tungsten code generation engine. The post offers illustrative examples that explain how specific code generation can be much faster than generic code, due to virtual function overhead, making better use of CPU registers, and loop unrolling. In addition to the Databricks post, The Morning Paper has an overview of the VLDB paper on which the implementation is based.
+[Spark2.0] (https://databricks.com/blog/2016/05/23/apache-spark-as-a-compiler-joining-a-billion-rows-per-second-on-a-laptop.html)
+<a href="https://blog.acolyer.org/2016/05/23/efficiently-compiling-efficient-query-plans-for-modern-hardware/">Query-Plan-Spark2.0</a></p>
+
+<hr />
+
+<p>StreamScope, which is Microsoft’s stream processing system, is another one of the papers covered by The Morning Paper this week. The post pulls out some of the highlights—the throughput/cluster sizes, a look at the programming model (SQL), the time model, the delivery semantics/guarantees, and its use in production at Microsoft.
+<a href="https://blog.acolyer.org/2016/05/24/streamscope-continuous-reliable-distributed-processing-of-big-data-streams/">StreamScope</a></p>
+
+<hr />
+
+<p>The Apache blog has a post from the team at HubSpot on tuning the G1GC for Apache HBase. The article walks through the progression of changes that HubSpot tried and how they impacted the stability, 99% performance, and overall time spent in stop-the-world garbage collections. The team used lots of tricks and does a good job explaining intricacies of the GC algorithms. At the end of the post, there’s a step-by-step guide to tuning G1GC for HBase.
+<a href="https://blogs.apache.org/hbase/entry/tuning_g1gc_for_your_hbase">Apache HBase</a></p>
+
+<hr />
+
+<p>LinkedIn has a post about some difficult to debug issues with Kafka offset management. The article details the symptoms of two so-called “offset rewind” events, how to detect these types of events with monitoring, and the underlying causes (and their solutions) of both incidents.
+<a href="https://engineering.linkedin.com/blog/2016/05/kafkaesque-days-at-linkedin--part-1">Kafka</a></p>
+
+<hr />
+
+<p>The Databricks blog has the third and final part of a series on using Apache Spark for Genome Variant Analysis. The post describes the needed preparation (converting files to Parquet and reading data into Spark RRDs), how to load genotype data, and running k-means clustering on the resulting genotypes to predict geographic population based on the genotype features.
+<a href="https://databricks.com/blog/2016/05/24/predicting-geographic-population-using-genome-variants-and-k-means.html">Spark-Usecase</a></p>
+
+<hr />
+
+<p>Much of the batch big data ecosystem has progressed from custom APIs back to SQL, so it’ll be interesting to see if the same happens to stream processing frameworks as well. In this post, the Apache Flink team has written about their plans for supporting streaming SQL. Flink already has a Table API, and they’re using Apache Calcite to add SQL support. For things like windowing, they’re planning to use Calcite’s streaming SQL extensions.  The initial SQL work is targeted for the 1.1.0 release, with much richer support in 1.2.0.
+<a href="http://flink.apache.org/news/2016/05/24/stream-sql.html">Apache Flink</a></p>
+
+<hr />
+
+<p>This post gives an introduction to the XML plugin for Apache Drill. The support doesn’t yet ship with Drill, but it’s relatively easy to compile the jar and configure XML support.
+<a href="https://www.mapr.com/blog/how-use-xml-plugin-apache-drill">Apache Drill</a></p>
+
+<hr />
+
+<p>The Hortonworks blog has a brief introduction to the architecture of the Ambari metrics system, which recently added support for Grafana as a front-end for dashboards. The system uses Apache Phoenix and Apache HBase as the system of record, so it scales horizontally.
+<a href="http://hortonworks.com/blog/hood-ambari-metrics-grafana/">Grafana - Amabri</a></p>
+
+<hr />
+
+<p>This tutorial describes how to use Spark SQL on Amazon EMR with Hue and Apache Zeppelin to run SQL queries across tab-delimited data stored in S3. The post finishes off by showing how to save data from Spark to DynamoDB.
+<a href="http://blogs.aws.amazon.com/bigdata/post/Tx2D93GZRHU3TES/Using-Spark-SQL-for-ETL">Spark-SQL-for-ETL</a></p>
+
+<hr />
+
+<p>The Heroku team has written about their experience with the latest version of Apache Kafka—the introduction of the timestamp field (an additional 8-bytes) led to some counter intuitive performance changes.
+<a href="https://engineering.heroku.com/blogs/2016-05-27-apache-kafka-010-evaluating-performance-in-distributed-systems/">Apache Kafka -0.10-</a></p>
+
+<hr />
+
+<p><strong>Reference :</strong>
+<a href="http://hadoopweekly.com">Hadoop Weekly Publication</a></p>
+</p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/Hadoop_Technical_Updates_Dec/" title="Hadoop Technical Updates / 21-12-2015">Hadoop Technical Updates / 21-12-2015</a></h3>
+      <p>Hadoop Technical updates for Dec 2015</p>
+      <h6> Posted on : 2015-12-21 00:00:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><h3 id="technical-updates">Technical Updates</h3>
+
+<p>TitanDB is a distributed graph database with pluggable storage backends. AWS has built a backend for the Amazon DynamoDB service.  This post describes how to use Titan and DynamoDB to perform shortest path queries and presents performance comparison across different storage models. It also shows some of the features that are unique to the setup, such as CloudWatch metrics for performance monitoring.</p>
+
+<p><a href="http://blogs.aws.amazon.com/bigdata/post/Tx3JO46NGMX3WAW/Performance-Tuning-Your-Titan-Graph-Database-on-AWS">TitanDB</a></p>
+
+<hr />
+
+<p>Apache NiFi 0.4.0 (more about the release below) adds support for interfacing with Syslog and HBase. This tutorial shows how to configure NiFi with an HBaseClient, a ListenSyslog source, and a HBase writer to store syslog JSON data to HBase. This is a nice tutorial of a real-world use case for NiFi, including suggestions for improving performance in order to productionize the setup.</p>
+
+<p><a href="https://blogs.apache.org/nifi/entry/storing_syslog_events_in_hbase">Apache NiFi</a></p>
+
+<hr />
+
+<p>The Cloudera blog has a post on some recent improvements to performance of Hadoop’s DistCP utility. The post describes how DistCP (a distributed copy within or across HDFS clusters) works, how performance is improved with HDFS snapshots, and how a new method of computing the list of files to copy can improve setup time. If you’ve worked with DistCP on a non-trivial HDFS, performance improvements are likely much welcomed.</p>
+
+<p><a href="http://blog.cloudera.com/blog/2015/12/distcp-performance-improvements-in-apache-hadoop/">Cloudera Blog</a></p>
+
+<hr />
+
+<p>The Confluent blog has a good introduction to Kafka Connect, the new framework for loading data into and out of Kafka. It shows how to use the JDBC driver to load row-level changes into Kafka without writing any custom code. From there, data is loaded into HDFS and made available via Hive. The post also discusses some of the advanced features, such as schema migration and partitioning.</p>
+
+<p><a href="http://www.confluent.io/blog/how-to-build-a-scalable-etl-pipeline-with-kafka-connect">Confluent Blog</a></p>
+
+<hr />
+
+<p>The Altiscale blog has a nice introduction to Apache Yetus, which provides automation for testing patches, producing api documentation, and generating release notes for software project. Yetus was originally part of the Hadoop project and is used by several other ecosystem projects.</p>
+
+<p><a href="https://www.altiscale.com/blog/apache-yetus-faster-more-reliable-software-development/">Altiscale Blog</a></p>
+
+<hr />
+
+<p>Apache Flink 0.10 added beta support for compatibility with Apache Storm. Using this support, a Storm topology can be run as-is on Flink (it must be converted to a Flink topology, though, which requires changes to a few lines of code). In addition, existing Storm Spouts and Bolts can be embedded inside of a Flink topology. This post describes the integration and gives examples of both features.</p>
+
+<p><a href="http://flink.apache.org/news/2015/12/11/storm-compatibility.html">Apache Flink</a></p>
+
+<hr />
+
+<p>Cloudera CDH 5.5 has support for Apache HTrace (incubating), which can provide granular details about timings of HDFS operations. This post describes how to setup HTrace and htraced (from Cloudera Labs) to record this information and view it with the included web front-end.</p>
+
+<p><a href="http://blog.cloudera.com/blog/2015/12/new-in-cloudera-labs-apache-htrace-incubating/">Cloudera CDH 5.5</a></p>
+
+<hr />
+
+<p>Region replicas are a relatively new feature of Apache HBase. By enabling them and specifying the correct flag at query time, HBase can delivery high availability of reads. This tutorial describes how to configure HBase for HA reads and gives a quick walkthrough of using the HBase CLI to create a table with replicas and query secondary regions.</p>
+
+<p><a href="https://developer.ibm.com/hadoop/blog/2015/12/02/hbase-read-ha/">IBM Developer Blog</a></p>
+
+<hr />
+
+<p><strong>Reference :</strong>
+<a href="http://hadoopweekly.com">Hadoop Weekly Publication</a></p>
+</p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/HDP-Webinar-IOA-Dec2015/" title="HDP DataFlow & Internet of Anything (IOA)">HDP DataFlow & Internet of Anything (IOA)</a></h3>
+      <p>HDP dataflow/IOA on Windows Azure</p>
+      <h6> Posted on : 2015-12-03 00:00:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><p>Few Slides for reference from the webinar on Connected Cars with Hadoop by Hortonworks &amp; Windows.</p>
+
+<p><img src="http://localhost:4000/downloads/HDP-Web1.png" alt="Slide 1" />
+<img src="http://localhost:4000/downloads/HDP-Web2.png" alt="Slide 2" />
+<img src="http://localhost:4000/downloads/HDP-Web3.png" alt="Slide 3" />
+<img src="http://localhost:4000/downloads/HDP-Web4.png" alt="Slide 4" />
+<img src="http://localhost:4000/downloads/HDP-Web5.png" alt="Slide 5" />
+<img src="http://localhost:4000/downloads/HDP-Web6.png" alt="Slide 6" />
+<img src="http://localhost:4000/downloads/HDP-Web7.png" alt="Slide 7" />
+<img src="http://localhost:4000/downloads/HDP-Web8.png" alt="Slide 8" />
+<img src="http://localhost:4000/downloads/HDP-Web9.png" alt="Slide 9" /></p>
+
+<p><strong>Reference : <a href="http://hortonworks.com/webinars/#library">HortonWorks Webinar</a></strong></p>
+</p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/Hadoop_Technical_Update-Nov-1/" title="Hadoop Technical Updates / 09-11-2015">Hadoop Technical Updates / 09-11-2015</a></h3>
+      <p>Hadoop Technical updates for Nov 2015</p>
+      <h6> Posted on : 2015-11-09 00:00:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><h3 id="technical-updates">Technical Updates</h3>
+
+<p>The DataTorrent blog has a tutorial for writing an Apache Apex application in Scala. The tutorial shows how to setup a Maven project, write a LineReader, Parser, and Application, and run the application with <code class="highlighter-rouge">dtcli</code>.</p>
+
+<ul>
+  <li><a href="https://www.datatorrent.com/blog-writing-apache-apex-application-in-scala/">https://www.datatorrent.com/blog-writing-apache-apex-application-in-scala/</a></li>
+</ul>
+
+<p>The Confluent blog has a post describing how Kafka implements “request purgatory”—tracking  requests that haven’t yet succeeded or encountered an error. The original implementation uses Java’s DelayQueue, which shares performance characteristics with a priority queue. The new design uses Hierarchical Timing Wheels, which offer faster, tunable performance characters. The post describes the implementation in detail and gives an overview of performance benchmarks comparing the old and the new.</p>
+
+<ul>
+  <li><a href="http://www.confluent.io/blog/apache-kafka-purgatory-hierarchical-timing-wheels">http://www.confluent.io/blog/apache-kafka-purgatory-hierarchical-timing-wheels</a></li>
+</ul>
+
+<p>Hortonworks has a post describing the components and features of Spark that they’ve worked on in the past year, and where they’re concentrating effort for the future. Past work includes ORC support, an Ambari stack definition for Spark, machine learning library improvements, and documentation updates. Future work includes maturing Apache Zeppelin, an entity disambiguation library, a new Spark + HBase integration, the ability to persist RDDs to HDFS’s memory tier, and making Spark streaming more robust.</p>
+
+<ul>
+  <li><a href="http://hortonworks.com/blog/spark-hdp-perfect-together/">http://hortonworks.com/blog/spark-hdp-perfect-together/</a></li>
+</ul>
+
+<p>The recently released Apache Phoenix 4.6 includes support for declaring <code class="highlighter-rouge">ROW_TIMESTAMP</code> as part of a table’s primary key. BY doing so, the value is stored using HBase’s native row timestamp, which provides performance gains. Particularly, when scanning regions with HFiles that haven’t been compacted, the <code class="highlighter-rouge">ROW_TIMESTAMP</code> information can be used to skip entire files. This is particularly handy when reading recently-written data. The introductory blog post describes the optimization in more details and shows example query response times with this feature enabled and not.</p>
+
+<ul>
+  <li><a href="https://blogs.apache.org/phoenix/entry/new_optimization_for_time_series">https://blogs.apache.org/phoenix/entry/new_optimization_for_time_series</a></li>
+</ul>
+
+<p>Kudu, the new storage engine from Cloudera, integrates with Impala for SQL access. This post describes how to setup Impala with Kudu (this currently requires a custom build of Impala), how to tell Impala about data stored in Kudu, how to perform various SQL operations (both read and write/update queries), and more.</p>
+
+<ul>
+  <li><a href="http://blog.cloudera.com/blog/2015/11/how-to-use-impala-with-kudu/">http://blog.cloudera.com/blog/2015/11/how-to-use-impala-with-kudu/</a></li>
+</ul>
+
+<p>This post describes the types of RDD persistence available in Spark. The default is memory-only, which is performant but can lead to OutOfMemoryError’s. The post has a brief overview of the performance characteristics and trade-offs of several other options.</p>
+
+<p><a href="https://www.altiscale.com/blog/tips-and-tricks-for-running-spark-on-hadoop-part-3-rdd-persistence/">https://www.altiscale.com/blog/tips-and-tricks-for-running-spark-on-hadoop-part-3-rdd-persistence/</a></p>
+
+<p>This tutorial describes how to use Apache Ambari to install and configure the Tachyon FileSystem, which is a memory-centric distributed storage system. The post also has a brief example of using TachyonFS from Spark.</p>
+
+<ul>
+  <li><a href="https://developer.ibm.com/hadoop/blog/2015/11/04/installing-tachyon-0-8-0-on-iop-4-1-4-2/">https://developer.ibm.com/hadoop/blog/2015/11/04/installing-tachyon-0-8-0-on-iop-4-1-4-2/</a></li>
+</ul>
+
+<p>Depending on data sizes and distributions, an inner join in MapReduce can be performed efficiently in a few different ways. This post describes, in a high-level, several of the strategies for implementing an inner-join with MapReduce. For each (e.g. reduce-side, map-side), the post describes some of the relevant Hadoop APIs.</p>
+
+<ul>
+  <li><a href="https://haifengl.wordpress.com/2015/11/04/inner-join-with-mapreduce/">https://haifengl.wordpress.com/2015/11/04/inner-join-with-mapreduce/</a></li>
+</ul>
+
+<p>Myriad is a system for running YARN atop of a Mesos cluster. This post looks at how to use Docker’s overlay network plugin to isolate YARN clusters (with the ResourceManager and NodeManager running inside of Docker). All clusters share a common distributed file system, which can be accessed via another network bridge. The post has many more details about and code (including Dockerfiles and scripts) for implementing the solution.</p>
+
+<ul>
+  <li><a href="https://www.mapr.com/blog/docker-global-hack-day-on-demand-yarn-clusters">https://www.mapr.com/blog/docker-global-hack-day-on-demand-yarn-clusters</a></li>
+</ul>
+
+<p><strong>Reference : <a href="http://hadoopweekly.com">Hadoop Weekly Publication</a></strong></p>
+</p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/Hadoop_Technical_Update-Oct-2/" title="Hadoop Technical Updates / 19-10-2015">Hadoop Technical Updates / 19-10-2015</a></h3>
+      <p>Hadoop Technical updates for Oct 19 2015</p>
+      <h6> Posted on : 2015-10-19 00:00:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><h3 id="technical-updates">Technical Updates</h3>
+
+<p>The DataTorrent blog has a post about Apache Apex (incubating) that describes how Apex’s architecture is built around DAGs. At a high-level, a data flow is specified as a DAG (the Logical Plan) using the Java API or JSON, and the Streaming Application Master converts this logical plan into a physical plan for execution on a cluster. The post gives an overview of how Apex performs the conversion and executes it on a distributed platform like YARN.</p>
+
+<ul>
+  <li><a href="https://www.datatorrent.com/blog-tracing-dags-from-specification-to-execution/">https://www.datatorrent.com/blog-tracing-dags-from-specification-to-execution/</a></li>
+</ul>
+
+<p>Ibis, the Python data analysis framework for big data, contains an integration with SQL engines (in particular, Ibis aims to work well with Cloudera Impala). This post describes Ibis’ SQL API, which provides an API for building and running SQL queries.</p>
+
+<ul>
+  <li><a href="http://blog.ibis-project.org/ibis-for-sql-programmers/">http://blog.ibis-project.org/ibis-for-sql-programmers/</a></li>
+</ul>
+
+<p>The Confluent blog has an update on Apache Kafka, which includes news on a number of features in various stages of development. Of particular note, support for authorization and the new Kafka Streams library have both been committed to trunk.</p>
+
+<ul>
+  <li><a href="http://www.confluent.io/blog/log-compaction-highlights-in-the-kafka-and-stream-processing-community-october-2015">http://www.confluent.io/blog/log-compaction-highlights-in-the-kafka-and-stream-processing-community-october-2015</a></li>
+</ul>
+
+<p>This post describes how Collective is using a long-running Spark cluster to power interactive dashboards. The system makes use of HyperLogLog for estimating cardinality of the audiences they measure, and the post describes the custom Spark aggregation function they’ve built for merging HyperLogLogs. After putting all of these things together, a 40 node cluster with 100GB of cached data can answer queries in under 2 seconds.</p>
+
+<ul>
+  <li><a href="https://databricks.com/blog/2015/10/13/interactive-audience-analytics-with-spark-and-hyperloglog.html">https://databricks.com/blog/2015/10/13/interactive-audience-analytics-with-spark-and-hyperloglog.html</a></li>
+</ul>
+
+<p>The Bay Area Samza Meetup hosted a presentation about the next release of Apache Samza, version 0.10.0. In addition to support for new consumers and producers (Amazon Kinesis, HDFS, ElasticSearch), version 0.10.0 adds support for dynamic configuration and host affinity which can improve job startup/recovery time when tasks have a lot of local state. Samza 0.10.0 is expected to be released in November.</p>
+
+<ul>
+  <li><a href="http://www.slideshare.net/NavinaRamesh/apache-samza-new-features-in-the-upcoming-samza-release-0100">http://www.slideshare.net/NavinaRamesh/apache-samza-new-features-in-the-upcoming-samza-release-0100</a></li>
+</ul>
+
+<p>Also at the Bay Area Samza Meetup, Netflix presented on how Samza fits into the Netflix data pipeline. Netflix processes over 1 Petabyte / day (550 billion events), using Samza instances running inside of docker on hosts in an EC2 auto-scaling group. The presentation describes their production experience (and some improvements/workarounds they’re using) and the number and types of instances that they use for both Samza and Kafka.</p>
+
+<ul>
+  <li><a href="http://www.slideshare.net/mmddtmp/netflix-keystone-samzaeetup10132015">http://www.slideshare.net/mmddtmp/netflix-keystone-samzaeetup10132015</a></li>
+</ul>
+
+<p>This tutorial shows how to update configuration settings in Apache Ambari using the Ambari web UI. The UI exposes knobs for common settings and supports configuration of additional settings by setting raw property values. Ambari also supports comparison/diff across configuration versions.</p>
+
+<ul>
+  <li><a href="https://developer.ibm.com/hadoop/blog/2015/10/15/update-open-source-component-configurations-via-ambari-part-one/">https://developer.ibm.com/hadoop/blog/2015/10/15/update-open-source-component-configurations-via-ambari-part-one/</a></li>
+</ul>
+
+<p>This post on the Cloudera blog discusses how to calculate resources for YARN by taking into consideration common cluster scenarios and accounting for operating system overhead. It also shows how to verify configuration using the ResourceManager Web UI.</p>
+
+<ul>
+  <li><a href="http://blog.cloudera.com/blog/2015/10/untangling-apache-hadoop-yarn-part-2/">http://blog.cloudera.com/blog/2015/10/untangling-apache-hadoop-yarn-part-2/</a></li>
+</ul>
+
+<p><strong>Reference : <a href="http://hadoopweekly.com">Hadoop Weekly Publication</a></strong></p>
+</p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/InAndAroundAnalytics-Oct-1/" title="In & Around Analytics / Oct 2015">In & Around Analytics / Oct 2015</a></h3>
+      <p>In & Around Analytics</p>
+      <h6> Posted on : 2015-10-15 00:00:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><h2 id="top-stories">Top Stories</h2>
+
+<p>Extreme Events for Insurers:
+“Complete cycle of extreme event risk management, from identifying experience data sources, to extreme event detection, to modelling and dependence analysis and finally to monitoring and mitigation.”</p>
+
+<ul>
+  <li><a href="https://www.soa.org/Research/Research-Projects/Life-Insurance/2015-extreme-events-for-insurers.aspx">https://www.soa.org/Research/Research-Projects/Life-Insurance/2015-extreme-events-for-insurers.aspx</a></li>
+</ul>
+
+<hr />
+
+<p>Key trends expected to accelerate supply chain capabilities</p>
+<ul>
+  <li>Bimodal Supply Chain Strategies</li>
+  <li>Increased Customer Intimacy</li>
+  <li>
+    <p>Emerging Digital Business Models</p>
+  </li>
+  <li><a href="http://www.supplychain247.com/article/2015_gartner_supply_chain_top_25_3_key_trends/supply_chain_optimization">http://www.supplychain247.com/article/2015_gartner_supply_chain_top_25_3_key_trends/supply_chain_optimization</a></li>
+</ul>
+
+<hr />
+
+<p>Why Your Data Scientists Need to Be Storytellers, and How to Get Them There - More new channels, competition, and distinct segments to manage, as well as shorter product lifecycles, greater price transparency, and higher customer experience expectations, are creating an exponential increase in the amount of available marketing data.</p>
+
+<ul>
+  <li><a href="http://www.marketingprofs.com/articles/2014/26436/why-your-data-scientists-need-to-be-storytellers-and-how-to-get-them-there#ixzz3n6pIuX5k">http://www.marketingprofs.com/articles/2014/26436/why-your-data-scientists-need-to-be-storytellers-and-how-to-get-them-there#ixzz3n6pIuX5k</a></li>
+</ul>
+
+<h2 id="supply-chain-tax">Supply Chain, Tax</h2>
+
+<p>According to Gartner, three key trends are expected to accelerate the supply chain capabilities of the top leaders separating them from the rest of the pack:</p>
+<ul>
+  <li>Bimodal Supply Chain Strategies</li>
+  <li>Increased Customer Intimacy</li>
+  <li>
+    <p>Emerging Digital Business Models</p>
+  </li>
+  <li><a href="http://www.supplychain247.com/article/2015_gartner_supply_chain_top_25_3_key_trends/supply_chain_optimization">http://www.supplychain247.com/article/2015_gartner_supply_chain_top_25_3_key_trends/supply_chain_optimization</a></li>
+</ul>
+
+<hr />
+
+<p>Green Supply Chain: Dynamics in Energy Production is expected to rapidly decrease the use of fossil fuels through the “self-reinforcing cycle”.</p>
+
+<ul>
+  <li><a href="http://thegreensupplychain.com/NEWS/15-10-12-3.PHP?CID=9818">http://thegreensupplychain.com/NEWS/15-10-12-3.PHP?CID=9818</a></li>
+</ul>
+
+<h2 id="talent">Talent</h2>
+
+<p>The Future of Talent Technology - An old mindset still prevails when it comes to structuring HR technology — and it is inhibiting true innovation. Talent technologies are now more
+valuable than ever with technology bolstering the capability of the entire hire-to-retire spectrum.</p>
+
+<ul>
+  <li><a href="http://www.talentmgt.com/articles/7476-the-future-of-talent-technology">http://www.talentmgt.com/articles/7476-the-future-of-talent-technology</a>
+-How to Build an HR Analytics</li>
+</ul>
+
+<hr />
+
+<p>How to Build an HR Analytics Team - In the age of Big Data, business leaders and HR professionals are still learning to combine age-old intuition with analytics when it comes to
+making workforce decisions. Only 4 percent of the market is currently running sophisticated people analytics, while 50 to 60 percent of companies are still trying to make sense of the
+data they have. So, where should organizations looking to implement an analytics program begin? Start by hiring the right people. People analytics is intrinsically a multidisciplinary
+endeavor, and you need a team that can evaluate, approve and implement data-driven decisions across your workforce.</p>
+
+<ul>
+  <li><a href="http://www.cornerstoneondemand.com/blog/how-build-hr-analytics-team-infographic#.VheGY03snIU">http://www.cornerstoneondemand.com/blog/how-build-hr-analytics-team-infographic#.VheGY03snIU</a></li>
+</ul>
+
+<hr />
+
+<p>Taking HR Analytics beyond Technologists: Dave Ulrich’s widely adopted model separates the roles in HR into four specializations</p>
+
+<ul>
+  <li><a href="http://www.forbes.com/sites/rawnshah/2015/04/13/taking-hr-analytics-beyond-technologists/">http://www.forbes.com/sites/rawnshah/2015/04/13/taking-hr-analytics-beyond-technologists/</a></li>
+</ul>
+
+<hr />
+
+<h3 id="data-technology">Data Technology</h3>
+
+<p>What will happen after the Internet of Things matures? What sort of innovation will be possible when 50 billion sensors are interconnected and when the Spark and Hadoop frameworks are processing data sets of unprecedented size in mere minutes, on the hunt for patterns and anomalies? To what degree will automation rule our lives? What opportunities will be truly transformative?</p>
+
+<ul>
+  <li><a href="http://www.ibmbigdatahub.com/blog/internet-things-transforming-treatment-connected-healthcare">http://www.ibmbigdatahub.com/blog/internet-things-transforming-treatment-connected-healthcare</a></li>
+</ul>
+
+<hr />
+
+<p>How to Improve Hadoop ROI? With the adoption of any new technology, businesses are tasked with measuring success and demonstrating value to the organization — Big Data is not any different.</p>
+
+<ul>
+  <li><a href="http://insidebigdata.com/2015/10/08/hitting-a-big-data-wall-how-to-improve-hadoop-roi/">http://insidebigdata.com/2015/10/08/hitting-a-big-data-wall-how-to-improve-hadoop-roi/</a></li>
+</ul>
+
+<hr />
+
+<p>EverString Extends AI-Powered Solution for Predictive Marketing - EverString, a leading provider of predictive analytics for sales and marketing, announced the release of EverString Predictive Ad Targeting, an ad targeting solution that is both account-based and fully integrated with predictive scoring and demand generation in a unified platform.</p>
+
+<ul>
+  <li><a href="http://insidebigdata.com/2015/10/13/everstring-extends-ai-powered-solution-for-predictive-marketing/">http://insidebigdata.com/2015/10/13/everstring-extends-ai-powered-solution-for-predictive-marketing/</a></li>
+</ul>
+
+<hr />
+
+<p>Demand for data science, data engineering, and development professionals has zoomed as the industry’s product life cycle races up the S-curve. They are being hired for a rash of new solutions as business model innovations ride the technological maturity of big data.</p>
+
+<ul>
+  <li><a href="http://www.allanalytics.com/author.asp?section_id=3762&amp;doc_id=278672">http://www.allanalytics.com/author.asp?section_id=3762&amp;doc_id=278672</a></li>
+</ul>
+</p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/Hadoop_Technical_Update-Oct-1/" title="Hadoop Technical Updates / 11-10-2015">Hadoop Technical Updates / 11-10-2015</a></h3>
+      <p>Hadoop Technical updates for Oct 2015</p>
+      <h6> Posted on : 2015-10-11 00:00:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><h3 id="technical-updates">Technical Updates</h3>
+
+<p>Spark is the topic of over half of the technical articles this week. As evidenced by new features and companies sharing practical knowledge, it is maturing (and gaining plenty of adoption) as a product. Aside from the great articles on Spark, I highly recommend the visualization covering the fundamentals of Raft’s distributed consensus algorithm.</p>
+
+<p>In Spark 1.5, SparkR gained support for distributed computation of generalized linear models. This tutorial shows how to use the SparkR APIs to perform to build a linear model for predicting airline delays.</p>
+
+<ul>
+  <li><a href="https://databricks.com/blog/2015/10/05/generalized-linear-models-in-sparkr-and-r-formula-support-in-mllib.html">https://databricks.com/blog/2015/10/05/generalized-linear-models-in-sparkr-and-r-formula-support-in-mllib.html</a></li>
+</ul>
+
+<p>This tutorial describes how to build a Apache Spark cluster on Amazon Web Services using spot instances (which provide a significant cost savings). The instructions describe using the AWS web console, installing Spark using a recent release, and configuring Spark’s important settings.</p>
+
+<ul>
+  <li><a href="http://blog.insightdatalabs.com/spark-cluster-step-by-step/">http://blog.insightdatalabs.com/spark-cluster-step-by-step/</a></li>
+</ul>
+
+<p>The MapR blog has a guide to Spark Streaming, which discusses Spark Streaming’s API and streaming model (microbatch). It also describes processing semantics (at least once, exactly once, at most once), which vary depending on the input source for Spark Streaming.</p>
+
+<ul>
+  <li><a href="https://www.mapr.com/blog/quick-guide-spark-streaming">https://www.mapr.com/blog/quick-guide-spark-streaming</a></li>
+</ul>
+
+<p>Datanami has an article describing how Uber has migrated from a data system built on Amazon EMR and Celery/Python ETL to a new system built on Spark and Kafka. Uber makes heavy use of Spark Streaming and Spark SQL, and they’ve built two Spark-based tools to keep the system running smoothly. The first, called Paricon, is used to validate data contracts when schema’s change, and the second, called Komondor, takes care of common ingestion pieces (like dedup).</p>
+
+<ul>
+  <li><a href="http://www.datanami.com/2015/10/05/how-uber-uses-spark-and-hadoop-to-optimize-customer-experience/">http://www.datanami.com/2015/10/05/how-uber-uses-spark-and-hadoop-to-optimize-customer-experience/</a></li>
+</ul>
+
+<p>Compared to other distributed systems, Kafka is relatively easy to configure and operate. But that’s not to say it never has problems—this presentation describes several situations where folks have experienced trouble.</p>
+
+<ul>
+  <li><a href="http://www.slideshare.net/gwenshap/nyc-kafka-meetup-2015-when-bad-things-happen-to-good-kafka-clusters">http://www.slideshare.net/gwenshap/nyc-kafka-meetup-2015-when-bad-things-happen-to-good-kafka-clusters</a></li>
+</ul>
+
+<p>The Stitch Fix blog has a post describing their experience with Spark. It covers how they think about when to use Spark, the Spark Data Source API, caching, the DataFrame API, and SparkSQL. There are some good tips and anecdotes—e.g. that Stick Fix converted some Python jobs to use the DataFrame API and saw 6x performance improvements.</p>
+
+<ul>
+  <li><a href="http://multithreaded.stitchfix.com/blog/2015/10/06/spark-for-data-science/">http://multithreaded.stitchfix.com/blog/2015/10/06/spark-for-data-science/</a></li>
+</ul>
+
+<p>This post describes some statistical tests added to Spark’s MLlib for Goodness-of-Fit. It contains some background on the tests, and how they’re implemented in Spark.</p>
+
+<ul>
+  <li><a href="http://blog.cloudera.com/blog/2015/10/continuous-distribution-goodness-of-fit-in-mllib-kolmogorov-smirnov-testing-in-apache-spark/">http://blog.cloudera.com/blog/2015/10/continuous-distribution-goodness-of-fit-in-mllib-kolmogorov-smirnov-testing-in-apache-spark/</a></li>
+</ul>
+
+<p>The MapR blog has a recap of the three talks given at the recent Bay Area Apache Flink Meetup. The talks covered stateful distributed stream processing, Gelly (the Flink graph processing API), and the future of Apache Flink.</p>
+
+<ul>
+  <li><a href="https://www.mapr.com/blog/distributed-stream-and-graph-processing-apache-flink">https://www.mapr.com/blog/distributed-stream-and-graph-processing-apache-flink</a></li>
+</ul>
+
+<p>Kudu, the new distributed storage engine from Cloudera, includes APIs in Java, C++, and Python (in alpha). These articles give an overview and introduction to the Kudu APIs in Python and Java.</p>
+
+<ul>
+  <li><a href="http://peter-hoffmann.com/2015/getting-started-with-the-cloudera-kudu-storage-engine-in-python.html">http://peter-hoffmann.com/2015/getting-started-with-the-cloudera-kudu-storage-engine-in-python.html</a></li>
+  <li><a href="http://harshj.com/writing-a-simple-kudu-java-api-program/">http://harshj.com/writing-a-simple-kudu-java-api-program/</a></li>
+</ul>
+
+<p>Sparkling Water is a library for combining H2O.ai’s machine learning APIs and UI with Apache Spark. This post describes how Spark and H2O work together (both the API and architecture) and walks through an example of building a deep learning model using Sparkling Water.</p>
+
+<ul>
+  <li><a href="http://blog.cloudera.com/blog/2015/10/how-to-build-a-machine-learning-app-using-sparkling-water-and-apache-spark/">http://blog.cloudera.com/blog/2015/10/how-to-build-a-machine-learning-app-using-sparkling-water-and-apache-spark/</a></li>
+</ul>
+
+<p>This visualization provides an excellent introduction to the Raft distributed consensus algorithm. During the visualization (which lasts about 5 minutes), several animations describe leader election and log replication. If you’re a visual learner (or even if not), this is one of the best ways to learn the fundamentals of Raft.</p>
+
+<ul>
+  <li><a href="http://thesecretlivesofdata.com/raft/">http://thesecretlivesofdata.com/raft/</a></li>
+</ul>
+
+<p><strong>Reference : <a href="http://hadoopweekly.com">Hadoop Weekly Publication</a></strong></p>
+</p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/Hadoop_Technical_Update-Sept/" title="Hadoop Technical Updates / 27-09-2015">Hadoop Technical Updates / 27-09-2015</a></h3>
+      <p>Hadoop Technical updates for Sept 2015</p>
+      <h6> Posted on : 2015-09-27 00:00:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><h3 id="technical-updates">Technical Updates</h3>
+
+<p>If you like reading about distributed systems or are interested in learning more about the CAP theorem, then Martin Kleppmann’s “A Critique of the CAP Theorem” is for you. It discusses the theorem and many of the common confusions in terminology. It then proposes an alternative to the CAP theorem, which is aimed at helping practitioners reason about common trade-offs.</p>
+
+<ul>
+  <li><a href="http://arxiv.org/abs/1509.05393">http://arxiv.org/abs/1509.05393</a></li>
+</ul>
+
+<p>The Apache blog describes building an Apache NiFi flow that ingests tweets from the Twitter API, does some light-weight processing, and stores the resulting tweets into Solr. It demonstrates some of NiFi’s built-in tools, such as json evaluation and batching.</p>
+
+<ul>
+  <li><a href="https://blogs.apache.org/nifi/entry/indexing_tweets_with_nifi_and">https://blogs.apache.org/nifi/entry/indexing_tweets_with_nifi_and</a></li>
+</ul>
+
+<p>The Databricks blog has a post that gives an overview of Spark’s implementation of Latent Dirichlet Allocation (LDA). Spark implements an online variant of the algorithm, which improves performance and scalability. The post links to example code on github and provides a number of tips for using LDA.</p>
+
+<ul>
+  <li><a href="https://databricks.com/blog/2015/09/22/large-scale-topic-modeling-improvements-to-lda-on-spark.html">https://databricks.com/blog/2015/09/22/large-scale-topic-modeling-improvements-to-lda-on-spark.html</a></li>
+</ul>
+
+<p>Spark Testing Base is a library for testing Spark code in Scala and Java. This post gives an overview of the functionality, which includes the ability to test non-trivial jobs (such a Spark streaming).</p>
+
+<ul>
+  <li><a href="http://blog.cloudera.com/blog/2015/09/making-apache-spark-testing-easy-with-spark-testing-base/">http://blog.cloudera.com/blog/2015/09/making-apache-spark-testing-easy-with-spark-testing-base/</a></li>
+</ul>
+
+<p>This post articulates several reasons why it’s a good idea to invest in operating a centralized schema registry for a data platform. Reasons include enforcing safe schema evolution, storage efficiency, data discovery, and data policy enforcement. The post also describes why it’s critical for stream processing.</p>
+
+<ul>
+  <li><a href="http://www.confluent.io/blog/schema-registry-kafka-stream-processing-yes-virginia-you-really-need-one">http://www.confluent.io/blog/schema-registry-kafka-stream-processing-yes-virginia-you-really-need-one</a></li>
+</ul>
+
+<p>Erasure codings are a well-known mechanism of data protection that can incur less overhead than Hadoop’s three-way replication. Adding this to HDFS was proposed over five years ago, and engineers from Cloudera and Intel are working on it for the upcoming Hadoop 3.0 release. This blog post has an in-depth overview of the strategy and implementation, which takes advantage of hardware acceleration for encoding and decoding parity data.</p>
+
+<ul>
+  <li><a href="http://blog.cloudera.com/blog/2015/09/introduction-to-hdfs-erasure-coding-in-apache-hadoop/">http://blog.cloudera.com/blog/2015/09/introduction-to-hdfs-erasure-coding-in-apache-hadoop/</a></li>
+</ul>
+
+<p>Hue includes Livy, a REST interface for interacting with Spark. This post describes how to start Livy to run Spark jobs, and it gives examples of starting a Spark shell and entering commands via the REST api.</p>
+
+<ul>
+  <li><a href="http://gethue.com/how-to-use-the-livy-spark-rest-job-server-for-interactive-spark/">http://gethue.com/how-to-use-the-livy-spark-rest-job-server-for-interactive-spark/</a></li>
+</ul>
+
+<p>Unlike java or scala libraries, python libraries often aren’t portable across machines. This can cause problems for a distributed computation with PySpark, but there are a few strategies to distribute the necessary libraries. This post describes them (e.g. shipping a py file, py egg, setting up a virtualenv on each node) and when each is most appropriate.</p>
+
+<ul>
+  <li><a href="http://blog.cloudera.com/blog/2015/09/how-to-prepare-your-apache-hadoop-cluster-for-pyspark-jobs/">http://blog.cloudera.com/blog/2015/09/how-to-prepare-your-apache-hadoop-cluster-for-pyspark-jobs/</a></li>
+</ul>
+
+<p>This post describes Coursera’s data infrastructure, which ties together Cassandra, Scalding, Amazon Redshift, and more. They use Dataduct, which is a python framework for the AWS Data Pipeline to manage workflows.</p>
+
+<ul>
+  <li><a href="http://blogs.aws.amazon.com/bigdata/post/Tx2Q3JGH427TL8Z/How-Coursera-Manages-Large-Scale-ETL-using-AWS-Data-Pipeline-and-Dataduct">http://blogs.aws.amazon.com/bigdata/post/Tx2Q3JGH427TL8Z/How-Coursera-Manages-Large-Scale-ETL-using-AWS-Data-Pipeline-and-Dataduct</a></li>
+</ul>
+
+<p><strong>Reference : <a href="http://hadoopweekly.com">Hadoop Weekly Publication</a></strong></p>
+</p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/Hadoop_Technical_Update-August/" title="Hadoop Technical Updates / 31-08-2015">Hadoop Technical Updates / 31-08-2015</a></h3>
+      <p>Hadoop Technical updates for August 2015</p>
+      <h6> Posted on : 2015-08-31 00:00:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><h3 id="technical-updates">Technical Updates</h3>
+
+<p>Two projects that exemplify the push in the Hadoop ecosystem to continuously improve the status quo are the covered in this week’s issue. First, Apache Flink, a project with similar features to Apache Spark that has been gaining momentum (particularly for use-cases where Spark falls short), is covered in several links. Second, there’s a great presentation on Apache Phoenix, which aims to improve the usability HBase through SQL access. In other news, Apache Ignite and Lens graduated from the incubator, and Hortonworks announced the acquisition of Onyara.</p>
+
+<p>One of the advantages of the cloud—short-lived, on-demand clusters—violates assumptions in Hadoop’s design, which creates complications. For example, the MapReduce and Spark job history servers disappear when an ephemeral cluster terminates. Qubole describes how they’ve designed a solution to serve job histories via S3 even when the associated cluster has been terminated.</p>
+
+<ul>
+  <li><a href="http://www.qubole.com/blog/product/multi-tenant-job-history-server-for-ephemeral-hadoop-and-spark-clusters/">http://www.qubole.com/blog/product/multi-tenant-job-history-server-for-ephemeral-hadoop-and-spark-clusters/</a></li>
+</ul>
+
+<p>Gelly is Apache Flink’s graph-processing library. It supports iterative graph processing using the vertex-centric and grather-sum-apply computation models. It includes built-in support for PageRank, single source shortest path, connected components, and several other algorithms. The introductory post describes all of these and also shows how to build music profiles via a user-user similarity graph.</p>
+
+<ul>
+  <li><a href="http://flink.apache.org/news/2015/08/24/introducing-flink-gelly.html">http://flink.apache.org/news/2015/08/24/introducing-flink-gelly.html</a></li>
+</ul>
+
+<p>This follow-up post to an earlier introduction to Apache Falcon discusses several features and uses of Falcon. These include backup and disaster recovery and late data handling (Falcon can compute preliminary and updated results as late data arrives). The post also discusses some areas where Falcon could use improvement and how it works well in conjunction with HCatalog.</p>
+
+<ul>
+  <li><a href="http://getindata.com/blog/post/avoiding-the-mess-in-the-hadoop-cluster-part-2/">http://getindata.com/blog/post/avoiding-the-mess-in-the-hadoop-cluster-part-2/</a></li>
+</ul>
+
+<p>Amazon Kinesis is a hosted service for streaming data with similarities to Apache Kafka. This post describes using the Cascading framework to perform a streaming analysis of microbatched data sourced from Kinesis. The tutorial describes how to deploy the necessary resources to ingest data, process it with Cascading on EMR, and store the results in Amazon Redshift for analysis.</p>
+
+<ul>
+  <li><a href="http://blogs.aws.amazon.com/bigdata/post/Tx3FWOWOHSITOFC/Integrating-Amazon-Kinesis-Amazon-S3-and-Amazon-Redshift-with-Cascading-on-Amazo">http://blogs.aws.amazon.com/bigdata/post/Tx3FWOWOHSITOFC/Integrating-Amazon-Kinesis-Amazon-S3-and-Amazon-Redshift-with-Cascading-on-Amazo</a></li>
+</ul>
+
+<p>The Confluent blog has an excellent post about distributed consensus with Apache Zookeeper and Kafka. It introduces consensus and atomic broadcast, describes consensus in Zookeeper, describes Kafka’s in-sync replica sets, and gives an overview of a couple of failure scenarios in Kafka replication.</p>
+
+<ul>
+  <li><a href="http://www.confluent.io/blog/distributed-consensus-reloaded-apache-zookeeper-and-replication-in-kafka">http://www.confluent.io/blog/distributed-consensus-reloaded-apache-zookeeper-and-replication-in-kafka</a></li>
+</ul>
+
+<p>These slides are a fantastic overview of tuning HBase, with a focus on the Phoenix SQL-layer, for low-latency applications. The topics covered include optimizing Phoenix queries (and what to look for in EXPLAIN output), HBase regionserver config settings, JVM GC configuration options, schema considerations, HBase timeline consistent reads, OS-level tuning, and future work for Phoenix.</p>
+
+<ul>
+  <li><a href="http://phoenix.apache.org/presentations/TuningForOLTP.pdf">http://phoenix.apache.org/presentations/TuningForOLTP.pdf</a></li>
+</ul>
+
+<p>Slides from the recent Bay Area Apache Flink meetup have been posted. Topics covered include the state of the community (e.g. recently added and upcoming features), ongoing research topics being integrated into/with Flink (including streaming machine learning pipelines and streaming graphs), the Gelly Graph library, and an overview of stateful stream processing (with details about how Flink achieves exactly-once semantics).</p>
+
+<ul>
+  <li><a href="http://www.slideshare.net/HenrySaputra/bay-area-apache-flink-meetup-community-update-august-2015">http://www.slideshare.net/HenrySaputra/bay-area-apache-flink-meetup-community-update-august-2015</a></li>
+  <li><a href="http://www.slideshare.net/foosounds/baymeetupflinkresearch">http://www.slideshare.net/foosounds/baymeetupflinkresearch</a></li>
+  <li><a href="http://www.slideshare.net/vkalavri/gelly-in-apache-flink-bay-area-meetup">http://www.slideshare.net/vkalavri/gelly-in-apache-flink-bay-area-meetup</a></li>
+  <li><a href="http://www.slideshare.net/GyulaFra/stateful-distributed-stream-processing">http://www.slideshare.net/GyulaFra/stateful-distributed-stream-processing</a></li>
+</ul>
+
+<p><strong>Reference : <a href="http://hadoopweekly.com">Hadoop Weekly Publication</a></strong></p>
+</p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/Hadoop_Technical_Update-July/" title="Hadoop Technical Updates / 28-07-2015">Hadoop Technical Updates / 28-07-2015</a></h3>
+      <p>Hadoop Technical updates for July 2015</p>
+      <h6> Posted on : 2015-07-28 00:00:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><h3 id="technical-updates">Technical Updates</h3>
+
+<p>This week’s theme is new projects—Cloudera announced Ibis for Hadoop-scale data science with Python, Spree provides an alternative web UI for Spark, and Astro adds HBase support to Spark SQL. In addition, Hortonworks released HDP 2.3 and Cassandra 2.2 adds a number of interesting new features.</p>
+
+<p>This post describes using HyperLogLog (HLL) for estimating things like click-through rates for ads. To run at scale, the post describes how to use HLL from Spark, including how to build a custom Spark aggregation function.  Finally, it describes a system that uses a pre-built/cached SparkContext to power a REST API server to run Spark queries with 1-2s response times across 100GB of data.</p>
+
+<ul>
+  <li><a href="http://eugenezhulenev.com/blog/2015/07/15/interactive-audience-analytics-with-spark-and-hyperloglog/">http://eugenezhulenev.com/blog/2015/07/15/interactive-audience-analytics-with-spark-and-hyperloglog/</a></li>
+</ul>
+
+<p>This post describes the tradeoff between throughput and latency in the Kafka Producer and how to tweak the various producer settings to achieve desired performance.</p>
+
+<ul>
+  <li><a href="http://ingest.tips/2015/07/19/tips-for-improving-performance-of-kafka-producer/">http://ingest.tips/2015/07/19/tips-for-improving-performance-of-kafka-producer/</a></li>
+</ul>
+
+<p>The MapR blog has a great introduction to Hive’s new support for transactions. The post describes some use cases, the supported semantics, how to enable transaction-support, and a brief overview of how it works (including how compactions clean up delta files).</p>
+
+<ul>
+  <li><a href="https://www.mapr.com/blog/hive-transaction-feature-hive-10">https://www.mapr.com/blog/hive-transaction-feature-hive-10</a></li>
+</ul>
+
+<p>Cloudera has announced a new project called Ibis, which has the goal of marrying Python data analysis/science libraries with Cloudera Impala to build a fast, native distributed framework. The project will including LLVM integration for code generation from Python code. The Cloudera blog has two posts about it—the first announced and describes the project goals and the second includes getting started instructions and more on contributing.</p>
+
+<ul>
+  <li><a href="http://blog.cloudera.com/blog/2015/07/ibis-on-impala-python-at-scale-for-data-science/">http://blog.cloudera.com/blog/2015/07/ibis-on-impala-python-at-scale-for-data-science/</a></li>
+  <li><a href="http://blog.cloudera.com/blog/2015/07/getting-started-with-ibis-and-how-to-contribute/">http://blog.cloudera.com/blog/2015/07/getting-started-with-ibis-and-how-to-contribute/</a></li>
+</ul>
+
+<p>With the caveat (as always) that benchmarks should be taken with a grain of salt, Pivotal has posted part 1 of a comparison of HAWQ (their SQL-on-Hadoop) to Hive and Impala. The tests were performed on a 15 node cluster with the 30TB TPC-DS dataset size. Among the highlights, HAWQ shows speed improvements over Hive and Impala, and it has full support for all of the TPC-DS queries (whereas Hive and Impala do not).</p>
+
+<ul>
+  <li><a href="http://blog.pivotal.io/big-data-pivotal/products/performance-benchmark-pivotal-hawq-beats-impala-apache-hive-part-1">http://blog.pivotal.io/big-data-pivotal/products/performance-benchmark-pivotal-hawq-beats-impala-apache-hive-part-1</a></li>
+</ul>
+
+<p>This post from the MapR blog compares MapReduce and Spark. It looks at the difference between the execution models, the differences in expressiveness (the Spark API having many more high-level operations like join and group by), and the library support (Spark includes machine learning, graph programming, and SQL as part of the core release).</p>
+
+<ul>
+  <li><a href="https://www.mapr.com/blog/5-minute-guide-understanding-significance-apache-spark">https://www.mapr.com/blog/5-minute-guide-understanding-significance-apache-spark</a></li>
+</ul>
+
+<p>This interview with some folks from dataArtisans about Apache Flink has some interesting details about the project. Topics include how it compares to Spark/Samza/Storm, Flink’s approach to iterative processing, data streaming in Flink, and the Flink roadmap.</p>
+
+<ul>
+  <li><a href="https://www.smaato.com/big-data-nosql-meetup-hamburg-with-apache-flink-at-smaato/">https://www.smaato.com/big-data-nosql-meetup-hamburg-with-apache-flink-at-smaato/</a></li>
+</ul>
+
+<p>This post describes several parameters, including how to debug them, for best utilizing resources on a YARN cluster. In additional to the basic memory settings, the post covers the virtual and physical memory checker, several common exceptions (and their solutions), and a few MapR-specific settings.</p>
+
+<ul>
+  <li><a href="https://www.mapr.com/blog/best-practices-yarn-resource-management">https://www.mapr.com/blog/best-practices-yarn-resource-management</a></li>
+</ul>
+
+<p><strong>Reference : <a href="http://hadoopweekly.com">Hadoop Weekly Publication</a></strong></p>
+</p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/Hadoop_Technical_Update-June/" title="Hadoop Technical Updates / 24-06-2015">Hadoop Technical Updates / 24-06-2015</a></h3>
+      <p>Hadoop Technical updates for June 2015</p>
+      <h6> Posted on : 2015-06-29 00:00:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><h3 id="technical-updates">Technical Updates</h3>
+
+<p>On the technical side, there are articles covering R &amp; Hadoop, Docker &amp; Hadoop, Spark, HBase, Presto, and Cascading.</p>
+
+<p>This post discusses four open-source solutions for using Hadoop with R, each of which has its own strengths and weaknesses. The options are R on a workstation or shared server to connect to Hadoop (which works with rhdfs, rhbase, RHive, and more), Revolution R Open (which works with similar tools but adds the Intel Math Kernel Libraries), and RMR2 for executing R inside of MapReduce programs.</p>
+
+<ul>
+  <li><a href="http://blog.revolutionanalytics.com/2015/06/using-hadoop-with-r-it-depends.html">http://blog.revolutionanalytics.com/2015/06/using-hadoop-with-r-it-depends.html</a></li>
+</ul>
+
+<p>BlueData provides a software platform for deploying Hadoop using virtualization. A recent version of the platform adds support for deployment via Docker containers in addition to hypervisors. This post compares the trade-offs of the two options in terms of performance, reliability, and security.</p>
+
+<ul>
+  <li><a href="http://www.bluedata.com/blog/2015/06/docker-and-spark-and-hadoop-oh-my">http://www.bluedata.com/blog/2015/06/docker-and-spark-and-hadoop-oh-my</a></li>
+</ul>
+
+<p>Spark 1.4 has greatly enhanced the builtin UI for visualizing job details. This post gives a tour of these new features, which include a timeline view of spark events (across jobs, within a job, and within a stage of a job) and the execution DAG (which shows RDD transformations and how they map to operations). There are a lot of useful features in here, such as the ability to visualize the breakdown of time spent in a stage across compute/shuffle/deserialization/serialization/etc.</p>
+
+<ul>
+  <li><a href="https://databricks.com/blog/2015/06/22/understanding-your-spark-application-through-visualization.html">https://databricks.com/blog/2015/06/22/understanding-your-spark-application-through-visualization.html</a></li>
+</ul>
+
+<p>Logstash 1.5 added an integration with Apache Kafka, which is the subject of this post. The article shows how to use Logstash to read and write data from Kafka, describes some of the important configuration settings of the integration, and discusses the scaling characteristics of the integration.</p>
+
+<ul>
+  <li><a href="https://www.elastic.co/blog/logstash-kafka-intro">https://www.elastic.co/blog/logstash-kafka-intro</a></li>
+</ul>
+
+<p>The Altiscale blog has an update on the efforts to integrate YARN and docker. Rather than continuing to develop the DockerContainerExecutor, the current plan is to extend the existing LinuxContainerExecutor to also support docker containers. Otherwise, the two were going to share a lot of very similar code (e.g. for creating cgroups within which to run tasks).</p>
+
+<ul>
+  <li><a href="https://www.altiscale.com/hadoop-blog/whats-next-for-yarn-and-docker/">https://www.altiscale.com/hadoop-blog/whats-next-for-yarn-and-docker/</a></li>
+</ul>
+
+<p>This post introduces Pankh, which is a demonstrative application for building a real-time stream processing system with Kafka, Spark Streaming, and HBase. The post describes the main components of the canonical stream processing architecture and describes the component implementations used by Pankh.</p>
+
+<ul>
+  <li><a href="http://ingest.tips/2015/06/24/real-time-analytics-with-kafka-and-spark-streaming/">http://ingest.tips/2015/06/24/real-time-analytics-with-kafka-and-spark-streaming/</a></li>
+</ul>
+
+<p>In the latest post in guide to MapReduce frameworks, this post describes how to implement a left-join with the Cascading Java APIs. The code verbosity fits somewhere between Pig/Hive (quite short) and raw MapReduce (quite long). The post describes the details of the implementation and the full code (including a unit test) is available on github.</p>
+
+<ul>
+  <li><a href="http://blog.matthewrathbone.com/2015/06/25/real-world-hadoop---implementing-a-left-outer-join-in-java-with-cascading.html">http://blog.matthewrathbone.com/2015/06/25/real-world-hadoop—implementing-a-left-outer-join-in-java-with-cascading.html</a></li>
+</ul>
+
+<p>A common pattern in HBase schema design is to prefix keys with a salt in order to equally distribute load (avoid hot regions) when key prefixes are changing slowly. This post describes how to build a custom InputFormat to run MapReduce jobs over a logical key range for a salted table. The implementation overrides the getSplits() method, which is described in detail.</p>
+
+<ul>
+  <li><a href="http://technology.finra.org/blogs/hbase-mapreduce.html">http://technology.finra.org/blogs/hbase-mapreduce.html</a></li>
+</ul>
+
+<p>The Teradata blog has a post describing why they’ve chosen to adopt Presto and their near-term plans for contributing. On the former, the post gives background on Hadapt (whose architecture didn’t fit with low-latency queries), the IQ execution engine they were developing for low-latency, why IQ didn’t quite fit with Tez, and several of the advantageous features of Presto.</p>
+
+<ul>
+  <li><a href="http://blogs.teradata.com/data-points/love-presto/">http://blogs.teradata.com/data-points/love-presto/</a></li>
+</ul>
+
+<p><strong>Reference : <a href="http://hadoopweekly.com">Hadoop Weekly Publication</a></strong></p>
+</p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/Hadoop_Technical_Update-May/" title="Hadoop Technical Updates / 28-05-2015">Hadoop Technical Updates / 28-05-2015</a></h3>
+      <p>Hadoop Technical updates for May 2015</p>
+      <h6> Posted on : 2015-05-28 00:00:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><h3 id="technical-updates">Technical Updates</h3>
+
+<p>The Parse.ly blog has a post describing several hard-fought lessons-learned when deploying Cassandra for timeseries data at scale. These include understanding CQL, COMPACT STORAGE, Cassandra Counters, row sizes, and more. The end of the post has some pointers to documentation of Cassandra best practices, which is aimed at anyone just getting started.</p>
+
+<ul>
+  <li><a href="http://blog.parsely.com/post/1928/cass/">http://blog.parsely.com/post/1928/cass/</a></li>
+</ul>
+
+<p>Testing a distributed system is difficult, and it’s a problem that hasn’t gotten a lot of attention. This post looks at some of the work that’s been done, defines what it means for a distributed system to “work,” describes tools for testing distributed systems, and details the types of tests that are part of the Apache Slider framework (among which is the Slider Integral Chaos Monkey).</p>
+
+<ul>
+  <li><a href="http://steveloughran.blogspot.co.uk/2015/05/distributed-system-testing-where-now.html">http://steveloughran.blogspot.co.uk/2015/05/distributed-system-testing-where-now.html</a></li>
+</ul>
+
+<p>This presentation from Strata &amp; Hadoop World in London describes the architecture of Apache Flink. Topics covered include the Flink engine, data streaming analysis, Flink streaming (APIs, windowing, checkpointing), Flink for batch processing, memory management, and Flink’s ML and Graph libraries.</p>
+
+<ul>
+  <li><a href="http://www.slideshare.net/stephanewen1/apache-flink-strata-hadoop-world-london">http://www.slideshare.net/stephanewen1/apache-flink-strata-hadoop-world-london</a></li>
+</ul>
+
+<p>The Dynamic Yield engineering blog has a post on Apache HBase, which enumerates four best practices. These are: ensuring good key-distribution, generating HBase-friendly ids, working with HBase snapshots, and when to use (or not use) HBase for real-time analytics.</p>
+
+<ul>
+  <li><a href="https://www.dynamicyield.com/2015/05/apache-hbase-for-the-win-2/">https://www.dynamicyield.com/2015/05/apache-hbase-for-the-win-2/</a></li>
+</ul>
+
+<p>This post, the first in a series, looks at the advantages of using schemas for data (vs CSV, JSON, XML, etc). It also describes why a serialization format, such as JSON, isn’t enough by itself.</p>
+
+<ul>
+  <li><a href="http://blog.confluent.io/2015/05/19/how-i-learned-to-stop-worrying-and-love-the-schema-part-1/">http://blog.confluent.io/2015/05/19/how-i-learned-to-stop-worrying-and-love-the-schema-part-1/</a></li>
+</ul>
+
+<p>With traditional linux packaging, only a single version of a package is installed at a time. But when doing rolling upgrades, it’s best to have multiple version installed in order to minimize downtime. The Hortonworks blog describes how HDP 2.2 installs multiple versions simultaneously by using RPMs and Debs which include the version number. HDP also includes a tool to update symlinks to activate a specific version.</p>
+
+<ul>
+  <li><a href="http://hortonworks.com/blog/standards-based-packaging-to-support-rolling-upgrades-in-hdp/">http://hortonworks.com/blog/standards-based-packaging-to-support-rolling-upgrades-in-hdp/</a></li>
+</ul>
+
+<p>The Altiscale blog has kicked off a blog series containing tips for running Spark on Hadoop with an overview of the three common ways to invoke Spark. These are local mode (single JVM), YARN cluster (spark-submit), and YARN client (distributed spark-shell). The post describes when each mode is most appropriate.</p>
+
+<ul>
+  <li><a href="https://www.altiscale.com/hadoop-blog/spark-on-hadoop/">https://www.altiscale.com/hadoop-blog/spark-on-hadoop/</a></li>
+</ul>
+
+<p>This post looks at using Sqoop to import and export data from MySQL to Hive. It includes examples and describes several caveats related to metadata (e.g. an export can only work on files in HDFS not on a Hive table as described in the Hive metastore).</p>
+
+<ul>
+  <li><a href="http://ingest.tips/2015/05/20/a-roundtrip-from-mysql-to-hive/">http://ingest.tips/2015/05/20/a-roundtrip-from-mysql-to-hive/</a></li>
+</ul>
+
+<p>The Hortonworks blog has a guest post about benchmarking Hive 0.11, 0.13, 0.14 against two vendors. There are a number of interesting things about this post: seeing the speedup on a real-world use-case from Hive 0.11 to 0.13 to 0.14, Hive hold its weight against multiple vendors, and how the author collects metrics to evaluate query performance and bottlenecks.</p>
+
+<ul>
+  <li><a href="http://hortonworks.com/blog/evaluating-hive-with-tez-as-a-fast-query-engine/">http://hortonworks.com/blog/evaluating-hive-with-tez-as-a-fast-query-engine/</a></li>
+</ul>
+
+<p>The Financial Information eXchange (FIX) is a delimited, key-value pair format. This post describes how to query data in the format using Hive and Impala. There are several tricks and advanced Hive features demonstrated in the post, such as defining a table with various “TERMINATED BY” declarations and building a view.</p>
+
+<ul>
+  <li><a href="http://blog.cloudera.com/blog/2015/05/how-to-read-fix-messages-using-apache-hive-and-impala/">http://blog.cloudera.com/blog/2015/05/how-to-read-fix-messages-using-apache-hive-and-impala/</a></li>
+</ul>
+
+<p>The Hortonworks blog has a post describing how YARN uses Linux cgroups to ensure CPU isolation when vcore resource allocation is enabled. The post describes how (at a high-level) cgroups work, the basic configuration, advanced configuration (e.g. hard vs. soft limits), and provides some examples of the cgroup hierarchy.</p>
+
+<ul>
+  <li><a href="http://hortonworks.com/blog/apache-hadoop-yarn-in-hdp-2-2-isolation-of-cpu-resources-in-your-hadoop-yarn-clusters/">http://hortonworks.com/blog/apache-hadoop-yarn-in-hdp-2-2-isolation-of-cpu-resources-in-your-hadoop-yarn-clusters/</a></li>
+</ul>
+
+<p>This presentation from the recent Gluecon describes the data platform at FullContact. The platform has moved from a batch-only system to also have a real-time component powered by Apache Kafka and Apache Crunch. Given that they already had implementations of their algorithms in Crunch, they are using Crunch’s in-memory runner to process data in micro-batch directly from Kafka.</p>
+
+<ul>
+  <li><a href="https://speakerdeck.com/xorlev/using-kafka-and-crunch-for-realtime-processing">https://speakerdeck.com/xorlev/using-kafka-and-crunch-for-realtime-processing</a></li>
+</ul>
+
+<p><strong>Reference : <a href="http://hadoopweekly.com">Hadoop Weekly Publication</a></strong></p>
+</p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/Hadoop_Technical_Update-Apr/" title="Hadoop Technical Updates / 23-04-2015">Hadoop Technical Updates / 23-04-2015</a></h3>
+      <p>Hadoop Technical updates for April 2015</p>
+      <h6> Posted on : 2015-04-23 00:00:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><h3 id="technical-updates">Technical Updates</h3>
+
+<p>AppNexus has written about their experiences with Parquet. In comparison to snappy-compressed sequence files, snappy compressed parquet files use substantially less storage and aid performance (fewer and faster map tasks) across a number of Hive queries.</p>
+
+<ul>
+  <li><a href="http://techblog.appnexus.com/blog/2015/03/31/parquet-columnar-storage-for-hadoop-data/">http://techblog.appnexus.com/blog/2015/03/31/parquet-columnar-storage-for-hadoop-data/</a></li>
+</ul>
+
+<p>This post looks at how to use Spark’s GraphX to process RDF data. Specifically, it runs GraphX’s connected components implementation on the graph defined by the <code class="highlighter-rouge">related</code> values field of the Library of Congress Subject header dataset.</p>
+
+<ul>
+  <li><a href="http://www.snee.com/bobdc.blog/2015/04/running-spark-graphx-algorithm.html">http://www.snee.com/bobdc.blog/2015/04/running-spark-graphx-algorithm.html</a></li>
+</ul>
+
+<p>This post describe how to integrate Luigi, the workflow engine, with Google Cloud’s BigQuery. The author shares some code for running BigQuery tasks as well as experiences in improvement to throughput and cluster utilization after introducing Luigi.</p>
+
+<ul>
+  <li><a href="http://alex.vanboxel.be/2015/04/13/luigi-and-google-cloud-in-production-retrospective/">http://alex.vanboxel.be/2015/04/13/luigi-and-google-cloud-in-production-retrospective/</a></li>
+</ul>
+
+<p>The Databricks blog has an interesting look at how the Spark SQL “catalyst” optimizer works. It discusses Trees, which are the main data type manipulated by the optimizer, Rules, which optimize a query by transforming from one tree to another, the logical optimization phase, physical planning, and code generation (which makes use of Scala’s quasiquotes). The post is based on a paper that’s to appear at SIGMOD 2015.</p>
+
+<ul>
+  <li><a href="https://databricks.com/blog/2015/04/13/deep-dive-into-spark-sqls-catalyst-optimizer.html">https://databricks.com/blog/2015/04/13/deep-dive-into-spark-sqls-catalyst-optimizer.html</a></li>
+</ul>
+
+<p>The Hortonworks blog has a look at the new security-related features in Apache Ambari 2.0. These include setting up Kerberos and deploying/configuring Apache Ranger.</p>
+
+<ul>
+  <li><a href="http://hortonworks.com/blog/ambari-2-0-for-deploying-comprehensive-hadoop-security/">http://hortonworks.com/blog/ambari-2-0-for-deploying-comprehensive-hadoop-security/</a></li>
+</ul>
+
+<p>This presentation from Hadoop Summit covers some of the recent and ongoing work related to SQL with Hive and HBase. It looks at Hive’s “Live Long And Process” daemons for sub-second queries, work on a new HBase-backed Hive metastore (to replace a RDBMS), and some thoughts on how Apache Phoenix (which adds SQL atop of HBase) could leverage some of Hive’s components.</p>
+
+<ul>
+  <li><a href="http://www.slideshare.net/alanfgates/hive-hbase-phoenixtp-hadoopsummiteuapr2015">http://www.slideshare.net/alanfgates/hive-hbase-phoenixtp-hadoopsummiteuapr2015</a></li>
+</ul>
+
+<p>The morning paper has coverage of two-Hadoop related papers this week. The first, “Cross-layer scheduling in cloud systems,” looks at how a network-layer aware scheduler can improve throughput. For MapReduce, the authors show improvement during the shuffle phase. The second post looks at “ApproxHadoop: Bringing Approximations to MapReduce Frameworks,” which uses sampling, task dropping, and user-defined approximation to reduce execution time when approximation is acceptable.</p>
+
+<ul>
+  <li><a href="http://blog.acolyer.org/2015/04/15/cross-layer-scheduling-in-cloud-systems/">http://blog.acolyer.org/2015/04/15/cross-layer-scheduling-in-cloud-systems/</a></li>
+  <li><a href="http://blog.acolyer.org/2015/04/16/approxhadoop-bringing-approximations-to-mapreduce-frameworks/">http://blog.acolyer.org/2015/04/16/approxhadoop-bringing-approximations-to-mapreduce-frameworks/</a></li>
+</ul>
+
+<p>The CAP theorem is the basis of a lot of distributed system research and applications. Unfortunately, it’s often misunderstood—particularly when it comes to availability. This post describes the various parts of the CAP theorem and gives real-world examples of several CAP trade-offs (HDFS is used as the example of a CP system).</p>
+
+<ul>
+  <li><a href="http://blog.thislongrun.com/2015/04/cap-availability-high-availability-and_16.html">http://blog.thislongrun.com/2015/04/cap-availability-high-availability-and_16.html</a></li>
+</ul>
+
+<p>This post looks at using Spark ML to analyze network data. It describes frequent pattern mining, and how to use Spark 1.3’s implementation of Parallel FP-growth to compute it. The authors describe how Spark’s implementation scales in comparison to Mahout. The post also describes MLlib’s Power Iteration Clustering.</p>
+
+<ul>
+  <li><a href="https://databricks.com/blog/2015/04/17/new-mllib-algorithms-in-spark-1-3-fp-growth-and-power-iteration-clustering.html">https://databricks.com/blog/2015/04/17/new-mllib-algorithms-in-spark-1-3-fp-growth-and-power-iteration-clustering.html</a></li>
+</ul>
+
+<p><strong>Reference : <a href="http://hadoopweekly.com">Hadoop Weekly Publication</a></strong></p>
+</p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/new-releases-march-302015/" title="New Releases - March 30/2015">New Releases - March 30/2015</a></h3>
+      <p>Cloudera announced a maintenance release of Apache Accumulo for CDH 5 to fix the POODLE vulnerability.http://community.cloudera.com/t5/Release-Announcements/...</p>
+      <h6> Posted on : 2015-03-30 09:42:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><div dir="ltr" style="text-align: left;" trbidi="on"><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText">Cloudera announced a maintenance release of Apache Accumulo for CDH 5 to fix the POODLE vulnerability.<o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><a href="http://community.cloudera.com/t5/Release-Announcements/Announcing-Apache-Accumulo-on-CDH-5-Maintenance-Release/m-p/25752#U25752">http://community.cloudera.com/t5/Release-Announcements/Announcing-Apache-Accumulo-on-CDH-5-Maintenance-Release/m-p/25752#U25752</a><o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText">Version 1.1.2 of Luigi, the workflow management tool, was recently released. The new version includes improved support for Spark.<o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><a href="https://github.com/spotify/luigi/releases/tag/1.1.2">https://github.com/spotify/luigi/releases/tag/1.1.2</a><o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText">The SDK for Google's Cloud Dataflow (similar to many DSLs like Scalding and Spark) is open source. The main "runner" implementation uses the Google Cloud Platform, but there's also implementation for Apache Spark. This week, the Apache Flink project announced a runner, which allows any pipeline written for Cloud Dataflow to run on a Flink cluster.<o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><a href="http://googlecloudplatform.blogspot.com/2015/03/announcing-Google-Cloud-Dataflow-runner-for-Apache-Flink.html">http://googlecloudplatform.blogspot.com/2015/03/announcing-Google-Cloud-Dataflow-runner-for-Apache-Flink.html</a><o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText">MicroStrategy announced that Apache Drill is certified with the MicroStrategy Analytics Enterprise Platform. The MapR blog has a brief introduction of how to configure the integration.<o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><a href="https://www.mapr.com/blog/microstrategy-analytics-apache-drill-and-you">https://www.mapr.com/blog/microstrategy-analytics-apache-drill-and-you</a><o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText">EMC has announced the Federation Business Data Lake, which combines several pieces of software with hardware. The software includes Pivotal HD (with mention of the Open Data Platform) and hardware includes EMC Isilon.<o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><a href="http://blog.pivotal.io/big-data-pivotal/news-2/new-federation-business-data-lake-should-be-your-silver-bullet-for-big-data-success">http://blog.pivotal.io/big-data-pivotal/news-2/new-federation-business-data-lake-should-be-your-silver-bullet-for-big-data-success</a><o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText">Cloudera Director 1.1.1 was released this week. Cloudera Director is a tool for provisioning and managing Hadoop clusters in AWS. This release includes several bug fixes and documentation updates.<o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><a href="http://community.cloudera.com/t5/Release-Announcements/Announcing-Cloudera-Director-1-1-1/m-p/25927#U25927">http://community.cloudera.com/t5/Release-Announcements/Announcing-Cloudera-Director-1-1-1/m-p/25927#U25927</a><o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText">Cask has announced version 2.8.0 of the Cask Data Application Platform (CDAP). The new version adds namespaces, fork/join for the workflow system, a new metrics layer, and more.<o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><a href="http://blog.cask.co/2015/03/cdap-v2-8-0-is-out-in-the-wild/">http://blog.cask.co/2015/03/cdap-v2-8-0-is-out-in-the-wild/</a><o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText">Sematext, makes of the SPM Performance Monitoring system, have announced that SPM now supports monitoring, alerting, anomaly detection for Apache HBase 0.98. The tool monitors a number of metrics including cache, replication, the WAL, and much more (290 metrics in total).<o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><a href="http://blog.sematext.com/2015/03/24/hbase-0-98-monitoring-support/">http://blog.sematext.com/2015/03/24/hbase-0-98-monitoring-support/</a><o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText">LinkedIn has open-sourced a golang library for Apache Avro. The library, called Goavro, supports decoding and encoding of data according to version 1.7.7 of the Avro specification. More details (including a few limitations) are described on the github site.<o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><a href="https://github.com/linkedin/goavro">https://github.com/linkedin/goavro</a><o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText">Version 0.9.6 of RDMA for Apache Hadoop was released this week.&nbsp; The package is a derivative of Apache Hadoop that allows a cluster to use remote direct memory access (RDMA) interconnects to improve performance. It supports a Lustre and a hybrid file system where data is stored both in memory and on disk.<o:p></o:p></div><div class="MsoPlainText"><br /></div><br /><div class="MsoPlainText"><a href="http://hibd.cse.ohio-state.edu/features/#hadoop2">http://hibd.cse.ohio-state.edu/features/#hadoop2</a><o:p></o:p></div></div></p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/technical-updates-march-302015/" title="Technical Updates - March 30/2015">Technical Updates - March 30/2015</a></h3>
+      <p>This tutorial describes how to build a kerberos-enabled Hadoop cluster inside of a VM (the steps are valuable outside of a VM, too). The author provides a sc...</p>
+      <h6> Posted on : 2015-03-30 09:41:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><div dir="ltr" style="text-align: left;" trbidi="on"><div class="MsoPlainText"><br /></div><div class="MsoPlainText">This tutorial describes how to build a kerberos-enabled Hadoop cluster inside of a VM (the steps are valuable outside of a VM, too). The author provides a script for setting up kerberos before running the quickstart wizard that comes with Cloudera Manager. The script, which includes thorough comments, makes kerberos much less intimidating.<o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><a href="http://blog.cloudera.com/blog/2015/03/how-to-quickly-configure-kerberos-for-your-apache-hadoop-cluster/">http://blog.cloudera.com/blog/2015/03/how-to-quickly-configure-kerberos-for-your-apache-hadoop-cluster/</a><o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText">This post provides a brief introduction to the DockerContainerExecutor that was introduced in YARN as part of Apache Hadoop 2.6. It describes one of the main motivations for running inside of docker containers—managing system-level dependencies.<o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><a href="https://www.altiscale.com/hadoop-blog/dockercontainerexecutor/">https://www.altiscale.com/hadoop-blog/dockercontainerexecutor/</a><o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText">The following slides and video are from a presentation given at the recent Strata San Jose conference on optimizing Spark programs. Topics covered include understanding shuffle in Spark (and common problems), understanding which code runs on the client vs. the workers, and tips for organizing code for reusability and testability.<o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><a href="http://www.slideshare.net/databricks/strata-sj-everyday-im-shuffling-tips-for-writing-better-spark-programs">http://www.slideshare.net/databricks/strata-sj-everyday-im-shuffling-tips-for-writing-better-spark-programs</a><o:p></o:p></div><div class="MsoPlainText"><a href="https://www.youtube.com/watch?v=Wg2boMqLjCg&amp;feature=youtu.be">https://www.youtube.com/watch?v=Wg2boMqLjCg&amp;feature=youtu.be</a><o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText">As noted in the Apache Spark 1.3 release, Spark SQL is no-longer alpha. This post explains that this guarantee means binary compatibility across Spark 1.x. It also describes some plans for improving Spark SQL (better integration with Hive), the new data sources API, improvements to Parquet support (automatic partition discovery and schema migration), and support for JDBC sources.<o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><a href="https://databricks.com/blog/2015/03/24/spark-sql-graduates-from-alpha-in-spark-1-3.html">https://databricks.com/blog/2015/03/24/spark-sql-graduates-from-alpha-in-spark-1-3.html</a><o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText">The Cloudera blog has a post from a software engineer working at Edmunds.com on how they built a spark-streaming based analytics dashboard to monitor traffic related to superbowl ads. The system also uses Flume, HBase, Solr, Morphlines, and Banana (a port of kibana to Solr) as well as algebird's implementation of HyperLogLog. The post is a good end-to-end description of how the system was built and how it works (with screenshots).<o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><a href="http://blog.cloudera.com/blog/2015/03/how-edmunds-com-used-spark-streaming-to-build-a-near-real-time-dashboard/">http://blog.cloudera.com/blog/2015/03/how-edmunds-com-used-spark-streaming-to-build-a-near-real-time-dashboard/</a><o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText">For those looking to scale machine learning implementations, the Databricks blog has a post on Spark 1.3's implementation of Latent Dirichlet Allocation (LDA). The post describes LDA, common use-cases, and how it's implemented atop of GraphX (the Graph API for Spark).<o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><a href="https://databricks.com/blog/2015/03/25/topic-modeling-with-lda-mllib-meets-graphx.html">https://databricks.com/blog/2015/03/25/topic-modeling-with-lda-mllib-meets-graphx.html</a><o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText">This post describes how to enable support for impersonation from Hue in HBase so that users can only view/modify data which they're allowed to via HBase permissions. It also describes how to configure the HBase Thrift Server for kerberos authentication. There are screen shots of the Hue-HBase application, and several troubleshooting steps for common configuration issues.<o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><a href="http://gethue.com/hbase-browsing-with-doas-impersonation-and-kerberos/">http://gethue.com/hbase-browsing-with-doas-impersonation-and-kerberos/</a><o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText">As a developer, it can become easy to get used to peculiarities of a system you're working with. It's good to take a step back and understand these issues (or even decide if they really are issues!). In this case, the ingest.tips blog has a post that gathers feedback on "what is confusing about Kafka?" In addition to collecting the feedback, there are responses/links for several of the issues.<o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><a href="http://ingest.tips/2015/03/26/what-is-confusing-about-kafka/">http://ingest.tips/2015/03/26/what-is-confusing-about-kafka/</a><o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText">The Hortonworks blog has the third part in a series on anomaly detection in healthcare data. In this post, they use SociaLite, an open-source graph analysis framework to compute a variant of PageRank. The post gives an overview of SociaLite (which integrates with Python) and describes the implementation to find anomalies. All code is available on github.<o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><a href="http://hortonworks.com/blog/using-pagerank-to-detect-anomalies-and-fraud-in-healthcare-part3/">http://hortonworks.com/blog/using-pagerank-to-detect-anomalies-and-fraud-in-healthcare-part3/</a><o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText">Most folks working with batch systems start out with a simple workflow system that spawns one job after another via cron. From their, they often move to a job that runs based on the availability of input data. As a post on the Cask blog explains, it's difficult to implement a data-driven workflow efficiently. Most systems poll for the availability of input, which can be slow. The Cask Data Application Platform (CDAP) uses notifications to trigger jobs. The follow post describes the architecture in greater detail.<o:p></o:p></div><div class="MsoPlainText"><br /></div><br /><div class="MsoPlainText"><a href="http://blog.cask.co/2015/03/data-driven-job-scheduling-in-hadoop/">http://blog.cask.co/2015/03/data-driven-job-scheduling-in-hadoop/</a><o:p></o:p></div></div></p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/Hadoop_Technical_Update-Mar/" title="Hadoop Technical Updates / 23-03-2015">Hadoop Technical Updates / 23-03-2015</a></h3>
+      <p>Hadoop Technical updates for March 2015</p>
+      <h6> Posted on : 2015-03-22 00:00:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><h3 id="technical-updates">Technical Updates</h3>
+
+<p>The Confluent blog has a post that provides suggestions for choosing the number of partitions in a Kafka topic. While more partitions will help improve throughput, increasing the number will result in more open file handles, (potentially) longer unavailability in certain circumstances, higher end-to-end latency, and additional memory requirements in clients. The post describes each of these trade-offs in-depth.</p>
+
+<ul>
+  <li><a href="http://blog.confluent.io/2015/03/12/how-to-choose-the-number-of-topicspartitions-in-a-kafka-cluster/">http://blog.confluent.io/2015/03/12/how-to-choose-the-number-of-topicspartitions-in-a-kafka-cluster/</a></li>
+</ul>
+
+<p>This presentation provides an up-to-date overview of the state of Hadoop with Python. It looks at several open-source frameworks, including mrjob and Pydoop for MapReduce jobs, snakebite for interacting with HDFS, and the python APIs included with Spark and Pig.</p>
+
+<ul>
+  <li><a href="http://www.slideshare.net/DonaldMiner/hadoop-with-python">http://www.slideshare.net/DonaldMiner/hadoop-with-python</a></li>
+  <li><a href="https://www.youtube.com/watch?v=g99U7c4jSNs&amp;feature=youtu.be">https://www.youtube.com/watch?v=g99U7c4jSNs&amp;feature=youtu.be</a></li>
+</ul>
+
+<p>The Qubole blog has a post looking at the effects of different types and features of virtualization on the Amazon Web Services cloud. The post is worth reading in its entirety, but key takeaways are that switching from PV to HVM instances and enabling enhanced networking is a major win. They didn’t see huge enhancements with placement groups. As always, its worth validating these results with your own application.</p>
+
+<ul>
+  <li><a href="http://www.qubole.com/blog/product/hadoop-enhanced-networking-aws/">http://www.qubole.com/blog/product/hadoop-enhanced-networking-aws/</a></li>
+</ul>
+
+<p>This is a good read about how one distributed data processing framework solves a lot of distributed system problems. Focussing on equi-joins, the post describes the high-level Flink API, join strategies, memory management, join optimization, and performance.</p>
+
+<ul>
+  <li><a href="http://flink.apache.org/news/2015/03/13/peeking-into-Apache-Flinks-Engine-Room.html">http://flink.apache.org/news/2015/03/13/peeking-into-Apache-Flinks-Engine-Room.html</a></li>
+</ul>
+
+<p>This post on the Cloudera blog describes the Spark-Kafka integration in the recent 1.3 release of Spark. Topics include creating RDDs for batch jobs, RRDs for streaming, and an overview of strategies for building at least once/at most once/exactly once delivery of results. The exactly-once section describes two strategies—idempotent writes based on unique keys and transactional writes.</p>
+
+<ul>
+  <li><a href="http://blog.cloudera.com/blog/2015/03/exactly-once-spark-streaming-from-apache-kafka/">http://blog.cloudera.com/blog/2015/03/exactly-once-spark-streaming-from-apache-kafka/</a></li>
+</ul>
+
+<p>A new paper on Spark analyzed performance on the BDBench and TPC-DS benchmarks and found some surprising results. Specifically, they found that CPU is often the limiting factor and not disk or network I/O. It’s a big paper with a lot of interesting findings and suggestions for improvement.</p>
+
+<ul>
+  <li><a href="http://www.eecs.berkeley.edu/~keo/publications/nsdi15-final147.pdf">http://www.eecs.berkeley.edu/~keo/publications/nsdi15-final147.pdf</a></li>
+</ul>
+
+<p>The Hortonworks blog has a post on several new features that have been added to the Hadoop ecosystem in order to support rolling upgrades. It discusses some operational items like software packaging and configuration as well as the changes in core HDFS, YARN, Hive, and more. There are also instructions for the order in which to upgrade services as part of a full upgrade.</p>
+
+<ul>
+  <li><a href="http://hortonworks.com/blog/enterprise-grade-rolling-upgrades-in-hdp-2-2/">http://hortonworks.com/blog/enterprise-grade-rolling-upgrades-in-hdp-2-2/</a></li>
+</ul>
+
+<p>This post looks at how to package jars into an uber-jar, package a third-party library that isn’t available via maven central, and use a jar with the Spark shell.</p>
+
+<ul>
+  <li><a href="http://blog.cloudera.com/blog/2015/03/how-to-build-re-usable-spark-programs-using-spark-shell-and-maven/">http://blog.cloudera.com/blog/2015/03/how-to-build-re-usable-spark-programs-using-spark-shell-and-maven/</a></li>
+</ul>
+
+<p>This post starts out with a story that’s all too familiar for many people working with Hadoop—you have a seemingly simple query, but you spend a lot of time finding the right data to query. One solution to this problem is to keep every dataset in Hive and to use comments to describe the dataset. Then, Apache Falcon provides a nice interface to view and search datasets in Hive (in addition to several other features, which the article describes).</p>
+
+<ul>
+  <li><a href="http://getindata.com/blog/post/avoiding-the-mess-from-the-hadoop-cluster-part-1/">http://getindata.com/blog/post/avoiding-the-mess-from-the-hadoop-cluster-part-1/</a></li>
+</ul>
+
+<p>Hortonworks has a recap of talks at the recent Apache Slider meetup. There was a talk on running dockerized applications on YARN and another on KOYA (Kafka on YARN). The post also has links to the presenter slides.</p>
+
+<ul>
+  <li><a href="http://hortonworks.com/blog/deploying-long-running-services-on-yarn-using-apache-slider/">http://hortonworks.com/blog/deploying-long-running-services-on-yarn-using-apache-slider/</a></li>
+</ul>
+
+<p>This post describes how to convert data from Avro to Parquet. The instructions utilize a simple tool which runs a map-only job to do the conversion.</p>
+
+<ul>
+  <li><a href="http://www.bigdatatidbits.cc/2015/03/converting-avro-data-to-parquet-format.html">http://www.bigdatatidbits.cc/2015/03/converting-avro-data-to-parquet-format.html</a></li>
+</ul>
+
+<p>While MongoDB has a built-in MapReduce framework, there are often advantages to processing data outside of Mongo. To that end, this post gives an introduction on how to integration MongoDB with Spark using the Hadoop input format for Mongo.</p>
+
+<ul>
+  <li><a href="https://databricks.com/blog/2015/03/20/using-mongodb-with-spark.html">https://databricks.com/blog/2015/03/20/using-mongodb-with-spark.html</a></li>
+</ul>
+
+<p>The LinkedIn Site Reliability team has pulled back the curtain to reveal a lot about how LinkedIn uses Apache Kafka. Topics covered include scale (175 terabytes/day), the types of applications (queueing, logging, metrics, and more), their multi-datacenter setup, and integration into the application stack.</p>
+
+<ul>
+  <li><a href="https://engineering.linkedin.com/kafka/running-kafka-scale">https://engineering.linkedin.com/kafka/running-kafka-scale</a></li>
+</ul>
+
+<p>Apache Tajo version 0.10 was released last week, and this tutorial provides all the instructions needed to get started with Tajo on an Amazon Elastic MapReduce cluster. After specifying a Tajo bootstrap action for the cluster, data is stored in HDFS. If you want to integrate directly with S3, the post describes the additional configuration required to do so.</p>
+
+<ul>
+  <li><a href="http://www.gruter.com/blog/?p=1428">http://www.gruter.com/blog/?p=1428</a></li>
+</ul>
+
+<p>MapR has posted a new whiteboard walkthrough, which compares and contrasts Hadoop with NoSQL systems. In addition to a short video, the transcript of the presentation is available on the MapR blog. It covers the the strengths of Hadoop vs. NoSQL and when each one is appropriate.</p>
+
+<ul>
+  <li><a href="https://www.mapr.com/blog/hadoop-vs-nosql-whiteboard-walkthrough">https://www.mapr.com/blog/hadoop-vs-nosql-whiteboard-walkthrough</a></li>
+</ul>
+
+<p><strong>Reference : <a href="http://hadoopweekly.com">Hadoop Weekly Publication</a></strong></p>
+</p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/introducing-dataframes-in-spark-for/" title="Introducing DataFrames in Spark for Large Scale Data Science !">Introducing DataFrames in Spark for Large Scale Data Science !</a></h3>
+      <p>Spark to introduce a new DataFrame API designed to make big data processing even easier for a wider audience.As Spark continues to grow, we want to enable wi...</p>
+      <h6> Posted on : 2015-02-23 10:52:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><div dir="ltr" style="text-align: left;" trbidi="on"><br /><span style="background-color: white; color: #444444; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 22.8571434020996px;">Spark to introduce a new DataFrame API designed to make big data processing even easier for a wider audience.</span><br /><br /><div style="background-color: white; box-sizing: border-box; color: #444444; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 22.8571434020996px; margin-bottom: 1.4em;">As Spark continues to grow, we want to enable wider audiences beyond “Big Data” engineers to leverage the power of distributed processing. The new DataFrames API was created with this goal in mind. &nbsp;This API is inspired by data frames in R and Python (Pandas), but designed from the ground-up to support modern big data and data science applications. As an extension to the existing RDD API, DataFrames feature:</div><ul style="background-color: white; box-sizing: border-box; color: #444444; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 22.8571434020996px; margin-bottom: 1.4em; margin-top: 0px;"><li style="box-sizing: border-box;">Ability to scale from kilobytes of data on a single laptop to petabytes on a large cluster</li><li style="box-sizing: border-box;">Support for a wide array of data formats and storage systems</li><li style="box-sizing: border-box;">State-of-the-art optimization and code generation through the Spark SQL&nbsp;<a href="https://databricks.com/blog/2014/03/26/spark-sql-manipulating-structured-data-using-spark-2.html" style="background-color: transparent; box-sizing: border-box; color: #1cb1c2; text-decoration: none;">Catalyst</a>&nbsp;optimizer</li><li style="box-sizing: border-box;">Seamless integration with all big data tooling and infrastructure via Spark</li><li style="box-sizing: border-box;">APIs for Python, Java, Scala, and R (in development via&nbsp;<a href="http://amplab-extras.github.io/SparkR-pkg/" style="background-color: transparent; box-sizing: border-box; color: #1cb1c2; text-decoration: none;">SparkR</a>)</li></ul>https://databricks.com/blog/2015/02/17/introducing-dataframes-in-spark-for-large-scale-data-science.html</div></p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/pivotal-open-sources-its-hadoop-and/" title="Pivotal open sources its Hadoop and Greenplum ! ">Pivotal open sources its Hadoop and Greenplum ! </a></h3>
+      <p>Pivotal open sources its Hadoop and Greenplum !&nbsp;Pivotal, the cloud computing and big data company that spun out from EMC and VMware in 2013, is open sou...</p>
+      <h6> Posted on : 2015-02-23 10:47:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><div dir="ltr" style="text-align: left;" trbidi="on"><br /><header class="head entry-header" style="height: 623.08px;"><div class="head-inner" style="text-align: left;"><span style="font-weight: normal;">Pivotal open sources its Hadoop and Greenplum !&nbsp;</span><span style="font-weight: normal;"><br /></span><span style="font-weight: normal;">Pivotal, the cloud computing and big data company that spun out from EMC and VMware in 2013, is open sourcing its entire portfolio of big data technologies and is teaming up with Hortonworks, IBM, GE, and several other companies on a Hadoop effort called the Open Data Platform.</span><br /><span style="font-weight: normal;"><br /></span>https://gigaom.com/2015/02/17/pivotal-open-sources-its-hadoop-and-greenplum-tech-and-then-some/</div></header></div></p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/open-data-platform-initiative/" title="Open Data Platform Initiative !">Open Data Platform Initiative !</a></h3>
+      <p>Pivotal and Hortonworks are founding members of an initiative called Open Data Platform (ODP) whose mission will be to enable collaboration between vendors a...</p>
+      <h6> Posted on : 2015-02-23 10:45:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><div dir="ltr" style="text-align: left;" trbidi="on"><br style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;" /><br style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;" /><span style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;">Pivotal and Hortonworks are founding members of an initiative called Open Data Platform (ODP) whose mission will be to enable collaboration between vendors and end users of Big Data technology. It will do this by jointly developing and promoting a common core of Apache Hadoop related technologies and enhancing compatibility amongst Hadoop related projects by driving interest amongst vendors and enterprise users in contributing to Apache Hadoop related projects according to ASF guidelines.</span><br /><span style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;"><br /></span><span style="background-color: white; font-size: 14px; line-height: 18.2000007629395px;"><span style="color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif;">http://hortonworks.com/blog/pivotal-hortonworks-announce-alliance/</span></span><br /><span style="background-color: white; font-size: 14px; line-height: 18.2000007629395px;"><span style="color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif;"><br /></span></span></div></p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/Hadoop_Technical_Update-Feb/" title="Hadoop Technical Updates / 22-02-2015">Hadoop Technical Updates / 22-02-2015</a></h3>
+      <p>Hadoop Technical updates for Feb 2015</p>
+      <h6> Posted on : 2015-02-23 00:00:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><h3 id="technical-updates">Technical Updates</h3>
+
+<p>The O’Reilly Radar blog has a post describing several compute frameworks for Hadoop—everything from SQL to machine learning to real-time. The post describes the key considerations for choosing a framework and gives some guidance as to when to use each.</p>
+
+<ul>
+  <li><a href="http://radar.oreilly.com/2015/02/processing-frameworks-for-hadoop.html">http://radar.oreilly.com/2015/02/processing-frameworks-for-hadoop.html</a></li>
+</ul>
+
+<p>Apache Spark is adding a new DataFrames API, which is inspired by data frames in R and Pandas (Python). DataFrames are like a table in a RDBMS, but contain additional optimizations. In particular, materialization of DataFrames uses the Spark SQL optimizer and code generation framework. There are more details on the API, which is planned for Spark 1.3, in the introductory post.</p>
+
+<ul>
+  <li><a href="https://databricks.com/blog/2015/02/17/introducing-dataframes-in-spark-for-large-scale-data-science.html">https://databricks.com/blog/2015/02/17/introducing-dataframes-in-spark-for-large-scale-data-science.html</a></li>
+</ul>
+
+<p>The ingest.tips blog has a walkthrough of a new feature in Kite 0.18.0, which allows importing of data using custom InputFormats.</p>
+
+<ul>
+  <li><a href="http://ingest.tips/2015/02/17/kite-0-18-0-adds-custom-inputformat-support/">http://ingest.tips/2015/02/17/kite-0-18-0-adds-custom-inputformat-support/</a></li>
+</ul>
+
+<p>Answers is a near real-time mobile app analytics system built by Crashlytics/Twitter. The Twitter blog has a post describing the architecture of the system, which ingests billions of events per second. The system implements the Lamda architecture, using Kafka as the messaging layer, Storm for the speed layer, and EMR with Cascading for batch computation.</p>
+
+<ul>
+  <li><a href="https://blog.twitter.com/2015/handling-five-billion-sessions-a-day-in-real-time">https://blog.twitter.com/2015/handling-five-billion-sessions-a-day-in-real-time</a></li>
+</ul>
+
+<p>In last week’s newsletter, there was mention of separating Spark from Hadoop. This week, Pinterest has written about just that—they’re using Spark streaming with MemSQL for real-time analytics. The prototype system uses Spark streaming to take data from a Kafka topic, join it with dimensional data, and send the data to MemSQL.</p>
+
+<ul>
+  <li><a href="http://engineering.pinterest.com/post/111380432054/real-time-analytics-at-pinterest">http://engineering.pinterest.com/post/111380432054/real-time-analytics-at-pinterest</a></li>
+</ul>
+
+<p>The MSDN blog has a post about tuning performance of Sqoop jobs on Azure HDInsight. The suggestions are mostly distribution-independent (e.g. tuning number of map tasks, sizing the cluster and db properly), so it’s a useful read if you’re working with Sqoop.</p>
+
+<ul>
+  <li><a href="http://blogs.msdn.com/b/bigdatasupport/archive/2015/02/17/sqoop-job-performance-tuning-in-hdinsight-hadoop.aspx">http://blogs.msdn.com/b/bigdatasupport/archive/2015/02/17/sqoop-job-performance-tuning-in-hdinsight-hadoop.aspx</a></li>
+</ul>
+
+<p>The MongoDB blog has a tutorial on integrating MongoDB and Hive. The post describe how to use the MongoStorageHandler for Hive to query a Mongo-backed table.</p>
+
+<ul>
+  <li><a href="http://www.mongodb.com/blog/post/using-mongodb-hadoop-spark-part-2-hive-example">http://www.mongodb.com/blog/post/using-mongodb-hadoop-spark-part-2-hive-example</a></li>
+</ul>
+
+<p>This post how the components of the MapReduce API fit together and the role of each. Topics covered include InputFormats, RecordReaders, and OutputCommitters.</p>
+
+<ul>
+  <li><a href="https://www.mapr.com/blog/how-use-mapreduce-api">https://www.mapr.com/blog/how-use-mapreduce-api</a></li>
+</ul>
+
+<p>Netflix recently announced the Surus project, which is an open-source library of analysis tools for Pig and Hive. This week, they added the second function to the library: Robust Anomaly Detection (RAD). The Netflix blog has an overview of the goals of the tool, the algorithm it implements, and how it can be used via Apache Pig.</p>
+
+<ul>
+  <li><a href="http://techblog.netflix.com/2015/02/rad-outlier-detection-on-big-data.html">http://techblog.netflix.com/2015/02/rad-outlier-detection-on-big-data.html</a></li>
+</ul>
+
+<p>This presentation describes best practices for building a data architecture. It contains ideas like using Kafka as a data bus, directory layouts for datasets in HDFS, using Spark streaming, and schema management. Lots of tips for building a reliable and consistent system.</p>
+
+<ul>
+  <li><a href="http://www.slideshare.net/gwenshap/data-architectures-for-robust-decision-making">http://www.slideshare.net/gwenshap/data-architectures-for-robust-decision-making</a></li>
+</ul>
+
+<p>Cascalog, the Clojure library for Cascading, has recently added support for customer Hadoop counters (on master). This post describes how to update counters as part of a Cascalog job and how to access the counters programmatically afterwards.</p>
+
+<ul>
+  <li><a href="http://www.samritchie.io/cascalog-hadoop-counters/">http://www.samritchie.io/cascalog-hadoop-counters/</a></li>
+</ul>
+
+<p><strong>Reference : <a href="http://hadoopweekly.com">Hadoop Weekly Publication</a></strong></p>
+</p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/amazon-emr-hue-ldap-authentication/" title="Amazon EMR - Hue - LDAP Authentication">Amazon EMR - Hue - LDAP Authentication</a></h3>
+      <p>Last October, AWS announced the AWS Directory Service, which provides Active Directory in the AWS cloud. Several tools in the Hadoop ecosystem support LDAP a...</p>
+      <h6> Posted on : 2015-02-16 09:54:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><div dir="ltr" style="text-align: left;" trbidi="on"><br /><span style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;">Last October, AWS announced the AWS Directory Service, which provides Active Directory in the AWS cloud. Several tools in the Hadoop ecosystem support LDAP authentication (AWS Directory Service is compatible with LDAP). This post focusses on configuring an Amazon EMR cluster using Hue with LDAP authentication. The post describes how to configure AWS Directory Services and how to launch an EMR cluster with Hue’s LDAP configuration.</span><br /><br /><br /><br /><div class="MsoPlainText"><a href="https://databricks.com/blog/2015/02/09/learning-spark-book-available-from-oreilly.html">https://databricks.com/blog/2015/02/09/learning-spark-book-available-from-oreilly.html</a><o:p></o:p></div></div></p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/hue-371-on-hdp-22/" title="Hue 3.7.1 on HDP 2.2 ">Hue 3.7.1 on HDP 2.2 </a></h3>
+      <p>This post walks through the steps necessary to install Hue 3.7.1 on HDP 2.2 (version 2.6.1 is bundled with HDP) on Ubuntu 12.04. There are a number of screen...</p>
+      <h6> Posted on : 2015-02-16 09:50:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><div dir="ltr" style="text-align: left;" trbidi="on"><div class="MsoPlainText">This post walks through the steps necessary to install Hue 3.7.1 on HDP 2.2 (version 2.6.1 is bundled with HDP) on Ubuntu 12.04. There are a number of screen shots and thorough instructions, which include a custom build of Hue and manual configuration.<o:p></o:p></div><div class="MsoPlainText"><br /></div><div class="MsoPlainText"><a href="http://gethue.com/hadoop-hue-3-on-hdp-installation-tutorial/">http://gethue.com/hadoop-hue-3-on-hdp-installation-tutorial/</a><o:p></o:p></div></div></p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/zeppelinproposal-open-source-big-data/" title="ZeppelinProposal - Open Source Big Data Moves Up the Stack to reporting and visualization !">ZeppelinProposal - Open Source Big Data Moves Up the Stack to reporting and visualization !</a></h3>
+      <p>Apache Zepplin - a collaborative data analytics and visualization tool for distributed, general-purpose data processing systems such as Apache Spark, Apache ...</p>
+      <h6> Posted on : 2015-02-14 23:07:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><div dir="ltr" style="text-align: left;" trbidi="on"><span style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;">Apache Zepplin - a collaborative data analytics and visualization tool for distributed, general-purpose data processing systems such as Apache Spark, Apache Flink, etc.&nbsp;</span><br style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;" /><span style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;">Watch this space !</span><br /><span style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;"><br /></span><span style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;"><br /></span></div></p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/pydata-next-generation/" title="PyData: The Next Generation ?">PyData: The Next Generation ?</a></h3>
+      <p>Slideshare on the rise of Python for data science &amp; some of the big data tools that exist today for Python, and provides some suggestions for improving P...</p>
+      <h6> Posted on : 2015-02-14 23:04:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><div dir="ltr" style="text-align: left;" trbidi="on"><span style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;">Slideshare on the rise of Python for data science &amp; some of the big data tools that exist today for Python, and provides some suggestions for improving Python’s big data support in the future.</span><br /><span style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;"><br /></span><span style="background-color: white; font-size: 14px; line-height: 18.2000007629395px;"><span style="color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif;"><a href="http://www.slideshare.net/wesm/pydata-the-next-generation">http://www.slideshare.net/wesm/pydata-the-next-generation</a></span></span></div></p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/new-in-cdh-53-transparent-encryption-in/" title="New in CDH 5.3: Transparent Encryption in HDFS">New in CDH 5.3: Transparent Encryption in HDFS</a></h3>
+      <p>Cloudera has declared HDFS’ transparent encryption as production-ready as part of the CDH 5.3 release. This post discusses the design and features of HDFS en...</p>
+      <h6> Posted on : 2015-02-14 23:04:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><div dir="ltr" style="text-align: left;" trbidi="on"><span style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;">Cloudera has declared HDFS’ transparent encryption as production-ready as part of the CDH 5.3 release. This post discusses the design and features of HDFS encryption, provides some basic examples for using it, and talks about about performance impact.</span><br /><span style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;"><a href="https://www.blogger.com/goog_35435506"><br /></a></span><span style="background-color: white; font-size: 14px; line-height: 18.2000007629395px;"><span style="color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif;"><a href="http://blog.cloudera.com/blog/2015/01/new-in-cdh-5-3-transparent-encryption-in-hdfs/">http://blog.cloudera.com/blog/2015/01/new-in-cdh-5-3-transparent-encryption-in-hdfs/</a></span></span></div></p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/another-distributed-data-processing/" title="Another Distributed Data Processing Framework - Apache Flink">Another Distributed Data Processing Framework - Apache Flink</a></h3>
+      <p>Apache Flink, a distributed data processing framework, graduated from the Apache incubator this week. Originally called stratosphere, the project has some si...</p>
+      <h6> Posted on : 2015-02-14 23:02:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><div dir="ltr" style="text-align: left;" trbidi="on"><span style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;">Apache Flink, a distributed data processing framework, graduated from the Apache incubator this week. Originally called stratosphere, the project has some similarities to Apache Spark (e.g. it aims to be faster at MapReduce for iterative algorithms).</span><br /><span style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;"><br /></span><span style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;"><a href="http://www.datanami.com/2015/01/12/apache-flink-takes-route-distributed-data-processing/">http://www.datanami.com/2015/01/12/apache-flink-takes-route-distributed-data-processing/</a></span><br /><span style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;"><br /></span><span style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;"><br /></span></div></p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/hdfs-now-with-tiered-storage/" title="HDFS now with Tiered Storage ">HDFS now with Tiered Storage </a></h3>
+      <p>The eBay tech blog has a post on HDFS’ (relatively new) support for tiered storage. The post describes the feature, which allows a cluster to define differen...</p>
+      <h6> Posted on : 2015-02-14 23:01:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><div dir="ltr" style="text-align: left;" trbidi="on"><span style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;">The eBay tech blog has a post on HDFS’ (relatively new) support for tiered storage. The post describes the feature, which allows a cluster to define different types of storage, and various storage policies that describe how to map replicas to tiers. eBay uses this feature to move much of their data to machines with a small amount of compute power but a large disk density (220TB each).</span><br /><span style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;"><br /></span><span style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;"><a href="http://www.ebaytechblog.com/2015/01/12/hdfs-storage-efficiency-using-tiered-storage/">http://www.ebaytechblog.com/2015/01/12/hdfs-storage-efficiency-using-tiered-storage/</a></span></div></p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/apache-slider/" title="Apache Slider ">Apache Slider </a></h3>
+      <p>Slider is a framework for deployment and management of these long-running data access applications in Hadoop. Slider “slides” existing long-running services ...</p>
+      <h6> Posted on : 2015-02-14 22:58:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><div dir="ltr" style="text-align: left;" trbidi="on"><span style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;">Slider is a framework for deployment and management of these long-running data access applications in Hadoop. Slider “slides” existing long-running services (like Apache HBase, Apache Accumulo and Apache Storm) onto YARN, so that they have enough resources to handle changing amounts of data, without tying up more processing resources than they need.</span><br /><span style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;"><br /></span><span style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;"><a href="http://hortonworks.com/hadoop/slider/">http://hortonworks.com/hadoop/slider/</a></span></div>
+</p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/datastax-pulls-out-titan/" title="DataStax Pulls Out A Titan !">DataStax Pulls Out A Titan !</a></h3>
+      <p>DataStax, makers of enterprise software for Cassandra, have acquired Aurelius, who is behind the TitanDB open-sorce project. TitanDB is a graph database, whi...</p>
+      <h6> Posted on : 2015-02-14 22:57:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><div dir="ltr" style="text-align: left;" trbidi="on"><span style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;">DataStax, makers of enterprise software for Cassandra, have acquired Aurelius, who is behind the TitanDB open-sorce project. TitanDB is a graph database, which supports multiple storage backends including Cassandra and HBase and has Hadoop integration for analytics of graph data.</span><br /><span style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;"><br /></span><span style="background-color: white; font-size: 14px; line-height: 18.2000007629395px;"><span style="color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif;"><a href="http://www.datanami.com/2015/02/03/datastax-dips-graph-waters-pulls-titan/">http://www.datanami.com/2015/02/03/datastax-dips-graph-waters-pulls-titan/</a></span></span></div></p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/streaming-implementation-of-k-means/" title="Streaming Implementation of K-Means - Spark 1.2">Streaming Implementation of K-Means - Spark 1.2</a></h3>
+      <p>Spark 1.2 introduced a streaming implementation of k-means with the ability to dynamically detect (and remove) clusters over time. The key to this feature is...</p>
+      <h6> Posted on : 2015-02-14 22:55:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><div dir="ltr" style="text-align: left;" trbidi="on"><span style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;">Spark 1.2 introduced a streaming implementation of k-means with the ability to dynamically detect (and remove) clusters over time. The key to this feature is forgetfulness, which is implemented as a half-life parameter to decay old data. The Databricks blog has a post with more details on the algorithm, including several visualizations of it in action.</span><br /><span style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;"><br /></span><a href="http://databricks.com/blog/2015/01/28/introducing-streaming-k-means-in-spark-1-2.html">http://databricks.com/blog/2015/01/28/introducing-streaming-k-means-in-spark-1-2.html</a><br /><span style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;"><br /></span><span style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;"><br /></span></div></p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/monitoring-solution-for-spark/" title="Monitoring Solution For Spark">Monitoring Solution For Spark</a></h3>
+      <p>Sematext offers a monitoring solution for Spark as part of their Performance Monitoring (SPM) product. This post by a customer describes how to integrate the...</p>
+      <h6> Posted on : 2015-02-14 22:52:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><div dir="ltr" style="text-align: left;" trbidi="on"><span style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;">Sematext offers a monitoring solution for Spark as part of their Performance Monitoring (SPM) product. This post by a customer describes how to integrate the monitoring with Spark and gives an example of a production issue they solved with the help of SPM. Given that Spark is still relatively young, it’s good to see more solutions for monitoring and debugging helping folks become more productive.</span><br /><span style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;"><br /></span><span style="background-color: white; font-size: 14px; line-height: 18.2000007629395px;"><span style="color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif;"><a href="http://blog.sematext.com/2015/01/21/spark-performance-monitoring-use-case/">http://blog.sematext.com/2015/01/21/spark-performance-monitoring-use-case/</a></span></span><br /><span style="background-color: white; font-size: 14px; line-height: 18.2000007629395px;"><span style="color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif;"><br /></span></span></div></p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/revolution-analytics-acquired-by/" title="Revolution Analytics Acquired By Microsoft !">Revolution Analytics Acquired By Microsoft !</a></h3>
+      <p>Revolution Analytics, makers of the RHadoop packages, announced that they’re being acquired by Microsoft. The announcement recognizes Microsoft’s recent embr...</p>
+      <h6> Posted on : 2015-02-14 22:41:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><div dir="ltr" style="text-align: left;" trbidi="on"><span style="background-color: white; color: #333333; font-family: Segoe, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.2000007629395px;">Revolution Analytics, makers of the RHadoop packages, announced that they’re being acquired by Microsoft. The announcement recognizes Microsoft’s recent embrace of open-source, which includes Linux on Azure and support for Hadoop via Azure HDInsight.</span><br /><a href="https://www.blogger.com/goog_1246489997"><br /></a><a href="http://blog.revolutionanalytics.com/2015/01/revolution-acquired.html">http://blog.revolutionanalytics.com/2015/01/revolution-acquired.html</a><br /><br /></div></p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/Hadoop_Technical_Update-Jan/" title="Hadoop Technical Updates / 25-01-2015">Hadoop Technical Updates / 25-01-2015</a></h3>
+      <p>Hadoop Technical updates for Jan 2015</p>
+      <h6> Posted on : 2015-01-25 00:00:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><h3 id="technical-updates">Technical Updates</h3>
+
+<p>PayPal has a post on how they’re training Restricted Boltzmann Machines to build Deep Belief Networks. While many folks are using GPUs to speed up these types of computations, PayPal was looking for a way to make use of existing Hadoop infrastructure. They’ve implemented an adaptation of IterativeReduce running on YARN (Hadoop 2.4.1). The post has a thorough overview of how they use the YARN APIs to build their system, and they show good results from an evaluation of the implementation.</p>
+
+<ul>
+  <li><a href="https://www.paypal-engineering.com/2015/01/12/deep-learning-on-hadoop-2-0-2/">https://www.paypal-engineering.com/2015/01/12/deep-learning-on-hadoop-2-0-2/</a></li>
+</ul>
+
+<p>Apache Flink is a large-scale, in-memory processing and data streaming framework that’s compatible with Hadoop. This presentation gives an overview of the API ( which resembles Spark and Scalding and includes streaming and graph APIs), compatibility with the Hadoop ecosystem (Mappers and Reducers can be used unmodified), the included visualization tool, the runtime (and how it compares to Spark), and the project roadmap (improvements to fault tolerance and streaming fault tolerance, backend for Hive, and more more).</p>
+
+<ul>
+  <li><a href="http://www.slideshare.net/KostasTzoumas/apache-flink-api-runtime-and-project-roadmap">http://www.slideshare.net/KostasTzoumas/apache-flink-api-runtime-and-project-roadmap</a></li>
+</ul>
+
+<p>Making the leap from running a Hadoop job in-memory to on a cluster (especially a pseudo distributed one) can be frustrating as you battle configuration, setup, etc. This post suggests using the Kiji Bento Box, which will build a local Hadoop cluster with Hadoop and setup all the proper environment variables to interact with that cluster.</p>
+
+<ul>
+  <li><a href="http://www.andyamick.com/blog/easier-get-started-with-scalding">http://www.andyamick.com/blog/easier-get-started-with-scalding</a></li>
+</ul>
+
+<p>The ingest tips blog has some guidance for using Kafka to ship large messages. The post has several suggestions for avoiding large messages, as well as advice for how to configure Kafka to handle large messages if the other suggestions aren’t feasible.</p>
+
+<ul>
+  <li><a href="http://ingest.tips/2015/01/21/handling-large-messages-kafka/">http://ingest.tips/2015/01/21/handling-large-messages-kafka/</a></li>
+</ul>
+
+<p>The Databricks blog has a post about the implementation of Random Forests and Gradient-Boosted Trees in Spark 1.2’s MLlib. The post gives a high-level overview of how decision trees work and how MLlib distributes the computation. It then provides some code snippets to provide an introduction to the API and shows several scalability results based on evaluating a dataset in AWS EC2.</p>
+
+<ul>
+  <li><a href="http://databricks.com/blog/2015/01/21/random-forests-and-boosting-in-mllib.html">http://databricks.com/blog/2015/01/21/random-forests-and-boosting-in-mllib.html</a></li>
+</ul>
+
+<p>MapR has a new Whiteboard Walkthrough (both a video and a transcript) about HBase key design. OpenTSDB’s schema is used as an example, and the presentation discusses things like sequential vs. random keys and the importance of knowing the data access patterns.</p>
+
+<ul>
+  <li><a href="https://www.mapr.com/blog/hbase-key-design-opentsdb">https://www.mapr.com/blog/hbase-key-design-opentsdb</a></li>
+</ul>
+
+<p>The Hue blog has a post on making Hue highly-available by running multiple instances of the Hue application behind a load-balancer. The tutorial walks through the requirements (a HA database backend and nginx/haproxy installed), and describes how to enable the load-balancer (which runs via supervisord).</p>
+
+<ul>
+  <li><a href="http://gethue.com/automatic-high-availability-with-hue-and-cloudera-manager/">http://gethue.com/automatic-high-availability-with-hue-and-cloudera-manager/</a></li>
+</ul>
+
+<p>Sematext offers a monitoring solution for Spark as part of their Performance Monitoring (SPM) product. This post by a customer describes how to integrate the monitoring with Spark and gives an example of a production issue they solved with the help of SPM. Given that Spark is still relatively young, it’s good to see more solutions for monitoring and debugging helping folks become more productive.</p>
+
+<ul>
+  <li><a href="http://blog.sematext.com/2015/01/21/spark-performance-monitoring-use-case/">http://blog.sematext.com/2015/01/21/spark-performance-monitoring-use-case/</a></li>
+</ul>
+
+<p>Hadoop’s cost advantage is based on using commodity hardware, including commodity hard drives. Not all hard drives are the same, though, and failure can be expensive and time consuming. Cloud-backup provider Backblaze has posted a new analysis of hard drive failure rates based on their experience with many different kinds of disks. They look at drives from HGST, Seagate, Toshiba, and Western Digital.</p>
+
+<ul>
+  <li><a href="https://www.backblaze.com/blog/best-hard-drive/">https://www.backblaze.com/blog/best-hard-drive/</a></li>
+</ul>
+
+<p>The Hortonworks blog has a post about the past, present, and future of HBase High Availability. The majority of the post looks at the recently added Timeline-Consistent Region Replicas, which provide a read-only version of the data in case of a region failure. Combined with best practices, this feature allows for 99.99% availability, although clients must decide if they need strict consistency (i.e. can only query the primary region) or if they can accept stale data. Looking ahead, the HBase team is working on write-availability during failures and cross-datacenter consistency.</p>
+
+<ul>
+  <li><a href="http://hortonworks.com/blog/apache-hbase-high-availability-next-level/">http://hortonworks.com/blog/apache-hbase-high-availability-next-level/</a></li>
+</ul>
+
+<p>A lot of presentations and posts on event-processing are either very high-level and theoretical or about the low-level details of a particular technology. This talk centers around a few technologies (kafka and avro), but it strikes a good balance of theory and practice. There are several important details and ideas related to building an event-based processing system.</p>
+
+<ul>
+  <li><a href="http://www.slideshare.net/esammer/from-source-to-solution-building-a-system-for-eventoriented-data">http://www.slideshare.net/esammer/from-source-to-solution-building-a-system-for-eventoriented-data</a></li>
+</ul>
+
+<p><strong>Reference : <a href="http://hadoopweekly.com">Hadoop Weekly Publication</a></strong></p>
+</p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/Hadoop_Technical_Update-Dec2014/" title="Hadoop Technical Updates / 29-12-2014">Hadoop Technical Updates / 29-12-2014</a></h3>
+      <p>Hadoop Technical updates for Dec 2014</p>
+      <h6> Posted on : 2014-12-29 00:00:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><h3 id="technical-updates">Technical Updates</h3>
+
+<p>The AWS big data blog has a post on building a recommendation system using Mortar (disclosure: Mortar syndicates Hadoop Weekly and curates the events section). The tutorial walks through using Mortar’s system locally as well as in a distributed setting on Amazon EMR.</p>
+
+<ul>
+  <li><a href="http://blogs.aws.amazon.com/bigdata/post/TxEUOWQRG7D9IZ/Building-and-Running-a-Recommendation-Engine-at-Any-Scale">http://blogs.aws.amazon.com/bigdata/post/TxEUOWQRG7D9IZ/Building-and-Running-a-Recommendation-Engine-at-Any-Scale</a></li>
+</ul>
+
+<p>The Hortonworks blog has a recap of a recent webinar discussing new HDFS features such as heterogeneous storage, encryption, and security enhancements. They’ve posted a Q&amp;A from the webinar, which has a lot of good information about how these features work (or will work) in practice.</p>
+
+<ul>
+  <li><a href="http://hortonworks.com/blog/discover-hdp-2-2-discover-hdp-2-2-data-storage-innovations-hadoop-distributed-filesystem-hdfs/">http://hortonworks.com/blog/discover-hdp-2-2-discover-hdp-2-2-data-storage-innovations-hadoop-distributed-filesystem-hdfs/</a></li>
+</ul>
+
+<p>The Hue blog has a post on setting up Hue for HDP 2.2. It describes the custom configuration and gotchas related to the integration.</p>
+
+<ul>
+  <li><a href="http://gethue.com/how-to-deploy-hue-on-hdp/">http://gethue.com/how-to-deploy-hue-on-hdp/</a></li>
+</ul>
+
+<p>Hive-on-Spark has recently made a lot of progress, and there’s a new way to try out the integration. The team from MapR, Intel, IBM, and Cloudera have created a pre-configured Amazon AMI for trying it out.</p>
+
+<ul>
+  <li><a href="http://blog.cloudera.com/blog/2014/12/hands-on-hive-on-spark-in-the-aws-cloud/">http://blog.cloudera.com/blog/2014/12/hands-on-hive-on-spark-in-the-aws-cloud/</a></li>
+</ul>
+
+<p>The High Scalability blog has a post on how Bloomberg is using HBase to serve time-series data. The post describes how they’re replacing a legacy system with HBase, which provides 1000x faster writes and 3x faster reads. With that said, they’re eagerly anticipating the upcoming timeline-consistent standby region servers will help improve read latency in the face of failure in order to meet SLAs.</p>
+
+<ul>
+  <li><a href="http://highscalability.com/blog/2014/12/17/the-big-problem-is-medium-data.html">http://highscalability.com/blog/2014/12/17/the-big-problem-is-medium-data.html</a></li>
+</ul>
+
+<p>Cloudera Enterprise is available on the Microsoft Azure Marketplace for deployment in the cloud. This tutorial describes how to launch a CDH cluster in Azure, which brings up cluster with Cloudera Manager for configuration.</p>
+
+<ul>
+  <li><a href="http://azure.microsoft.com/blog/2014/12/17/how-to-deploy-the-cloudera-evaluation-cluster-in-azure/">http://azure.microsoft.com/blog/2014/12/17/how-to-deploy-the-cloudera-evaluation-cluster-in-azure/</a></li>
+</ul>
+
+<p>This presentation provides an overview of using Spark together with Cassandra. The first part gives an introduction to Spark, the second looks at Spark and Cassandra (including how CQL integrates), and the last part looks at integrating Spark streaming with Cassandra.</p>
+
+<ul>
+  <li><a href="http://www.slideshare.net/RussellSpitzer/zero-to-streaming-spark-and-cassandra">http://www.slideshare.net/RussellSpitzer/zero-to-streaming-spark-and-cassandra</a></li>
+</ul>
+
+<p><strong>Reference : <a href="http://hadoopweekly.com">Hadoop Weekly Publication</a></strong></p>
+</p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/Hadoop_Technical_Updates/" title="Hadoop Technical Updates / 17-11-2014">Hadoop Technical Updates / 17-11-2014</a></h3>
+      <p>Hadoop Technical updates for Nov 2014</p>
+      <h6> Posted on : 2014-11-17 00:00:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><h3 id="technical-updates">Technical Updates</h3>
+
+<p>The Cloudera blog has a guest post from Cerner about integrating Apache Kafka with HBase and Storm for real-time processing. The post describes how adopting Kafka helped reduce load on HBase (which was previously used for queuing) and improve performance. This style of Kafka-based architecture seems to be more and more common, but it’s always interesting to hear how folks are putting together the pieces of the Hadoop ecosystem.</p>
+
+<ul>
+  <li><a href="http://blog.cloudera.com/blog/2014/11/how-cerner-uses-cdh-with-apache-kafka/">http://blog.cloudera.com/blog/2014/11/how-cerner-uses-cdh-with-apache-kafka/</a></li>
+</ul>
+
+<p>The MapR blog has a post on using the recently-released Apache Drill 0.6.0-incubating to analyze Yelp’s public data set. The data, which is a JSON file, can be queried directly via SQL in Drill without first declaring the data’s schema (drill auto-detects it). The post has a number of sample queries which you can use to get started analyzing this or any other data set.</p>
+
+<ul>
+  <li><a href="https://www.mapr.com/blog/how-turn-raw-data-yelp-insights-minutes-apache-drill">https://www.mapr.com/blog/how-turn-raw-data-yelp-insights-minutes-apache-drill</a></li>
+</ul>
+
+<p>The Cloudera blog has a second guest post, this time from Dell, on the new Oracle direct-mode in Sqoop 1.4.5. The post describes several of the implemented optimizations in the Oracle direct mode and includes an analysis of performance improvements the connector provides.</p>
+
+<ul>
+  <li><a href="http://blog.cloudera.com/blog/2014/11/how-apache-sqoop-1-4-5-improves-oracle-databaseapache-hadoop-integration/">http://blog.cloudera.com/blog/2014/11/how-apache-sqoop-1-4-5-improves-oracle-databaseapache-hadoop-integration/</a></li>
+</ul>
+
+<p>The Hortonworks blog has a post on using Apache Pig with the Python Scikit-learn package in order predict flight delays using logistic regression and random forests. The post is a bit light in details, but there is a linked IPython notebook which has a very detailed overview and description of the entire process.  Given that Python is often a data scientist’s top choice for machine learning on small data sets, it’s useful to see how to extend it to larger data sets with Pig.</p>
+
+<ul>
+  <li><a href="http://hortonworks.com/blog/data-science-apacheh-hadoop-predicting-airline-delays/">http://hortonworks.com/blog/data-science-apacheh-hadoop-predicting-airline-delays/</a></li>
+</ul>
+
+<p>The ingest.tips blog has a post on Sqoop1 support for Parquet, which leverages the Kite SDK to generate Parquet files during import. The post serves as a good introduction to Sqoop1, which can both import data to HDFS and update the Hive metastore with information about the data. There are examples demonstrating how to use Parquet support.</p>
+
+<ul>
+  <li><a href="http://ingest.tips/2014/11/10/parquet-support-arriving-in-sqoop/">http://ingest.tips/2014/11/10/parquet-support-arriving-in-sqoop/</a></li>
+</ul>
+
+<p>Tephra is a open-source system that provides globally-consistent transactions for Apache HBase. Cask, the makers of Tephra, have written a blog post describing the requirements and design of Tephra. Tephra is designed in such a way that it can be used with systems other than HBase, and it is even designed to support transactions spanning multiple data stores.</p>
+
+<ul>
+  <li><a href="http://blog.cask.co/2014/11/how-we-built-it-designing-a-globally-consistent-transaction-engine/">http://blog.cask.co/2014/11/how-we-built-it-designing-a-globally-consistent-transaction-engine/</a></li>
+</ul>
+
+<p>This presentation focusses on Spark streaming, the micro-batch component of Apache Spark. The slides give an introduction to both Spark and Spark streaming, describe several use cases (claiming there are 40+ known production use cases), give an overview of several integrations (Cassandra, Kafka, Elastic Search, and more), and look ahead to some upcoming features and improvements in the development pipeline.</p>
+
+<ul>
+  <li><a href="http://www.slideshare.net/pacoid/tiny-batches-in-the-wine-shiny-new-bits-in-spark-streaming">http://www.slideshare.net/pacoid/tiny-batches-in-the-wine-shiny-new-bits-in-spark-streaming</a></li>
+</ul>
+
+<p><strong>Reference : <a href="http://hadoopweekly.com">Hadoop Weekly Publication</a></strong></p>
+</p> -->
+
+	  
+          
+	  
+
+
+	  <header class="major">      
+	    <h3><a href="http://localhost:4000/refer/big-data-trends-weekly-catchup-oct-2014/" title="Big Data Trends - Oct 2014">Big Data Trends - Oct 2014</a></h3>
+      <p>Getting&nbsp;started&nbsp;with&nbsp;a&nbsp;new&nbsp;distributed&nbsp;system&nbsp;typically&nbsp;requires&nbsp;looking&nbsp;through&nbsp;tutorials,&nbsp;docum...</p>
+      <h6> Posted on : 2014-11-11 11:27:00 +0530</h6>
+	  </header>
+	  
+	  
+
+	  <!-- <p><div dir="ltr" style="text-align: left;" trbidi="on"><div><span style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;">Getting&nbsp;started&nbsp;with&nbsp;a&nbsp;new&nbsp;distributed&nbsp;system&nbsp;typically&nbsp;requires&nbsp;looking&nbsp;through&nbsp;tutorials,&nbsp;documentation,&nbsp;and&nbsp;even&nbsp;source&nbsp;code.&nbsp;This&nbsp;presentation&nbsp;aims&nbsp;to&nbsp;gather&nbsp;all&nbsp;of&nbsp;that&nbsp;information&nbsp;(and&nbsp;more)&nbsp;into&nbsp;a&nbsp;single&nbsp;training&nbsp;deck&nbsp;for&nbsp;Apache&nbsp;Storm.&nbsp;It&nbsp;covers&nbsp;five&nbsp;key&nbsp;areas—an&nbsp;introduction,&nbsp;Storm’s&nbsp;core&nbsp;concepts,&nbsp;operational&nbsp;considerations,&nbsp;Storm&nbsp;app&nbsp;examples,&nbsp;and&nbsp;wirbelsturm&nbsp;for&nbsp;local&nbsp;development.</span><br /><br style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;" /><span style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;"><a href="http://www.michael-noll.com/blog/2014/09/15/apache-storm-training-deck-and-tutorial/">http://www.michael-noll.com/blog/2014/09/15/apache-storm-training-deck-and-tutorial/</a></span><br /><br style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;" /><br style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;" /><span style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;">This&nbsp;presentation&nbsp;gives&nbsp;an&nbsp;introduction&nbsp;to&nbsp;Apache&nbsp;Optiq&nbsp;(incubating)&nbsp;and&nbsp;describes&nbsp;how&nbsp;the&nbsp;Optiq&nbsp;cost-based&nbsp;optimizer&nbsp;is&nbsp;being&nbsp;added&nbsp;to&nbsp;Apache&nbsp;Hive&nbsp;0.14.&nbsp;There&nbsp;are&nbsp;some&nbsp;examples&nbsp;of&nbsp;optimizing&nbsp;the&nbsp;query&nbsp;plan&nbsp;for&nbsp;star&nbsp;schema,&nbsp;left-deep&nbsp;tree,&nbsp;and&nbsp;bushy&nbsp;tree&nbsp;queries.&nbsp;It&nbsp;also&nbsp;explores&nbsp;the&nbsp;importance&nbsp;of&nbsp;having&nbsp;statistics&nbsp;about&nbsp;the&nbsp;data,&nbsp;and&nbsp;there&nbsp;are&nbsp;some&nbsp;impressive&nbsp;benchmarks&nbsp;on&nbsp;TPC-DS&nbsp;queries&nbsp;at&nbsp;the&nbsp;end.</span><br /><br style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;" /><span style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;"><a href="http://www.slideshare.net/julianhyde/costbased-query-optimization-in-apache-hive-014">http://www.slideshare.net/julianhyde/costbased-query-optimization-in-apache-hive-014</a></span><br /><br style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;" /><br style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;" /><span style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;">This&nbsp;post&nbsp;walks&nbsp;through&nbsp;five&nbsp;different&nbsp;types&nbsp;of&nbsp;logs&nbsp;that&nbsp;are&nbsp;important&nbsp;for&nbsp;understanding&nbsp;and&nbsp;debugging&nbsp;a&nbsp;Hadoop&nbsp;cluster.&nbsp;Given&nbsp;that&nbsp;YARN&nbsp;is&nbsp;relatively&nbsp;new,&nbsp;this&nbsp;is&nbsp;a&nbsp;good&nbsp;introduction&nbsp;to&nbsp;the&nbsp;new&nbsp;types&nbsp;of&nbsp;logs&nbsp;introduced&nbsp;in&nbsp;recent&nbsp;versions&nbsp;of&nbsp;Hadoop.</span><br /><br style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;" /><span style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;"><a href="https://www.altiscale.com/top-10-hadoop-yarn-part-1/">https://www.altiscale.com/top-10-hadoop-yarn-part-1/</a></span><br /><br style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;" /><br style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;" /><span style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;">Spark’s&nbsp;MLlib&nbsp;contains&nbsp;a&nbsp;decision&nbsp;tree&nbsp;implementation&nbsp;which&nbsp;can&nbsp;be&nbsp;used&nbsp;in&nbsp;data&nbsp;classification&nbsp;problems.&nbsp;Even&nbsp;if&nbsp;you&nbsp;don’t&nbsp;know&nbsp;what&nbsp;a&nbsp;decision&nbsp;tree&nbsp;is,&nbsp;the&nbsp;article&nbsp;contains&nbsp;an&nbsp;introduction&nbsp;before&nbsp;it&nbsp;dies&nbsp;into&nbsp;the&nbsp;technical&nbsp;details.&nbsp;The&nbsp;post&nbsp;has&nbsp;an&nbsp;example&nbsp;in&nbsp;python&nbsp;(and&nbsp;links&nbsp;to&nbsp;examples&nbsp;for&nbsp;Java&nbsp;and&nbsp;Scala),&nbsp;describes&nbsp;the&nbsp;optimizations&nbsp;in&nbsp;the&nbsp;implementation,&nbsp;and&nbsp;has&nbsp;an&nbsp;overview&nbsp;of&nbsp;scalability&nbsp;(both&nbsp;dataset&nbsp;size&nbsp;and&nbsp;number&nbsp;of&nbsp;features).&nbsp;There&nbsp;were&nbsp;also&nbsp;some&nbsp;impressive&nbsp;speed&nbsp;gains&nbsp;in&nbsp;Spark&nbsp;1.1&nbsp;vs.&nbsp;Spark&nbsp;1.0.</span><br /><br style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;" /><span style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;"><a href="http://databricks.com/blog/2014/09/29/scalable-decision-trees-in-mllib.html">http://databricks.com/blog/2014/09/29/scalable-decision-trees-in-mllib.html</a></span><br /><br style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;" /><br style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;" /><span style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;">DataStax&nbsp;Enterprise&nbsp;4.5&nbsp;integrates&nbsp;Apache&nbsp;Cassandra&nbsp;with&nbsp;Apache&nbsp;Spark&nbsp;using&nbsp;the&nbsp;Spark&nbsp;Cassandra&nbsp;Connector.&nbsp;This&nbsp;post&nbsp;includes&nbsp;a&nbsp;walkthrough&nbsp;of&nbsp;using&nbsp;Spark’s&nbsp;MLlib&nbsp;with&nbsp;data&nbsp;stored&nbsp;in&nbsp;Cassandra.</span><br /><br style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;" /><span style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;"><a href="http://www.datastax.com/dev/blog/interactive-advanced-analytic-with-dse-and-spark-mllib">http://www.datastax.com/dev/blog/interactive-advanced-analytic-with-dse-and-spark-mllib</a></span><br /><br style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;" /><br style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;" /><span style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;">The&nbsp;SequenceIQ&nbsp;blog&nbsp;has&nbsp;an&nbsp;example&nbsp;of&nbsp;implementing&nbsp;a&nbsp;correlation&nbsp;function&nbsp;for&nbsp;Spark.&nbsp;While&nbsp;the&nbsp;implementation&nbsp;duplicates&nbsp;some&nbsp;functionality&nbsp;found&nbsp;in&nbsp;MLlib,&nbsp;the&nbsp;example&nbsp;shows&nbsp;how&nbsp;to&nbsp;write&nbsp;testable&nbsp;Spark&nbsp;code&nbsp;(and&nbsp;has&nbsp;example&nbsp;tests).&nbsp;The&nbsp;code&nbsp;is&nbsp;available&nbsp;in&nbsp;its&nbsp;entirety&nbsp;on&nbsp;github.</span><br /><br style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;" /><span style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;"><a href="http://blog.sequenceiq.com/blog/2014/09/29/spark-correlation-and-testing/">http://blog.sequenceiq.com/blog/2014/09/29/spark-correlation-and-testing/</a></span><br /><br style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;" /><br style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;" /><span style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;">Many&nbsp;folks&nbsp;get&nbsp;started&nbsp;with&nbsp;Hadoop&nbsp;in&nbsp;the&nbsp;cloud&nbsp;and&nbsp;end&nbsp;up&nbsp;storing&nbsp;data&nbsp;in&nbsp;object&nbsp;stores&nbsp;like&nbsp;S3&nbsp;as&nbsp;a&nbsp;result.&nbsp;This&nbsp;post&nbsp;from&nbsp;the&nbsp;Altiscale&nbsp;blog&nbsp;discusses&nbsp;some&nbsp;of&nbsp;the&nbsp;drawbacks&nbsp;of&nbsp;storing&nbsp;data&nbsp;in&nbsp;an&nbsp;object&nbsp;store&nbsp;vs.&nbsp;a&nbsp;true&nbsp;file&nbsp;system.</span><br /><br style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;" /><span style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;"><a href="https://www.altiscale.com/hdfs-object-stores-best-place-land-big-data/">https://www.altiscale.com/hdfs-object-stores-best-place-land-big-data/</a></span><br /><br style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;" /><br style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;" /><span style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;">Datameer&nbsp;has&nbsp;written&nbsp;about&nbsp;how&nbsp;they’ve&nbsp;reengineered&nbsp;the&nbsp;backend&nbsp;to&nbsp;Datameer&nbsp;5&nbsp;to&nbsp;be&nbsp;framework&nbsp;agnostic.&nbsp;Previously,&nbsp;the&nbsp;system&nbsp;was&nbsp;tightly&nbsp;coupled&nbsp;with&nbsp;MapReduce,&nbsp;but&nbsp;it&nbsp;can&nbsp;now&nbsp;also&nbsp;use&nbsp;Tez&nbsp;and&nbsp;small&nbsp;job/local&nbsp;execution&nbsp;engines.&nbsp;The&nbsp;post&nbsp;also&nbsp;describes&nbsp;why&nbsp;they&nbsp;use&nbsp;Apache&nbsp;Tez&nbsp;over&nbsp;Spark&nbsp;(although&nbsp;they&nbsp;do&nbsp;say&nbsp;that&nbsp;Spark&nbsp;will&nbsp;eventually&nbsp;be&nbsp;integrated).</span><br /><br style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;" /><span style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;"><a href="http://www.datameer.com/blog/announcements/the-challenge-to-choosing-the-right-execution-engine.html">http://www.datameer.com/blog/announcements/the-challenge-to-choosing-the-right-execution-engine.html</a></span><br /><br style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;" /><br style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;" /><span style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;">While&nbsp;Spark&nbsp;has&nbsp;had&nbsp;integration&nbsp;with&nbsp;Kafka&nbsp;for&nbsp;several&nbsp;releases,&nbsp;this&nbsp;post&nbsp;goes&nbsp;much&nbsp;further&nbsp;than&nbsp;the&nbsp;Spark-bundled&nbsp;KafkaWordCount&nbsp;example.&nbsp;In&nbsp;fact,&nbsp;the&nbsp;post&nbsp;contains&nbsp;everything&nbsp;needed&nbsp;to&nbsp;get&nbsp;started&nbsp;with&nbsp;Kafka&nbsp;and&nbsp;Spark&nbsp;Streaming—including&nbsp;overviews&nbsp;of&nbsp;both&nbsp;systems&nbsp;that&nbsp;describe&nbsp;core&nbsp;concepts.&nbsp;The&nbsp;post&nbsp;culminates&nbsp;with&nbsp;a&nbsp;full&nbsp;example&nbsp;that&nbsp;reads&nbsp;Avro-encoded&nbsp;data&nbsp;from&nbsp;Kafka&nbsp;(in&nbsp;parallel&nbsp;across&nbsp;partitions),&nbsp;does&nbsp;some&nbsp;simple&nbsp;computing,&nbsp;and&nbsp;writes&nbsp;the&nbsp;data&nbsp;back&nbsp;to&nbsp;Kafka.&nbsp;There&nbsp;is&nbsp;also&nbsp;a&nbsp;summary&nbsp;of&nbsp;known&nbsp;issues,&nbsp;testing,&nbsp;and&nbsp;performance&nbsp;testing.</span><br /><br style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;" /><span style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;"><a href="http://www.michael-noll.com/blog/2014/10/01/kafka-spark-streaming-integration-example-tutorial/">http://www.michael-noll.com/blog/2014/10/01/kafka-spark-streaming-integration-example-tutorial/</a></span><br /><br style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;" /><br style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;" /><span style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;">This&nbsp;post&nbsp;shows&nbsp;how&nbsp;to&nbsp;build&nbsp;an&nbsp;Amazon&nbsp;Elastic&nbsp;MapReduce&nbsp;(EMR)&nbsp;cluster&nbsp;that&nbsp;integrates&nbsp;RStudio.&nbsp;After&nbsp;bootstrapping&nbsp;a&nbsp;cluster,&nbsp;it&nbsp;walks&nbsp;through&nbsp;changing&nbsp;security&nbsp;settings&nbsp;to&nbsp;allow&nbsp;access&nbsp;to&nbsp;the&nbsp;RStudio&nbsp;web&nbsp;interface,&nbsp;describes&nbsp;how&nbsp;to&nbsp;use&nbsp;the&nbsp;rmr2&nbsp;package&nbsp;to&nbsp;run&nbsp;a&nbsp;MapReduce&nbsp;job&nbsp;from&nbsp;R,&nbsp;and&nbsp;shows&nbsp;how&nbsp;to&nbsp;pull&nbsp;in&nbsp;some&nbsp;real-world&nbsp;(global&nbsp;weather&nbsp;measurement)&nbsp;data&nbsp;for&nbsp;analysis.</span><br /><br style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;" /><span style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;"><a href="http://blogs.aws.amazon.com/bigdata/post/Tx37RSKRFDQNTSL/Statistical-Analysis-with-Open-Source-R-and-RStudio-on-Amazon-EMR">http://blogs.aws.amazon.com/bigdata/post/Tx37RSKRFDQNTSL/Statistical-Analysis-with-Open-Source-R-and-RStudio-on-Amazon-EMR</a></span><br /><br style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;" /><br style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;" /><span style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;">This&nbsp;tutorial&nbsp;explains&nbsp;how&nbsp;to&nbsp;install&nbsp;Apache&nbsp;Spark&nbsp;in&nbsp;the&nbsp;MapR&nbsp;sandbox&nbsp;(a&nbsp;VM&nbsp;running&nbsp;in&nbsp;VMWare&nbsp;or&nbsp;Virtualbox).&nbsp;After&nbsp;that,&nbsp;it&nbsp;has&nbsp;some&nbsp;examples&nbsp;with&nbsp;the&nbsp;spark-shell&nbsp;to&nbsp;run&nbsp;simple&nbsp;queries&nbsp;against&nbsp;a&nbsp;text-based&nbsp;Spark&nbsp;RRD.</span><br /><br style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;" /><span style="font-family: Tahoma; orphans: 2; text-align: -webkit-auto; widows: 2;"><a href="https://www.mapr.com/blog/getting-started-spark-mapr-sandbox">https://www.mapr.com/blog/getting-started-spark-mapr-sandbox</a></span></div></div></p> -->
+
+	  
+          
+	</div>
+      </section>
+
+    </div>
+
+    <!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/sivan.consult@gmail.com" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a href="#">sivan.consult@gmail.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>+91-999-545-5746</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    Karyavattam<br />
+					
+					
+					    Trivandrum,
+					
+					
+					    Kerala 
+					
+					
+					    695581<br />
+					
+					
+					    India
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+				<li><a href="https://twitter.com/sivansasidharan" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+				
+				
+				
+				<li><a href="https:facebook.com/sivansasidharan" class="icon alt fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+				
+				
+				
+				
+				
+				
+				<li><a href="https://github.com/sivansasidharan/" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+				
+				
+				
+				<li><a href="https://www.linkedin.com/in/sivansasidharan/" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; TECHNOLOGY PRÉCIS!   by Sivan Sasidharan</li>
+				<li>Design: HTML5 UP</li>
+				<li>Powered by: Jekyll & GitHub</li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="http://localhost:4000/assets/js/jquery.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrolly.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrollex.min.js"></script>
+	<script src="http://localhost:4000/assets/js/skel.min.js"></script>
+	<script src="http://localhost:4000/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="http://localhost:4000/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="http://localhost:4000/assets/js/main.js"></script>
+
+
+  </body>
+
+</html>

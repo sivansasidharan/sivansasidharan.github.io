@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>TECHNOLOGY PRÉCIS!</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="http://localhost:4000//" class="logo"><strong>TECHNOLOGY PRÉCIS!</strong> <span>by Sivan Sasidharan</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+        
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000//">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/all_posts/">WriteUps</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/freferences/">References</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/generic/">Experience</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/landingnews/">News Feeds</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/zlanding/">Webinars</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="#" class="button special fit">Get Started</a></li>
+		<li><a href="#" class="button fit">Log In</a></li>
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<header class="major">
+			<h1>Hadoop Technical Updates / 31-08-2015</h1>
+		</header>
+		
+		<p><h3 id="technical-updates">Technical Updates</h3>
+
+<p>Two projects that exemplify the push in the Hadoop ecosystem to continuously improve the status quo are the covered in this week’s issue. First, Apache Flink, a project with similar features to Apache Spark that has been gaining momentum (particularly for use-cases where Spark falls short), is covered in several links. Second, there’s a great presentation on Apache Phoenix, which aims to improve the usability HBase through SQL access. In other news, Apache Ignite and Lens graduated from the incubator, and Hortonworks announced the acquisition of Onyara.</p>
+
+<p>One of the advantages of the cloud—short-lived, on-demand clusters—violates assumptions in Hadoop’s design, which creates complications. For example, the MapReduce and Spark job history servers disappear when an ephemeral cluster terminates. Qubole describes how they’ve designed a solution to serve job histories via S3 even when the associated cluster has been terminated.</p>
+
+<ul>
+  <li><a href="http://www.qubole.com/blog/product/multi-tenant-job-history-server-for-ephemeral-hadoop-and-spark-clusters/">http://www.qubole.com/blog/product/multi-tenant-job-history-server-for-ephemeral-hadoop-and-spark-clusters/</a></li>
+</ul>
+
+<p>Gelly is Apache Flink’s graph-processing library. It supports iterative graph processing using the vertex-centric and grather-sum-apply computation models. It includes built-in support for PageRank, single source shortest path, connected components, and several other algorithms. The introductory post describes all of these and also shows how to build music profiles via a user-user similarity graph.</p>
+
+<ul>
+  <li><a href="http://flink.apache.org/news/2015/08/24/introducing-flink-gelly.html">http://flink.apache.org/news/2015/08/24/introducing-flink-gelly.html</a></li>
+</ul>
+
+<p>This follow-up post to an earlier introduction to Apache Falcon discusses several features and uses of Falcon. These include backup and disaster recovery and late data handling (Falcon can compute preliminary and updated results as late data arrives). The post also discusses some areas where Falcon could use improvement and how it works well in conjunction with HCatalog.</p>
+
+<ul>
+  <li><a href="http://getindata.com/blog/post/avoiding-the-mess-in-the-hadoop-cluster-part-2/">http://getindata.com/blog/post/avoiding-the-mess-in-the-hadoop-cluster-part-2/</a></li>
+</ul>
+
+<p>Amazon Kinesis is a hosted service for streaming data with similarities to Apache Kafka. This post describes using the Cascading framework to perform a streaming analysis of microbatched data sourced from Kinesis. The tutorial describes how to deploy the necessary resources to ingest data, process it with Cascading on EMR, and store the results in Amazon Redshift for analysis.</p>
+
+<ul>
+  <li><a href="http://blogs.aws.amazon.com/bigdata/post/Tx3FWOWOHSITOFC/Integrating-Amazon-Kinesis-Amazon-S3-and-Amazon-Redshift-with-Cascading-on-Amazo">http://blogs.aws.amazon.com/bigdata/post/Tx3FWOWOHSITOFC/Integrating-Amazon-Kinesis-Amazon-S3-and-Amazon-Redshift-with-Cascading-on-Amazo</a></li>
+</ul>
+
+<p>The Confluent blog has an excellent post about distributed consensus with Apache Zookeeper and Kafka. It introduces consensus and atomic broadcast, describes consensus in Zookeeper, describes Kafka’s in-sync replica sets, and gives an overview of a couple of failure scenarios in Kafka replication.</p>
+
+<ul>
+  <li><a href="http://www.confluent.io/blog/distributed-consensus-reloaded-apache-zookeeper-and-replication-in-kafka">http://www.confluent.io/blog/distributed-consensus-reloaded-apache-zookeeper-and-replication-in-kafka</a></li>
+</ul>
+
+<p>These slides are a fantastic overview of tuning HBase, with a focus on the Phoenix SQL-layer, for low-latency applications. The topics covered include optimizing Phoenix queries (and what to look for in EXPLAIN output), HBase regionserver config settings, JVM GC configuration options, schema considerations, HBase timeline consistent reads, OS-level tuning, and future work for Phoenix.</p>
+
+<ul>
+  <li><a href="http://phoenix.apache.org/presentations/TuningForOLTP.pdf">http://phoenix.apache.org/presentations/TuningForOLTP.pdf</a></li>
+</ul>
+
+<p>Slides from the recent Bay Area Apache Flink meetup have been posted. Topics covered include the state of the community (e.g. recently added and upcoming features), ongoing research topics being integrated into/with Flink (including streaming machine learning pipelines and streaming graphs), the Gelly Graph library, and an overview of stateful stream processing (with details about how Flink achieves exactly-once semantics).</p>
+
+<ul>
+  <li><a href="http://www.slideshare.net/HenrySaputra/bay-area-apache-flink-meetup-community-update-august-2015">http://www.slideshare.net/HenrySaputra/bay-area-apache-flink-meetup-community-update-august-2015</a></li>
+  <li><a href="http://www.slideshare.net/foosounds/baymeetupflinkresearch">http://www.slideshare.net/foosounds/baymeetupflinkresearch</a></li>
+  <li><a href="http://www.slideshare.net/vkalavri/gelly-in-apache-flink-bay-area-meetup">http://www.slideshare.net/vkalavri/gelly-in-apache-flink-bay-area-meetup</a></li>
+  <li><a href="http://www.slideshare.net/GyulaFra/stateful-distributed-stream-processing">http://www.slideshare.net/GyulaFra/stateful-distributed-stream-processing</a></li>
+</ul>
+
+<p><strong>Reference : <a href="http://hadoopweekly.com">Hadoop Weekly Publication</a></strong></p>
+</p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/sivan.consult@gmail.com" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a href="#">sivan.consult@gmail.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>+91-999-545-5746</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    Karyavattam<br />
+					
+					
+					    Trivandrum,
+					
+					
+					    Kerala 
+					
+					
+					    695581<br />
+					
+					
+					    India
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+				<li><a href="https://twitter.com/sivansasidharan" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+				
+				
+				
+				<li><a href="https:facebook.com/sivansasidharan" class="icon alt fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+				
+				
+				
+				
+				
+				
+				<li><a href="https://github.com/sivansasidharan/" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+				
+				
+				
+				<li><a href="https://www.linkedin.com/in/sivansasidharan/" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; TECHNOLOGY PRÉCIS!   by Sivan Sasidharan</li>
+				<li>Design: HTML5 UP</li>
+				<li>Powered by: Jekyll & GitHub</li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="http://localhost:4000/assets/js/jquery.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrolly.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrollex.min.js"></script>
+	<script src="http://localhost:4000/assets/js/skel.min.js"></script>
+	<script src="http://localhost:4000/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="http://localhost:4000/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="http://localhost:4000/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

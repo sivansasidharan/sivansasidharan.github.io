@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>TECHNOLOGY PRÉCIS!</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="http://localhost:4000//" class="logo"><strong>TECHNOLOGY PRÉCIS!</strong> <span>by Sivan Sasidharan</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+        
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000//">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/all_posts/">WriteUps</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/freferences/">References</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/generic/">Experience</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/landingnews/">News Feeds</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/zlanding/">Webinars</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="#" class="button special fit">Get Started</a></li>
+		<li><a href="#" class="button fit">Log In</a></li>
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<header class="major">
+			<h1>Hadoop Technical Updates / 19-10-2015</h1>
+		</header>
+		
+		<p><h3 id="technical-updates">Technical Updates</h3>
+
+<p>The DataTorrent blog has a post about Apache Apex (incubating) that describes how Apex’s architecture is built around DAGs. At a high-level, a data flow is specified as a DAG (the Logical Plan) using the Java API or JSON, and the Streaming Application Master converts this logical plan into a physical plan for execution on a cluster. The post gives an overview of how Apex performs the conversion and executes it on a distributed platform like YARN.</p>
+
+<ul>
+  <li><a href="https://www.datatorrent.com/blog-tracing-dags-from-specification-to-execution/">https://www.datatorrent.com/blog-tracing-dags-from-specification-to-execution/</a></li>
+</ul>
+
+<p>Ibis, the Python data analysis framework for big data, contains an integration with SQL engines (in particular, Ibis aims to work well with Cloudera Impala). This post describes Ibis’ SQL API, which provides an API for building and running SQL queries.</p>
+
+<ul>
+  <li><a href="http://blog.ibis-project.org/ibis-for-sql-programmers/">http://blog.ibis-project.org/ibis-for-sql-programmers/</a></li>
+</ul>
+
+<p>The Confluent blog has an update on Apache Kafka, which includes news on a number of features in various stages of development. Of particular note, support for authorization and the new Kafka Streams library have both been committed to trunk.</p>
+
+<ul>
+  <li><a href="http://www.confluent.io/blog/log-compaction-highlights-in-the-kafka-and-stream-processing-community-october-2015">http://www.confluent.io/blog/log-compaction-highlights-in-the-kafka-and-stream-processing-community-october-2015</a></li>
+</ul>
+
+<p>This post describes how Collective is using a long-running Spark cluster to power interactive dashboards. The system makes use of HyperLogLog for estimating cardinality of the audiences they measure, and the post describes the custom Spark aggregation function they’ve built for merging HyperLogLogs. After putting all of these things together, a 40 node cluster with 100GB of cached data can answer queries in under 2 seconds.</p>
+
+<ul>
+  <li><a href="https://databricks.com/blog/2015/10/13/interactive-audience-analytics-with-spark-and-hyperloglog.html">https://databricks.com/blog/2015/10/13/interactive-audience-analytics-with-spark-and-hyperloglog.html</a></li>
+</ul>
+
+<p>The Bay Area Samza Meetup hosted a presentation about the next release of Apache Samza, version 0.10.0. In addition to support for new consumers and producers (Amazon Kinesis, HDFS, ElasticSearch), version 0.10.0 adds support for dynamic configuration and host affinity which can improve job startup/recovery time when tasks have a lot of local state. Samza 0.10.0 is expected to be released in November.</p>
+
+<ul>
+  <li><a href="http://www.slideshare.net/NavinaRamesh/apache-samza-new-features-in-the-upcoming-samza-release-0100">http://www.slideshare.net/NavinaRamesh/apache-samza-new-features-in-the-upcoming-samza-release-0100</a></li>
+</ul>
+
+<p>Also at the Bay Area Samza Meetup, Netflix presented on how Samza fits into the Netflix data pipeline. Netflix processes over 1 Petabyte / day (550 billion events), using Samza instances running inside of docker on hosts in an EC2 auto-scaling group. The presentation describes their production experience (and some improvements/workarounds they’re using) and the number and types of instances that they use for both Samza and Kafka.</p>
+
+<ul>
+  <li><a href="http://www.slideshare.net/mmddtmp/netflix-keystone-samzaeetup10132015">http://www.slideshare.net/mmddtmp/netflix-keystone-samzaeetup10132015</a></li>
+</ul>
+
+<p>This tutorial shows how to update configuration settings in Apache Ambari using the Ambari web UI. The UI exposes knobs for common settings and supports configuration of additional settings by setting raw property values. Ambari also supports comparison/diff across configuration versions.</p>
+
+<ul>
+  <li><a href="https://developer.ibm.com/hadoop/blog/2015/10/15/update-open-source-component-configurations-via-ambari-part-one/">https://developer.ibm.com/hadoop/blog/2015/10/15/update-open-source-component-configurations-via-ambari-part-one/</a></li>
+</ul>
+
+<p>This post on the Cloudera blog discusses how to calculate resources for YARN by taking into consideration common cluster scenarios and accounting for operating system overhead. It also shows how to verify configuration using the ResourceManager Web UI.</p>
+
+<ul>
+  <li><a href="http://blog.cloudera.com/blog/2015/10/untangling-apache-hadoop-yarn-part-2/">http://blog.cloudera.com/blog/2015/10/untangling-apache-hadoop-yarn-part-2/</a></li>
+</ul>
+
+<p><strong>Reference : <a href="http://hadoopweekly.com">Hadoop Weekly Publication</a></strong></p>
+</p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/sivan.consult@gmail.com" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a href="#">sivan.consult@gmail.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>+91-999-545-5746</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    Karyavattam<br />
+					
+					
+					    Trivandrum,
+					
+					
+					    Kerala 
+					
+					
+					    695581<br />
+					
+					
+					    India
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+				<li><a href="https://twitter.com/sivansasidharan" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+				
+				
+				
+				<li><a href="https:facebook.com/sivansasidharan" class="icon alt fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+				
+				
+				
+				
+				
+				
+				<li><a href="https://github.com/sivansasidharan/" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+				
+				
+				
+				<li><a href="https://www.linkedin.com/in/sivansasidharan/" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; TECHNOLOGY PRÉCIS!   by Sivan Sasidharan</li>
+				<li>Design: HTML5 UP</li>
+				<li>Powered by: Jekyll & GitHub</li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="http://localhost:4000/assets/js/jquery.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrolly.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrollex.min.js"></script>
+	<script src="http://localhost:4000/assets/js/skel.min.js"></script>
+	<script src="http://localhost:4000/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="http://localhost:4000/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="http://localhost:4000/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

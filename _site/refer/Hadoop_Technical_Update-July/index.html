@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>TECHNOLOGY PRÉCIS!</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="http://localhost:4000//" class="logo"><strong>TECHNOLOGY PRÉCIS!</strong> <span>by Sivan Sasidharan</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+        
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000//">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/all_posts/">WriteUps</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/freferences/">References</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/generic/">Experience</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/landingnews/">News Feeds</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/zlanding/">Webinars</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="#" class="button special fit">Get Started</a></li>
+		<li><a href="#" class="button fit">Log In</a></li>
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<header class="major">
+			<h1>Hadoop Technical Updates / 28-07-2015</h1>
+		</header>
+		
+		<p><h3 id="technical-updates">Technical Updates</h3>
+
+<p>This week’s theme is new projects—Cloudera announced Ibis for Hadoop-scale data science with Python, Spree provides an alternative web UI for Spark, and Astro adds HBase support to Spark SQL. In addition, Hortonworks released HDP 2.3 and Cassandra 2.2 adds a number of interesting new features.</p>
+
+<p>This post describes using HyperLogLog (HLL) for estimating things like click-through rates for ads. To run at scale, the post describes how to use HLL from Spark, including how to build a custom Spark aggregation function.  Finally, it describes a system that uses a pre-built/cached SparkContext to power a REST API server to run Spark queries with 1-2s response times across 100GB of data.</p>
+
+<ul>
+  <li><a href="http://eugenezhulenev.com/blog/2015/07/15/interactive-audience-analytics-with-spark-and-hyperloglog/">http://eugenezhulenev.com/blog/2015/07/15/interactive-audience-analytics-with-spark-and-hyperloglog/</a></li>
+</ul>
+
+<p>This post describes the tradeoff between throughput and latency in the Kafka Producer and how to tweak the various producer settings to achieve desired performance.</p>
+
+<ul>
+  <li><a href="http://ingest.tips/2015/07/19/tips-for-improving-performance-of-kafka-producer/">http://ingest.tips/2015/07/19/tips-for-improving-performance-of-kafka-producer/</a></li>
+</ul>
+
+<p>The MapR blog has a great introduction to Hive’s new support for transactions. The post describes some use cases, the supported semantics, how to enable transaction-support, and a brief overview of how it works (including how compactions clean up delta files).</p>
+
+<ul>
+  <li><a href="https://www.mapr.com/blog/hive-transaction-feature-hive-10">https://www.mapr.com/blog/hive-transaction-feature-hive-10</a></li>
+</ul>
+
+<p>Cloudera has announced a new project called Ibis, which has the goal of marrying Python data analysis/science libraries with Cloudera Impala to build a fast, native distributed framework. The project will including LLVM integration for code generation from Python code. The Cloudera blog has two posts about it—the first announced and describes the project goals and the second includes getting started instructions and more on contributing.</p>
+
+<ul>
+  <li><a href="http://blog.cloudera.com/blog/2015/07/ibis-on-impala-python-at-scale-for-data-science/">http://blog.cloudera.com/blog/2015/07/ibis-on-impala-python-at-scale-for-data-science/</a></li>
+  <li><a href="http://blog.cloudera.com/blog/2015/07/getting-started-with-ibis-and-how-to-contribute/">http://blog.cloudera.com/blog/2015/07/getting-started-with-ibis-and-how-to-contribute/</a></li>
+</ul>
+
+<p>With the caveat (as always) that benchmarks should be taken with a grain of salt, Pivotal has posted part 1 of a comparison of HAWQ (their SQL-on-Hadoop) to Hive and Impala. The tests were performed on a 15 node cluster with the 30TB TPC-DS dataset size. Among the highlights, HAWQ shows speed improvements over Hive and Impala, and it has full support for all of the TPC-DS queries (whereas Hive and Impala do not).</p>
+
+<ul>
+  <li><a href="http://blog.pivotal.io/big-data-pivotal/products/performance-benchmark-pivotal-hawq-beats-impala-apache-hive-part-1">http://blog.pivotal.io/big-data-pivotal/products/performance-benchmark-pivotal-hawq-beats-impala-apache-hive-part-1</a></li>
+</ul>
+
+<p>This post from the MapR blog compares MapReduce and Spark. It looks at the difference between the execution models, the differences in expressiveness (the Spark API having many more high-level operations like join and group by), and the library support (Spark includes machine learning, graph programming, and SQL as part of the core release).</p>
+
+<ul>
+  <li><a href="https://www.mapr.com/blog/5-minute-guide-understanding-significance-apache-spark">https://www.mapr.com/blog/5-minute-guide-understanding-significance-apache-spark</a></li>
+</ul>
+
+<p>This interview with some folks from dataArtisans about Apache Flink has some interesting details about the project. Topics include how it compares to Spark/Samza/Storm, Flink’s approach to iterative processing, data streaming in Flink, and the Flink roadmap.</p>
+
+<ul>
+  <li><a href="https://www.smaato.com/big-data-nosql-meetup-hamburg-with-apache-flink-at-smaato/">https://www.smaato.com/big-data-nosql-meetup-hamburg-with-apache-flink-at-smaato/</a></li>
+</ul>
+
+<p>This post describes several parameters, including how to debug them, for best utilizing resources on a YARN cluster. In additional to the basic memory settings, the post covers the virtual and physical memory checker, several common exceptions (and their solutions), and a few MapR-specific settings.</p>
+
+<ul>
+  <li><a href="https://www.mapr.com/blog/best-practices-yarn-resource-management">https://www.mapr.com/blog/best-practices-yarn-resource-management</a></li>
+</ul>
+
+<p><strong>Reference : <a href="http://hadoopweekly.com">Hadoop Weekly Publication</a></strong></p>
+</p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/sivan.consult@gmail.com" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a href="#">sivan.consult@gmail.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>+91-999-545-5746</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    Karyavattam<br />
+					
+					
+					    Trivandrum,
+					
+					
+					    Kerala 
+					
+					
+					    695581<br />
+					
+					
+					    India
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+				<li><a href="https://twitter.com/sivansasidharan" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+				
+				
+				
+				<li><a href="https:facebook.com/sivansasidharan" class="icon alt fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+				
+				
+				
+				
+				
+				
+				<li><a href="https://github.com/sivansasidharan/" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+				
+				
+				
+				<li><a href="https://www.linkedin.com/in/sivansasidharan/" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; TECHNOLOGY PRÉCIS!   by Sivan Sasidharan</li>
+				<li>Design: HTML5 UP</li>
+				<li>Powered by: Jekyll & GitHub</li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="http://localhost:4000/assets/js/jquery.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrolly.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrollex.min.js"></script>
+	<script src="http://localhost:4000/assets/js/skel.min.js"></script>
+	<script src="http://localhost:4000/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="http://localhost:4000/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="http://localhost:4000/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

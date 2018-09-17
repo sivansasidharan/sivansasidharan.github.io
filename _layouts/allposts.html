@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+    Forty by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+  -->
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %} 
+    
+    <!-- Main -->
+    <div id="main" class="alt">
+
+      <!-- One -->
+                <h4 align="center">Technical Know-Hows!</h4>
+
+      <section id="one">
+	<div class="inner">
+
+          {% for post in site.categories.blog %}
+	  {% if post.title != 404 %}
+
+
+	  <header class="major">      
+	    <h3><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h3>
+      <p>{{ post.excerpt | strip_html | truncate: 160 }}</p>
+      <h6> Posted on : {% if post.date %}{{ post.date }}{% endif %}</h6>
+	  </header>
+	  {% if post.image %}<span class="image main"><img src="{{ site.baseurl }}/{{ post.image }}" alt="" /></span>{% endif %}
+	  
+
+	  <!-- <p>{{ post.content }}</p> -->
+
+	  {% endif %}
+          {% endfor %}
+	</div>
+      </section>
+
+    </div>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>

@@ -1,0 +1,37 @@
+# site settings
+title: TECHNOLOGY PRÉCIS!
+subtitle: by Sivan Sasidharan
+email: sivan.consult@gmail.com
+description: "A consultant technologist with experience in delivering business values by enabling focus, innovation, quality services at top class organizations.
+Interested in driving & aligning BigData strategy for large enterprises; identifying optimized architecture & choice of best fit technology."
+baseurl: "" # the subpath of your site, e.g. /blog
+url: # the base hostname & protocol for your site
+author: Sivan Sasidharan
+street_address: Karyavattam
+city: Trivandrum
+state: Kerala
+zip_code: 695581
+country: India
+phone: +91-999-545-5746
+
+# homepage tiles
+tiles-source: pages # accepts "posts" or "pages"
+tiles-count: 6
+
+# social settings
+500px_url:
+facebook_url: https:facebook.com/sivansasidharan
+github_url: https://github.com/sivansasidharan/
+linkedin_url: https://www.linkedin.com/in/sivansasidharan/
+twitter_url: https://twitter.com/sivansasidharan
+
+# build settings
+markdown: kramdown
+
+sass:
+  style: compressed
+
+collections:
+  - medium_posts
+
+permalink: /:categories/:title/

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>TECHNOLOGY PRÉCIS!</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="http://localhost:4000//" class="logo"><strong>TECHNOLOGY PRÉCIS!</strong> <span>by Sivan Sasidharan</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+        
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000//">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/all_posts/">WriteUps</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/freferences/">References</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/generic/">Experience</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/landingnews/">News Feeds</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/zlanding/">Webinars</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="#" class="button special fit">Get Started</a></li>
+		<li><a href="#" class="button fit">Log In</a></li>
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<header class="major">
+			<h1>Hadoop Technical Updates / 23-04-2015</h1>
+		</header>
+		
+		<p><h3 id="technical-updates">Technical Updates</h3>
+
+<p>AppNexus has written about their experiences with Parquet. In comparison to snappy-compressed sequence files, snappy compressed parquet files use substantially less storage and aid performance (fewer and faster map tasks) across a number of Hive queries.</p>
+
+<ul>
+  <li><a href="http://techblog.appnexus.com/blog/2015/03/31/parquet-columnar-storage-for-hadoop-data/">http://techblog.appnexus.com/blog/2015/03/31/parquet-columnar-storage-for-hadoop-data/</a></li>
+</ul>
+
+<p>This post looks at how to use Spark’s GraphX to process RDF data. Specifically, it runs GraphX’s connected components implementation on the graph defined by the <code class="highlighter-rouge">related</code> values field of the Library of Congress Subject header dataset.</p>
+
+<ul>
+  <li><a href="http://www.snee.com/bobdc.blog/2015/04/running-spark-graphx-algorithm.html">http://www.snee.com/bobdc.blog/2015/04/running-spark-graphx-algorithm.html</a></li>
+</ul>
+
+<p>This post describe how to integrate Luigi, the workflow engine, with Google Cloud’s BigQuery. The author shares some code for running BigQuery tasks as well as experiences in improvement to throughput and cluster utilization after introducing Luigi.</p>
+
+<ul>
+  <li><a href="http://alex.vanboxel.be/2015/04/13/luigi-and-google-cloud-in-production-retrospective/">http://alex.vanboxel.be/2015/04/13/luigi-and-google-cloud-in-production-retrospective/</a></li>
+</ul>
+
+<p>The Databricks blog has an interesting look at how the Spark SQL “catalyst” optimizer works. It discusses Trees, which are the main data type manipulated by the optimizer, Rules, which optimize a query by transforming from one tree to another, the logical optimization phase, physical planning, and code generation (which makes use of Scala’s quasiquotes). The post is based on a paper that’s to appear at SIGMOD 2015.</p>
+
+<ul>
+  <li><a href="https://databricks.com/blog/2015/04/13/deep-dive-into-spark-sqls-catalyst-optimizer.html">https://databricks.com/blog/2015/04/13/deep-dive-into-spark-sqls-catalyst-optimizer.html</a></li>
+</ul>
+
+<p>The Hortonworks blog has a look at the new security-related features in Apache Ambari 2.0. These include setting up Kerberos and deploying/configuring Apache Ranger.</p>
+
+<ul>
+  <li><a href="http://hortonworks.com/blog/ambari-2-0-for-deploying-comprehensive-hadoop-security/">http://hortonworks.com/blog/ambari-2-0-for-deploying-comprehensive-hadoop-security/</a></li>
+</ul>
+
+<p>This presentation from Hadoop Summit covers some of the recent and ongoing work related to SQL with Hive and HBase. It looks at Hive’s “Live Long And Process” daemons for sub-second queries, work on a new HBase-backed Hive metastore (to replace a RDBMS), and some thoughts on how Apache Phoenix (which adds SQL atop of HBase) could leverage some of Hive’s components.</p>
+
+<ul>
+  <li><a href="http://www.slideshare.net/alanfgates/hive-hbase-phoenixtp-hadoopsummiteuapr2015">http://www.slideshare.net/alanfgates/hive-hbase-phoenixtp-hadoopsummiteuapr2015</a></li>
+</ul>
+
+<p>The morning paper has coverage of two-Hadoop related papers this week. The first, “Cross-layer scheduling in cloud systems,” looks at how a network-layer aware scheduler can improve throughput. For MapReduce, the authors show improvement during the shuffle phase. The second post looks at “ApproxHadoop: Bringing Approximations to MapReduce Frameworks,” which uses sampling, task dropping, and user-defined approximation to reduce execution time when approximation is acceptable.</p>
+
+<ul>
+  <li><a href="http://blog.acolyer.org/2015/04/15/cross-layer-scheduling-in-cloud-systems/">http://blog.acolyer.org/2015/04/15/cross-layer-scheduling-in-cloud-systems/</a></li>
+  <li><a href="http://blog.acolyer.org/2015/04/16/approxhadoop-bringing-approximations-to-mapreduce-frameworks/">http://blog.acolyer.org/2015/04/16/approxhadoop-bringing-approximations-to-mapreduce-frameworks/</a></li>
+</ul>
+
+<p>The CAP theorem is the basis of a lot of distributed system research and applications. Unfortunately, it’s often misunderstood—particularly when it comes to availability. This post describes the various parts of the CAP theorem and gives real-world examples of several CAP trade-offs (HDFS is used as the example of a CP system).</p>
+
+<ul>
+  <li><a href="http://blog.thislongrun.com/2015/04/cap-availability-high-availability-and_16.html">http://blog.thislongrun.com/2015/04/cap-availability-high-availability-and_16.html</a></li>
+</ul>
+
+<p>This post looks at using Spark ML to analyze network data. It describes frequent pattern mining, and how to use Spark 1.3’s implementation of Parallel FP-growth to compute it. The authors describe how Spark’s implementation scales in comparison to Mahout. The post also describes MLlib’s Power Iteration Clustering.</p>
+
+<ul>
+  <li><a href="https://databricks.com/blog/2015/04/17/new-mllib-algorithms-in-spark-1-3-fp-growth-and-power-iteration-clustering.html">https://databricks.com/blog/2015/04/17/new-mllib-algorithms-in-spark-1-3-fp-growth-and-power-iteration-clustering.html</a></li>
+</ul>
+
+<p><strong>Reference : <a href="http://hadoopweekly.com">Hadoop Weekly Publication</a></strong></p>
+</p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/sivan.consult@gmail.com" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a href="#">sivan.consult@gmail.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>+91-999-545-5746</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    Karyavattam<br />
+					
+					
+					    Trivandrum,
+					
+					
+					    Kerala 
+					
+					
+					    695581<br />
+					
+					
+					    India
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+				<li><a href="https://twitter.com/sivansasidharan" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+				
+				
+				
+				<li><a href="https:facebook.com/sivansasidharan" class="icon alt fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+				
+				
+				
+				
+				
+				
+				<li><a href="https://github.com/sivansasidharan/" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+				
+				
+				
+				<li><a href="https://www.linkedin.com/in/sivansasidharan/" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; TECHNOLOGY PRÉCIS!   by Sivan Sasidharan</li>
+				<li>Design: HTML5 UP</li>
+				<li>Powered by: Jekyll & GitHub</li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="http://localhost:4000/assets/js/jquery.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrolly.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrollex.min.js"></script>
+	<script src="http://localhost:4000/assets/js/skel.min.js"></script>
+	<script src="http://localhost:4000/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="http://localhost:4000/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="http://localhost:4000/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

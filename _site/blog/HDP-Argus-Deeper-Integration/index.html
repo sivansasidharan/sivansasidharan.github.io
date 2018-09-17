@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>TECHNOLOGY PRÉCIS!</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="http://localhost:4000//" class="logo"><strong>TECHNOLOGY PRÉCIS!</strong> <span>by Sivan Sasidharan</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+        
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000//">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/all_posts/">WriteUps</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/freferences/">References</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/generic/">Experience</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/landingnews/">News Feeds</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/zlanding/">Webinars</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="#" class="button special fit">Get Started</a></li>
+		<li><a href="#" class="button fit">Log In</a></li>
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<header class="major">
+			<h1>Argus Deeper Integration </h1>
+		</header>
+		
+		<p><h4 id="deeper-integration-hbase">Deeper Integration (HBase)</h4>
+
+<ul>
+  <li>Pre Champlain
+    <ul>
+      <li>Hbase Agents supports table, CF, Column level permissions</li>
+      <li>Local Permissions not integrated</li>
+    </ul>
+  </li>
+  <li>Post Champlain
+    <ul>
+      <li>Integrate local grant/revoke permissions</li>
+      <li>New Argus/XA co-processor, no changes in HBase</li>
+      <li>Hbase-site.xml</li>
+    </ul>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="o">&lt;</span><span class="nt">property</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nt">name</span><span class="o">&gt;</span><span class="nt">hbase</span><span class="nc">.coprocessor.master.classes</span><span class="o">&lt;/</span><span class="nt">name</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nt">value</span><span class="o">&gt;</span><span class="nt">com</span><span class="nc">.xasecure.authorization.hbase.XaSecureAuthorizationCoprocessor</span><span class="o">&lt;/</span><span class="nt">value</span><span class="o">&gt;</span>  <span class="o">&lt;</span><span class="nt">property</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nt">name</span><span class="o">&gt;</span><span class="nt">hbase</span><span class="nc">.coprocessor.region.classes</span><span class="o">&lt;/</span><span class="nt">name</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nt">value</span><span class="o">&gt;</span><span class="nt">com</span><span class="nc">.xasecure.authorization.hbase.XaSecureAuthorizationCoprocessor</span><span class="o">&lt;/</span><span class="nt">value</span><span class="o">&gt;</span></code></pre></figure>
+
+<hr />
+
+<h5 id="hbase-grant-revoke">HBase Grant Revoke</h5>
+
+<ul>
+  <li>Command Line Operations
+    <ul>
+      <li>Permission supported
+        <ul>
+          <li>Admin (A) / Create © / Write (W) / Read (R)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Can be performed at table, CF, column level</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">grant</span> <span class="o">&lt;</span><span class="nt">user</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nt">permissions</span><span class="o">&gt;[</span> <span class="o">&lt;</span><span class="nt">table</span><span class="o">&gt;[</span> <span class="o">&lt;</span><span class="nt">column</span> <span class="nt">family</span><span class="o">&gt;[</span> <span class="o">&lt;</span><span class="nt">column</span> <span class="nt">qualifier</span><span class="o">&gt;</span> <span class="o">]</span> <span class="o">]</span> <span class="o">]</span>    <span class="err">#</span> <span class="nt">grants</span> <span class="nt">permissions</span>
+<span class="nt">revoke</span> <span class="o">&lt;</span><span class="nt">user</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nt">permissions</span><span class="o">&gt;</span> <span class="o">[</span> <span class="o">&lt;</span><span class="nt">table</span><span class="o">&gt;</span> <span class="o">[</span> <span class="o">&lt;</span><span class="nt">column</span> <span class="nt">family</span><span class="o">&gt;</span> <span class="o">[</span> <span class="o">&lt;</span><span class="nt">column</span> <span class="nt">qualifier</span><span class="o">&gt;</span> <span class="o">]</span> <span class="o">]</span> <span class="o">]</span>   <span class="err">#</span> <span class="nt">revokes</span> <span class="nt">permissions</span></code></pre></figure>
+
+<h4 id="deeper-integration-hive">Deeper Integration (Hive)</h4>
+
+<ul>
+  <li>Pre Champlain
+    <ul>
+      <li>XA Secure/Argus uses multiple hooks in Hive</li>
+      <li>Not all information necessary to make authorization decision are available in Hive authorizer hooks</li>
+      <li>Local Grant/Revoke permission not integrated with Argus</li>
+      <li>Storage based authorization only looks at POSIX permissions</li>
+    </ul>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">hive</span><span class="nc">.security.authorization.manager</span><span class="o">=</span><span class="nt">com</span><span class="nc">.xasecure.authorization.hive.authorizer.XaSecureAuthorizer</span>
+<span class="nt">hive</span><span class="nc">.semantic.analyzer.hook</span><span class="o">=</span><span class="nt">com</span><span class="nc">.xasecure.authorization.hive.hooks.XaSecureSemanticAnalyzerHook</span>
+<span class="nt">hive</span><span class="nc">.exec.post.hooks</span><span class="o">=</span><span class="nt">com</span><span class="nc">.xasecure.authorization.hive.hooks.XaSecureHivePostExecuteRunHook</span></code></pre></figure>
+
+<ul>
+  <li>Champlain Integration
+    <ul>
+      <li>New plug-in model in Hive to support external authorizers
+        <ul>
+          <li>All information necessary to make authorization decision are provided to authorizer plug-in</li>
+        </ul>
+      </li>
+      <li>XASecure/Argus Hive agent registers a single hook with Hive for authorization</li>
+    </ul>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">hive</span><span class="nc">.security.authorization.manager</span><span class="o">=</span><span class="nt">com</span><span class="nc">.xasecure.authorization.hive.authorizer.XaSecureHiveAuthorizerFactory</span></code></pre></figure>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+ Integrate Grant/Revoke permissions
+    * New Hive Plugin enables Argus to handle Grant/Revoke permission
+    * Argus will store Grant/Revoke policy and enforce it, with auditing
+    * Option to disable Grant/Revoke
+    * Group/Roles mapped to Groups in Argus Admin
++ Storage Based Authorization
+    * In SBA, Hive used HDFS permissions for allowing operations
+    * HDFS Permission Check
+        - Hive uses RPC to communicate with HDFS and validate permission on HDFS folders
+        - If Argus is enabled, Hive will use permissions based on Argus policies in HDFS
+        - Argus can be used for Storage based and regular Hive authorization
+</code></pre></div></div>
+
+<h4 id="deeper-integration-hdfs">Deeper Integration (HDFS)</h4>
+
+<ul>
+  <li>Pluggable HDFS authorization is being added (HDFS-6826)</li>
+  <li>Argus will replace the JavaAgent based code injection with a custom authorization plugin</li>
+</ul>
+
+<blockquote>
+  <p>Still in Discussions</p>
+</blockquote>
+
+<hr />
+<p><strong>Reference www.hortonworks.com</strong></p>
+
+</p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/sivan.consult@gmail.com" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a href="#">sivan.consult@gmail.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>+91-999-545-5746</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    Karyavattam<br />
+					
+					
+					    Trivandrum,
+					
+					
+					    Kerala 
+					
+					
+					    695581<br />
+					
+					
+					    India
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+				<li><a href="https://twitter.com/sivansasidharan" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+				
+				
+				
+				<li><a href="https:facebook.com/sivansasidharan" class="icon alt fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+				
+				
+				
+				
+				
+				
+				<li><a href="https://github.com/sivansasidharan/" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+				
+				
+				
+				<li><a href="https://www.linkedin.com/in/sivansasidharan/" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; TECHNOLOGY PRÉCIS!   by Sivan Sasidharan</li>
+				<li>Design: HTML5 UP</li>
+				<li>Powered by: Jekyll & GitHub</li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="http://localhost:4000/assets/js/jquery.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrolly.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrollex.min.js"></script>
+	<script src="http://localhost:4000/assets/js/skel.min.js"></script>
+	<script src="http://localhost:4000/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="http://localhost:4000/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="http://localhost:4000/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>TECHNOLOGY PRÉCIS!</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="http://localhost:4000//" class="logo"><strong>TECHNOLOGY PRÉCIS!</strong> <span>by Sivan Sasidharan</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+        
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000//">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/all_posts/">WriteUps</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/freferences/">References</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/generic/">Experience</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/landingnews/">News Feeds</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/zlanding/">Webinars</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="#" class="button special fit">Get Started</a></li>
+		<li><a href="#" class="button fit">Log In</a></li>
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<header class="major">
+			<h1>Apache Hive Overview </h1>
+		</header>
+		
+		<p><p>Apache Hive is part of Data Access in the Hadoop ecosystem and can be installed when you install the Hortonworks Data Platform.
+Topics covered in this post :</p>
+
+<ul>
+  <li>Explain why Hive was developed</li>
+  <li>Assess whether Hive is suitable for online transaction processing or online analytical processing</li>
+  <li>List differences between Hive on MapReduce and Hive on Tez</li>
+  <li>Describe how Hive projects structure on unstructured data</li>
+  <li>List methods to submit Hive queries</li>
+  <li>Recognize a few basic Hive query language commands</li>
+</ul>
+
+<h2 id="the-problem">The Problem</h2>
+
+<p>Until recently, most enterprise data has been stored in relational databases</p>
+
+<ul>
+  <li>It has been analyzed using a structured query language (SQL)</li>
+  <li>The result is that many data analysts are familiar with SQL
+The problem is that Hadoop data is commonly analyzed by MapReduce programs</li>
+  <li>Many data analysts are not familiar with MapReduce</li>
+</ul>
+
+<h2 id="how-do-enterprises-bridge-this-knowledge-gap">How do enterprises bridge this knowledge gap?</h2>
+
+<p>Until recently most of the data maintained by an enterprise has been stored in a relational database and has been analyzed using a structured query language. As a result, most data analysts today are familiar with a structured query language.However, data in Hadoop is commonly analyzed using MapReduce. Many data analysts are not familiar with MapReduce and would require training to use it.This limits how quickly an enterprise can derive value from a Hadoop deployment.</p>
+
+<h2 id="the-solution">The Solution</h2>
+
+<p>Apache Hive bridges the knowledge gap by converting SQL-like commands to MapReduce jobs*</p>
+
+<ul>
+  <li>Hive is a data warehouse infrastructure built on top of Hadoop</li>
+  <li>It was designed to enable experienced database users to analyze data using familiar SQL-like statements</li>
+  <li>Hive includes a SQL-like language called Hive Query Language (HQL)</li>
+  <li>With HQL, enterprises can utilize existing skillsets to quickly derive value from a Hadoop deployment</li>
+</ul>
+
+<p><code class="highlighter-rouge">Conversion to Apache Tez jobs is an option - will cover in a later post</code></p>
+
+<p>Apache Hive bridges the knowledge gap by enabling data analysts to use familiar SQL-like commands that are automatically converted to MapReduce jobs and executed across the Hadoop cluster.Hive is a data warehouse infrastructure built on top of Hadoop. It was designed to enable users with database experience to analyze data using familiar SQL-like statements. Hive includes a SQL-like language called Hive Query Language, or HQL. Hive and HQL enable an enterprise to utilize existing skillsets to quickly derive value from a Hadoop deployment.To avoid any potential confusion, you should be aware of a recent change to Hive. Hive’s default behavior is to convert HQL statements to MapReduce jobs. However starting with version 0.13.0, Hive’s default behavior can be modified so that it converts HQL statements to Apache Tez jobs. Hive on Tez significantly improves the performance of Hive queries. For example, Hive on MapReduce is suitable for batch queries whereas Hive on Tez is suitable for batch or interactive queries.</p>
+
+<h2 id="oltp-or-olap">OLTP or OLAP?</h2>
+
+<ul>
+  <li>Hive is used for online analytical processing (OLAP) and not online transaction processing (OLTP)</li>
+  <li>Hive was designed for batch rather than interactive queries</li>
+  <li>Even the simplest Hive queries can take minutes to complete because of MapReduce - ( Although interactive queries are possible with Hive on Tez )</li>
+  <li>Hive offers no support for row-level inserts, updates, and deletes - (Work is being done to add these features)</li>
+</ul>
+
+<p>Hive is used for online analytical processing (OLAP) and not online transaction processing (OLTP). This is because Hive was originally designed to run batch jobs rather than performing interactive queries or random table updates. Currently Hive offers no support for row-level inserts, updates, and deletes which are commonly required for OLTP. When Hive is run over MapReduce even the simplest Hive queries can take minutes to complete.If you run Hive over Tez rather than MapReduce, Hive is still not designed for OLTP. While Tez increases interactive performance, Hive still has no supportfor row-level inserts, updates, and deletes. However, work is currently being done to add these features to Hive.</p>
+
+<h2 id="structuring-unstructured-data">Structuring Unstructured Data</h2>
+
+<ul>
+  <li>Hive is not a relational database although it might appear like one</li>
+  <li>Hadoop collects and stores heterogeneous data types</li>
+  <li>Hive has a mechanism to project structure onto this data</li>
+  <li>The Hive metastore database stores user-defined table schemas</li>
+  <li>HDFS stores the unstructured data</li>
+</ul>
+
+<p>Hive is not a relational database although, on the surface, it can appear like one.Hadoop was built to collect, store, and analyze massive amounts of data. As such, the Hadoop distributed file system, called HDFS, is a reservoir of data from multiple sources. The data is often a mix of unstructured, semi-structured, and structured data. Hive provides a mechanism to project structure onto HDFS data and then query it using HQL. However, there is a limit to what Hive can do. Sometimes it is necessary to use another tool, like Apache Pig, to pre-format the unstructured data before processing it using Hive.If you are familiar with databases, then you understand that unstructured data has no schema associated with it. If you are not familiar with database schemas, they define the columns of a database along with the type of data in each column. Data types include such things as a string, an integer, a floating point number, or a date.</p>
+
+<p>A Hive installation includes a metastore database. Several database types are supported by Hive including an embedded Derby database used for development or testing, or an external database like MySQL used for production deployments. To project structure on HDFS data, HQL includes statements to create a table with user-defined schema information. The table schema is stored in the metastore database.The user-defined schema is associated with the data stored in one or more HDFS files when you use HQL statements to load the files into a table. The format of the data on HDFS remains unchanged but it appears as structured data whenusing HQL commands to submit queries.</p>
+
+<h2 id="hive-includes-four-methods-to-submit-queries">Hive includes four methods to submit queries.</h2>
+
+<ul>
+  <li>The Hive CLI</li>
+  <li>Beeline CLI</li>
+  <li>Web UI</li>
+  <li>ODBC and JDBC drivers</li>
+</ul>
+
+<p>Hive includes many methods to submit queries. Queries submitted to either the HiveServer or newer HiveServer2 result in a MapReduce or Tez job being submitted to YARN. YARN, the Hadoop resource scheduler, works in concert with HDFS to run the job in parallel across the machines in the cluster.The Hive CLI is used to interactively or non-interactively submit HQL commands to the HiveServer.The illustration shows the Hive CLI being used interactively. Users enter HQL commands at the hive&gt; prompt. HQL commands can also be placed into a file and run using hive –f file_name.</p>
+
+<p>The remaining three methods all submit HQL queries to the newer HiveServer2.
+The Beeline CLI is a new JDBC client that connects to a local or remote HiveServer2. When connecting locally, beeline works just like the Hive CLI. Beeline can connect to a remote HiveServer2 usinga variety of methods that include TCP and HTTP. For example, HTTP access is useful for submitting queries to a firewall protected cluster, assuming the firewall will allow HTTP traffic.The Web UI, called the Hive Web Interface or HWI, enables you to submit Hive queries remotely using HTTP. Again, this is useful for submitting queries to a firewall protected cluster. The difference between using the Web UI or beeline is that no Hive client software has to be installed to use the Web UI.ODBC and JDBC drivers enable you to connect to popular business intelligence tools to query, analyze,and visualize Hive data.</p>
+
+<p>While not illustrated above, you may also use the Hadoop User Experience, called HUE, to enter Hive queries. HUE is a graphical interface that enables you to interactively enter Hive queries, similar to what you would do from the Hive shell. Like most graphical tools, it provides many features to make Hive analysis easier. For example, you can write and test a series of Hive queries and then easily save them to a script for future use. You can use a single interface to execute queries and view the results and execution logs.</p>
+
+<h4 id="example-hql-commands">Example HQL Commands</h4>
+
+<blockquote>
+  <p>Create a table:
+CREATE TABLE stockinfo (symbol STRING, price FLOAT, change FLOAT) ROW FORMAT DELIMITED FIELDS TERMINATED BY ‘,’;</p>
+</blockquote>
+
+<blockquote>
+  <p>Load data from file in HDFS:
+LOAD DATA INPATH ‘/user/me/stockdata.csv’ OVERWRITE INTO TABLE stockinfo;</p>
+</blockquote>
+
+<blockquote>
+  <p>View everything in the table:
+SELECT * from stockinfo;</p>
+</blockquote>
+
+<p>A few common HQL commands are illustrated here.</p>
+
+<p>The first command creates a table named stockinfo. The table is created with three columns named symbol, price, and change. Any data in the first column will be treated as a string of characters. Any data in the second and third columns will be treated as a floating point number. The ROW FORMAT clause tells Hive to expect each row of data to be delimited by commas.</p>
+
+<p>The second command loads the data in the HDFS file named /user/me/stockdata.csv into a table named stockinfo. If any data has been previously loaded into the table it will overwritten. Loading datainto a table only associates the data with the table. The data is not altered in any way.The final command displays the entire contents of the stockinfo table. Such a command could take a long timeto complete if there is a large amount of data.(HQL syntax rules require every command end with a semi-colon)</p>
+
+<h2 id="hive-demonstration">Hive Demonstration</h2>
+<p>The demonstration is based on one of the Hortonworks Sandbox tutorials.
+The Sandbox is a downloadable virtual machine preinstalled and preconfigured with a Hadoop cluster.
+It runs all master, slave, and client components on the same machine. 
+The Sandbox machine and tutorials are found at <a href="http://hortonworks.com/products/hortonworks-sandbox/">Hortonworks</a> website.</p>
+</p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/sivan.consult@gmail.com" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a href="#">sivan.consult@gmail.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>+91-999-545-5746</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    Karyavattam<br />
+					
+					
+					    Trivandrum,
+					
+					
+					    Kerala 
+					
+					
+					    695581<br />
+					
+					
+					    India
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+				<li><a href="https://twitter.com/sivansasidharan" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+				
+				
+				
+				<li><a href="https:facebook.com/sivansasidharan" class="icon alt fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+				
+				
+				
+				
+				
+				
+				<li><a href="https://github.com/sivansasidharan/" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+				
+				
+				
+				<li><a href="https://www.linkedin.com/in/sivansasidharan/" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; TECHNOLOGY PRÉCIS!   by Sivan Sasidharan</li>
+				<li>Design: HTML5 UP</li>
+				<li>Powered by: Jekyll & GitHub</li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="http://localhost:4000/assets/js/jquery.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrolly.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrollex.min.js"></script>
+	<script src="http://localhost:4000/assets/js/skel.min.js"></script>
+	<script src="http://localhost:4000/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="http://localhost:4000/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="http://localhost:4000/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

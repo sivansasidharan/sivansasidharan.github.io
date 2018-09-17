@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>TECHNOLOGY PRÉCIS!</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="http://localhost:4000//" class="logo"><strong>TECHNOLOGY PRÉCIS!</strong> <span>by Sivan Sasidharan</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+        
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000//">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/all_posts/">WriteUps</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/freferences/">References</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/generic/">Experience</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/landingnews/">News Feeds</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/zlanding/">Webinars</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="#" class="button special fit">Get Started</a></li>
+		<li><a href="#" class="button fit">Log In</a></li>
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<header class="major">
+			<h1>Hadoop Technical Updates / 27-09-2015</h1>
+		</header>
+		
+		<p><h3 id="technical-updates">Technical Updates</h3>
+
+<p>If you like reading about distributed systems or are interested in learning more about the CAP theorem, then Martin Kleppmann’s “A Critique of the CAP Theorem” is for you. It discusses the theorem and many of the common confusions in terminology. It then proposes an alternative to the CAP theorem, which is aimed at helping practitioners reason about common trade-offs.</p>
+
+<ul>
+  <li><a href="http://arxiv.org/abs/1509.05393">http://arxiv.org/abs/1509.05393</a></li>
+</ul>
+
+<p>The Apache blog describes building an Apache NiFi flow that ingests tweets from the Twitter API, does some light-weight processing, and stores the resulting tweets into Solr. It demonstrates some of NiFi’s built-in tools, such as json evaluation and batching.</p>
+
+<ul>
+  <li><a href="https://blogs.apache.org/nifi/entry/indexing_tweets_with_nifi_and">https://blogs.apache.org/nifi/entry/indexing_tweets_with_nifi_and</a></li>
+</ul>
+
+<p>The Databricks blog has a post that gives an overview of Spark’s implementation of Latent Dirichlet Allocation (LDA). Spark implements an online variant of the algorithm, which improves performance and scalability. The post links to example code on github and provides a number of tips for using LDA.</p>
+
+<ul>
+  <li><a href="https://databricks.com/blog/2015/09/22/large-scale-topic-modeling-improvements-to-lda-on-spark.html">https://databricks.com/blog/2015/09/22/large-scale-topic-modeling-improvements-to-lda-on-spark.html</a></li>
+</ul>
+
+<p>Spark Testing Base is a library for testing Spark code in Scala and Java. This post gives an overview of the functionality, which includes the ability to test non-trivial jobs (such a Spark streaming).</p>
+
+<ul>
+  <li><a href="http://blog.cloudera.com/blog/2015/09/making-apache-spark-testing-easy-with-spark-testing-base/">http://blog.cloudera.com/blog/2015/09/making-apache-spark-testing-easy-with-spark-testing-base/</a></li>
+</ul>
+
+<p>This post articulates several reasons why it’s a good idea to invest in operating a centralized schema registry for a data platform. Reasons include enforcing safe schema evolution, storage efficiency, data discovery, and data policy enforcement. The post also describes why it’s critical for stream processing.</p>
+
+<ul>
+  <li><a href="http://www.confluent.io/blog/schema-registry-kafka-stream-processing-yes-virginia-you-really-need-one">http://www.confluent.io/blog/schema-registry-kafka-stream-processing-yes-virginia-you-really-need-one</a></li>
+</ul>
+
+<p>Erasure codings are a well-known mechanism of data protection that can incur less overhead than Hadoop’s three-way replication. Adding this to HDFS was proposed over five years ago, and engineers from Cloudera and Intel are working on it for the upcoming Hadoop 3.0 release. This blog post has an in-depth overview of the strategy and implementation, which takes advantage of hardware acceleration for encoding and decoding parity data.</p>
+
+<ul>
+  <li><a href="http://blog.cloudera.com/blog/2015/09/introduction-to-hdfs-erasure-coding-in-apache-hadoop/">http://blog.cloudera.com/blog/2015/09/introduction-to-hdfs-erasure-coding-in-apache-hadoop/</a></li>
+</ul>
+
+<p>Hue includes Livy, a REST interface for interacting with Spark. This post describes how to start Livy to run Spark jobs, and it gives examples of starting a Spark shell and entering commands via the REST api.</p>
+
+<ul>
+  <li><a href="http://gethue.com/how-to-use-the-livy-spark-rest-job-server-for-interactive-spark/">http://gethue.com/how-to-use-the-livy-spark-rest-job-server-for-interactive-spark/</a></li>
+</ul>
+
+<p>Unlike java or scala libraries, python libraries often aren’t portable across machines. This can cause problems for a distributed computation with PySpark, but there are a few strategies to distribute the necessary libraries. This post describes them (e.g. shipping a py file, py egg, setting up a virtualenv on each node) and when each is most appropriate.</p>
+
+<ul>
+  <li><a href="http://blog.cloudera.com/blog/2015/09/how-to-prepare-your-apache-hadoop-cluster-for-pyspark-jobs/">http://blog.cloudera.com/blog/2015/09/how-to-prepare-your-apache-hadoop-cluster-for-pyspark-jobs/</a></li>
+</ul>
+
+<p>This post describes Coursera’s data infrastructure, which ties together Cassandra, Scalding, Amazon Redshift, and more. They use Dataduct, which is a python framework for the AWS Data Pipeline to manage workflows.</p>
+
+<ul>
+  <li><a href="http://blogs.aws.amazon.com/bigdata/post/Tx2Q3JGH427TL8Z/How-Coursera-Manages-Large-Scale-ETL-using-AWS-Data-Pipeline-and-Dataduct">http://blogs.aws.amazon.com/bigdata/post/Tx2Q3JGH427TL8Z/How-Coursera-Manages-Large-Scale-ETL-using-AWS-Data-Pipeline-and-Dataduct</a></li>
+</ul>
+
+<p><strong>Reference : <a href="http://hadoopweekly.com">Hadoop Weekly Publication</a></strong></p>
+</p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/sivan.consult@gmail.com" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a href="#">sivan.consult@gmail.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>+91-999-545-5746</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    Karyavattam<br />
+					
+					
+					    Trivandrum,
+					
+					
+					    Kerala 
+					
+					
+					    695581<br />
+					
+					
+					    India
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+				<li><a href="https://twitter.com/sivansasidharan" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+				
+				
+				
+				<li><a href="https:facebook.com/sivansasidharan" class="icon alt fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+				
+				
+				
+				
+				
+				
+				<li><a href="https://github.com/sivansasidharan/" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+				
+				
+				
+				<li><a href="https://www.linkedin.com/in/sivansasidharan/" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; TECHNOLOGY PRÉCIS!   by Sivan Sasidharan</li>
+				<li>Design: HTML5 UP</li>
+				<li>Powered by: Jekyll & GitHub</li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="http://localhost:4000/assets/js/jquery.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrolly.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrollex.min.js"></script>
+	<script src="http://localhost:4000/assets/js/skel.min.js"></script>
+	<script src="http://localhost:4000/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="http://localhost:4000/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="http://localhost:4000/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

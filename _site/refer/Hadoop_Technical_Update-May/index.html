@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>TECHNOLOGY PRÉCIS!</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="http://localhost:4000//" class="logo"><strong>TECHNOLOGY PRÉCIS!</strong> <span>by Sivan Sasidharan</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+        
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000//">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/all_posts/">WriteUps</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/freferences/">References</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/generic/">Experience</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/landingnews/">News Feeds</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/zlanding/">Webinars</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="#" class="button special fit">Get Started</a></li>
+		<li><a href="#" class="button fit">Log In</a></li>
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<header class="major">
+			<h1>Hadoop Technical Updates / 28-05-2015</h1>
+		</header>
+		
+		<p><h3 id="technical-updates">Technical Updates</h3>
+
+<p>The Parse.ly blog has a post describing several hard-fought lessons-learned when deploying Cassandra for timeseries data at scale. These include understanding CQL, COMPACT STORAGE, Cassandra Counters, row sizes, and more. The end of the post has some pointers to documentation of Cassandra best practices, which is aimed at anyone just getting started.</p>
+
+<ul>
+  <li><a href="http://blog.parsely.com/post/1928/cass/">http://blog.parsely.com/post/1928/cass/</a></li>
+</ul>
+
+<p>Testing a distributed system is difficult, and it’s a problem that hasn’t gotten a lot of attention. This post looks at some of the work that’s been done, defines what it means for a distributed system to “work,” describes tools for testing distributed systems, and details the types of tests that are part of the Apache Slider framework (among which is the Slider Integral Chaos Monkey).</p>
+
+<ul>
+  <li><a href="http://steveloughran.blogspot.co.uk/2015/05/distributed-system-testing-where-now.html">http://steveloughran.blogspot.co.uk/2015/05/distributed-system-testing-where-now.html</a></li>
+</ul>
+
+<p>This presentation from Strata &amp; Hadoop World in London describes the architecture of Apache Flink. Topics covered include the Flink engine, data streaming analysis, Flink streaming (APIs, windowing, checkpointing), Flink for batch processing, memory management, and Flink’s ML and Graph libraries.</p>
+
+<ul>
+  <li><a href="http://www.slideshare.net/stephanewen1/apache-flink-strata-hadoop-world-london">http://www.slideshare.net/stephanewen1/apache-flink-strata-hadoop-world-london</a></li>
+</ul>
+
+<p>The Dynamic Yield engineering blog has a post on Apache HBase, which enumerates four best practices. These are: ensuring good key-distribution, generating HBase-friendly ids, working with HBase snapshots, and when to use (or not use) HBase for real-time analytics.</p>
+
+<ul>
+  <li><a href="https://www.dynamicyield.com/2015/05/apache-hbase-for-the-win-2/">https://www.dynamicyield.com/2015/05/apache-hbase-for-the-win-2/</a></li>
+</ul>
+
+<p>This post, the first in a series, looks at the advantages of using schemas for data (vs CSV, JSON, XML, etc). It also describes why a serialization format, such as JSON, isn’t enough by itself.</p>
+
+<ul>
+  <li><a href="http://blog.confluent.io/2015/05/19/how-i-learned-to-stop-worrying-and-love-the-schema-part-1/">http://blog.confluent.io/2015/05/19/how-i-learned-to-stop-worrying-and-love-the-schema-part-1/</a></li>
+</ul>
+
+<p>With traditional linux packaging, only a single version of a package is installed at a time. But when doing rolling upgrades, it’s best to have multiple version installed in order to minimize downtime. The Hortonworks blog describes how HDP 2.2 installs multiple versions simultaneously by using RPMs and Debs which include the version number. HDP also includes a tool to update symlinks to activate a specific version.</p>
+
+<ul>
+  <li><a href="http://hortonworks.com/blog/standards-based-packaging-to-support-rolling-upgrades-in-hdp/">http://hortonworks.com/blog/standards-based-packaging-to-support-rolling-upgrades-in-hdp/</a></li>
+</ul>
+
+<p>The Altiscale blog has kicked off a blog series containing tips for running Spark on Hadoop with an overview of the three common ways to invoke Spark. These are local mode (single JVM), YARN cluster (spark-submit), and YARN client (distributed spark-shell). The post describes when each mode is most appropriate.</p>
+
+<ul>
+  <li><a href="https://www.altiscale.com/hadoop-blog/spark-on-hadoop/">https://www.altiscale.com/hadoop-blog/spark-on-hadoop/</a></li>
+</ul>
+
+<p>This post looks at using Sqoop to import and export data from MySQL to Hive. It includes examples and describes several caveats related to metadata (e.g. an export can only work on files in HDFS not on a Hive table as described in the Hive metastore).</p>
+
+<ul>
+  <li><a href="http://ingest.tips/2015/05/20/a-roundtrip-from-mysql-to-hive/">http://ingest.tips/2015/05/20/a-roundtrip-from-mysql-to-hive/</a></li>
+</ul>
+
+<p>The Hortonworks blog has a guest post about benchmarking Hive 0.11, 0.13, 0.14 against two vendors. There are a number of interesting things about this post: seeing the speedup on a real-world use-case from Hive 0.11 to 0.13 to 0.14, Hive hold its weight against multiple vendors, and how the author collects metrics to evaluate query performance and bottlenecks.</p>
+
+<ul>
+  <li><a href="http://hortonworks.com/blog/evaluating-hive-with-tez-as-a-fast-query-engine/">http://hortonworks.com/blog/evaluating-hive-with-tez-as-a-fast-query-engine/</a></li>
+</ul>
+
+<p>The Financial Information eXchange (FIX) is a delimited, key-value pair format. This post describes how to query data in the format using Hive and Impala. There are several tricks and advanced Hive features demonstrated in the post, such as defining a table with various “TERMINATED BY” declarations and building a view.</p>
+
+<ul>
+  <li><a href="http://blog.cloudera.com/blog/2015/05/how-to-read-fix-messages-using-apache-hive-and-impala/">http://blog.cloudera.com/blog/2015/05/how-to-read-fix-messages-using-apache-hive-and-impala/</a></li>
+</ul>
+
+<p>The Hortonworks blog has a post describing how YARN uses Linux cgroups to ensure CPU isolation when vcore resource allocation is enabled. The post describes how (at a high-level) cgroups work, the basic configuration, advanced configuration (e.g. hard vs. soft limits), and provides some examples of the cgroup hierarchy.</p>
+
+<ul>
+  <li><a href="http://hortonworks.com/blog/apache-hadoop-yarn-in-hdp-2-2-isolation-of-cpu-resources-in-your-hadoop-yarn-clusters/">http://hortonworks.com/blog/apache-hadoop-yarn-in-hdp-2-2-isolation-of-cpu-resources-in-your-hadoop-yarn-clusters/</a></li>
+</ul>
+
+<p>This presentation from the recent Gluecon describes the data platform at FullContact. The platform has moved from a batch-only system to also have a real-time component powered by Apache Kafka and Apache Crunch. Given that they already had implementations of their algorithms in Crunch, they are using Crunch’s in-memory runner to process data in micro-batch directly from Kafka.</p>
+
+<ul>
+  <li><a href="https://speakerdeck.com/xorlev/using-kafka-and-crunch-for-realtime-processing">https://speakerdeck.com/xorlev/using-kafka-and-crunch-for-realtime-processing</a></li>
+</ul>
+
+<p><strong>Reference : <a href="http://hadoopweekly.com">Hadoop Weekly Publication</a></strong></p>
+</p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/sivan.consult@gmail.com" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a href="#">sivan.consult@gmail.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>+91-999-545-5746</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    Karyavattam<br />
+					
+					
+					    Trivandrum,
+					
+					
+					    Kerala 
+					
+					
+					    695581<br />
+					
+					
+					    India
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+				<li><a href="https://twitter.com/sivansasidharan" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+				
+				
+				
+				<li><a href="https:facebook.com/sivansasidharan" class="icon alt fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+				
+				
+				
+				
+				
+				
+				<li><a href="https://github.com/sivansasidharan/" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+				
+				
+				
+				<li><a href="https://www.linkedin.com/in/sivansasidharan/" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; TECHNOLOGY PRÉCIS!   by Sivan Sasidharan</li>
+				<li>Design: HTML5 UP</li>
+				<li>Powered by: Jekyll & GitHub</li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="http://localhost:4000/assets/js/jquery.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrolly.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrollex.min.js"></script>
+	<script src="http://localhost:4000/assets/js/skel.min.js"></script>
+	<script src="http://localhost:4000/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="http://localhost:4000/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="http://localhost:4000/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

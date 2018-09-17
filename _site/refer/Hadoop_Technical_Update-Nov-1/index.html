@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>TECHNOLOGY PRÉCIS!</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="http://localhost:4000//" class="logo"><strong>TECHNOLOGY PRÉCIS!</strong> <span>by Sivan Sasidharan</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+        
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000//">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/all_posts/">WriteUps</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/freferences/">References</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/generic/">Experience</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/landingnews/">News Feeds</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/zlanding/">Webinars</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="#" class="button special fit">Get Started</a></li>
+		<li><a href="#" class="button fit">Log In</a></li>
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<header class="major">
+			<h1>Hadoop Technical Updates / 09-11-2015</h1>
+		</header>
+		
+		<p><h3 id="technical-updates">Technical Updates</h3>
+
+<p>The DataTorrent blog has a tutorial for writing an Apache Apex application in Scala. The tutorial shows how to setup a Maven project, write a LineReader, Parser, and Application, and run the application with <code class="highlighter-rouge">dtcli</code>.</p>
+
+<ul>
+  <li><a href="https://www.datatorrent.com/blog-writing-apache-apex-application-in-scala/">https://www.datatorrent.com/blog-writing-apache-apex-application-in-scala/</a></li>
+</ul>
+
+<p>The Confluent blog has a post describing how Kafka implements “request purgatory”—tracking  requests that haven’t yet succeeded or encountered an error. The original implementation uses Java’s DelayQueue, which shares performance characteristics with a priority queue. The new design uses Hierarchical Timing Wheels, which offer faster, tunable performance characters. The post describes the implementation in detail and gives an overview of performance benchmarks comparing the old and the new.</p>
+
+<ul>
+  <li><a href="http://www.confluent.io/blog/apache-kafka-purgatory-hierarchical-timing-wheels">http://www.confluent.io/blog/apache-kafka-purgatory-hierarchical-timing-wheels</a></li>
+</ul>
+
+<p>Hortonworks has a post describing the components and features of Spark that they’ve worked on in the past year, and where they’re concentrating effort for the future. Past work includes ORC support, an Ambari stack definition for Spark, machine learning library improvements, and documentation updates. Future work includes maturing Apache Zeppelin, an entity disambiguation library, a new Spark + HBase integration, the ability to persist RDDs to HDFS’s memory tier, and making Spark streaming more robust.</p>
+
+<ul>
+  <li><a href="http://hortonworks.com/blog/spark-hdp-perfect-together/">http://hortonworks.com/blog/spark-hdp-perfect-together/</a></li>
+</ul>
+
+<p>The recently released Apache Phoenix 4.6 includes support for declaring <code class="highlighter-rouge">ROW_TIMESTAMP</code> as part of a table’s primary key. BY doing so, the value is stored using HBase’s native row timestamp, which provides performance gains. Particularly, when scanning regions with HFiles that haven’t been compacted, the <code class="highlighter-rouge">ROW_TIMESTAMP</code> information can be used to skip entire files. This is particularly handy when reading recently-written data. The introductory blog post describes the optimization in more details and shows example query response times with this feature enabled and not.</p>
+
+<ul>
+  <li><a href="https://blogs.apache.org/phoenix/entry/new_optimization_for_time_series">https://blogs.apache.org/phoenix/entry/new_optimization_for_time_series</a></li>
+</ul>
+
+<p>Kudu, the new storage engine from Cloudera, integrates with Impala for SQL access. This post describes how to setup Impala with Kudu (this currently requires a custom build of Impala), how to tell Impala about data stored in Kudu, how to perform various SQL operations (both read and write/update queries), and more.</p>
+
+<ul>
+  <li><a href="http://blog.cloudera.com/blog/2015/11/how-to-use-impala-with-kudu/">http://blog.cloudera.com/blog/2015/11/how-to-use-impala-with-kudu/</a></li>
+</ul>
+
+<p>This post describes the types of RDD persistence available in Spark. The default is memory-only, which is performant but can lead to OutOfMemoryError’s. The post has a brief overview of the performance characteristics and trade-offs of several other options.</p>
+
+<p><a href="https://www.altiscale.com/blog/tips-and-tricks-for-running-spark-on-hadoop-part-3-rdd-persistence/">https://www.altiscale.com/blog/tips-and-tricks-for-running-spark-on-hadoop-part-3-rdd-persistence/</a></p>
+
+<p>This tutorial describes how to use Apache Ambari to install and configure the Tachyon FileSystem, which is a memory-centric distributed storage system. The post also has a brief example of using TachyonFS from Spark.</p>
+
+<ul>
+  <li><a href="https://developer.ibm.com/hadoop/blog/2015/11/04/installing-tachyon-0-8-0-on-iop-4-1-4-2/">https://developer.ibm.com/hadoop/blog/2015/11/04/installing-tachyon-0-8-0-on-iop-4-1-4-2/</a></li>
+</ul>
+
+<p>Depending on data sizes and distributions, an inner join in MapReduce can be performed efficiently in a few different ways. This post describes, in a high-level, several of the strategies for implementing an inner-join with MapReduce. For each (e.g. reduce-side, map-side), the post describes some of the relevant Hadoop APIs.</p>
+
+<ul>
+  <li><a href="https://haifengl.wordpress.com/2015/11/04/inner-join-with-mapreduce/">https://haifengl.wordpress.com/2015/11/04/inner-join-with-mapreduce/</a></li>
+</ul>
+
+<p>Myriad is a system for running YARN atop of a Mesos cluster. This post looks at how to use Docker’s overlay network plugin to isolate YARN clusters (with the ResourceManager and NodeManager running inside of Docker). All clusters share a common distributed file system, which can be accessed via another network bridge. The post has many more details about and code (including Dockerfiles and scripts) for implementing the solution.</p>
+
+<ul>
+  <li><a href="https://www.mapr.com/blog/docker-global-hack-day-on-demand-yarn-clusters">https://www.mapr.com/blog/docker-global-hack-day-on-demand-yarn-clusters</a></li>
+</ul>
+
+<p><strong>Reference : <a href="http://hadoopweekly.com">Hadoop Weekly Publication</a></strong></p>
+</p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/sivan.consult@gmail.com" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a href="#">sivan.consult@gmail.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>+91-999-545-5746</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    Karyavattam<br />
+					
+					
+					    Trivandrum,
+					
+					
+					    Kerala 
+					
+					
+					    695581<br />
+					
+					
+					    India
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+				<li><a href="https://twitter.com/sivansasidharan" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+				
+				
+				
+				<li><a href="https:facebook.com/sivansasidharan" class="icon alt fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+				
+				
+				
+				
+				
+				
+				<li><a href="https://github.com/sivansasidharan/" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+				
+				
+				
+				<li><a href="https://www.linkedin.com/in/sivansasidharan/" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; TECHNOLOGY PRÉCIS!   by Sivan Sasidharan</li>
+				<li>Design: HTML5 UP</li>
+				<li>Powered by: Jekyll & GitHub</li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="http://localhost:4000/assets/js/jquery.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrolly.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrollex.min.js"></script>
+	<script src="http://localhost:4000/assets/js/skel.min.js"></script>
+	<script src="http://localhost:4000/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="http://localhost:4000/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="http://localhost:4000/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

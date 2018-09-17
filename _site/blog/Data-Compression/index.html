@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>TECHNOLOGY PRÉCIS!</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="http://localhost:4000//" class="logo"><strong>TECHNOLOGY PRÉCIS!</strong> <span>by Sivan Sasidharan</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+        
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000//">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/all_posts/">WriteUps</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/freferences/">References</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/generic/">Experience</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/landingnews/">News Feeds</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/zlanding/">Webinars</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="#" class="button special fit">Get Started</a></li>
+		<li><a href="#" class="button fit">Log In</a></li>
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<header class="major">
+			<h1>Data Compression in Hadoop</h1>
+		</header>
+		
+		<p><p>Hadoop users are encouraged to keep all data in order to prepare for future use cases and as-yet-unknown data integration points. This concept is part of what makes Hadoop and HDFS so appealing, so it is important to make sure that the data is being stored in a way that prolongs that behavior.One important factor in improving manageability is data compression.In many cluster environments, compression is disabled by default, putting the burden on the user.
+We need to decide and know on how to take advantage of compression techniques and the advantages and disadvantages of specific compression codec options with respect to Hadoop.</p>
+
+<h2 id="to-compress-or-not-to-compress">To compress or not to compress</h2>
+
+<p>Whenever data is converted to something other than its raw data format, there is some overhead involved in completing the conversion process. It is important to take this overhead into account with respect to the benefits of reducing the data footprint.</p>
+
+<p>One obvious benefit is that compressed data will reduce the amount of disk space that is required for storage of a particular dataset. In the big data environment, this benefit is especially significant</p>
+
+<ul>
+  <li>the Hadoop cluster will be able to keep data for a larger time range</li>
+  <li>storing data for the same time range will require fewer nodes</li>
+  <li>the disk usage ratios will remain lower for longer</li>
+  <li>the smaller file sizes will mean lower data transfer times;either internally for MapReduce jobs or when performing exports of data results</li>
+</ul>
+
+<p>The cost of these benefits, however, is that</p>
+
+<ul>
+  <li>the data must be decompressed at every point where the data needs to be read, and compressed before being inserted into HDFS.</li>
+</ul>
+
+<p>With respect to MapReduce jobs, this processing overhead at both the map phase and the reduce phase will increase the CPU processing time.</p>
+
+<p>How to ensure that the advantages of compression outweigh the disadvantages.</p>
+
+<h2 id="choosing-the-right-codec-for-each-phase">Choosing the right codec for each phase</h2>
+
+<p>Hadoop provides the user with some flexibility on which compression codec is used at each step of the data transformation process.Certain codecs are optimal for some stages, and non-optimal for others.</p>
+
+<ul>
+  <li>zlib</li>
+</ul>
+
+<p>The major benefit of using this codec is that it is the easiest way to get the benefits of data compression from a cluster and on the job configuration standpoint—the zlib codec is the default compression option. From the data transformation perspective, this codec will decrease the data footprint on disk, but will not provide much of a benefit in terms of job performance.</p>
+
+<ul>
+  <li>gzip</li>
+</ul>
+
+<p>The gzip codec available in Hadoop is the same one that is used outside of the Hadoop ecosystem. It is a common practice to use this as the codec for compressing the final output from a job, simply for the benefit of being able to share the compressed result with others (possibly outside of Hadoop) using a standard file format.</p>
+
+<ul>
+  <li>bzip2</li>
+</ul>
+
+<p>There are two important benefits for the bzip2 codec.</p>
+<blockquote>
+  <p>First, if reducing the data footprint is a high priority, this algorithm will compress the data more than the default zlib option.</p>
+</blockquote>
+
+<blockquote>
+  <p>Second, this is the only supported codec that produces “splittable” compressed data.</p>
+</blockquote>
+
+<p>A major characteristic of Hadoop is the idea of splitting the data so that they can be handled on each node independently. With the other compression codecs, there is an initial requirement to gather all parts of the compressed file in order to have all information necessary to decompress the data. With this format, the data can be decompressed in parallel. This splittable quality makes this format ideal for compressing data that will be used as input to a map function, either in a single step or as part of a series of chained jobs.</p>
+
+<ul>
+  <li>LZO, LZ4, Snappy</li>
+</ul>
+
+<p>These three codecs are ideal for compressing intermediate data, the data output from the mappers that will be immediately read in by the reducers. All three codecs heavily favor compression speed over file size ratio, but the detailed specifications for each algorithm should be examined based on the specific licensing, cluster, and job requirements.</p>
+
+<h2 id="enabling-compression">Enabling compression</h2>
+
+<p>Once the appropriate compression codec for any given transformation phase has been selected, there are a few configuration properties that need to be adjusted in order to have the changes take effect in the cluster.</p>
+
+<ul>
+  <li>Intermediate data to reducer</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">mapreduce</span><span class="nc">.map.output.compress</span> <span class="o">=</span> <span class="nt">true</span>
+<span class="o">(</span><span class="nt">Optional</span><span class="o">)</span> <span class="nt">mapreduce</span><span class="nc">.map.output.compress.codec</span> <span class="o">=</span> <span class="nt">org</span><span class="nc">.apache.hadoop.io.compress.SnappyCodec</span></code></pre></figure>
+
+<ul>
+  <li>Final output from a job</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">mapreduce</span><span class="nc">.output.fileoutputformat.compress</span> <span class="o">=</span> <span class="nt">true</span>
+<span class="o">(</span><span class="nt">Optional</span><span class="o">)</span> <span class="nt">mapreduce</span><span class="nc">.output.fileoutputformat.compress.codec</span> <span class="o">=</span> <span class="nt">org</span><span class="nc">.apache.hadoop.io.compress.BZip2Codec</span></code></pre></figure>
+
+<ul>
+  <li>Within Hive &amp; Pig</li>
+</ul>
+
+<p>These compression codecs are also available within some of the ecosystem tools like Hive and Pig. In most cases, the tools will default to the Hadoop-configured values for particular codecs, but the tools also provide the option to compress the data generated between steps.</p>
+
+<ul>
+  <li>Pig</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">pig</span><span class="nc">.tmpfilecompression</span> <span class="o">=</span> <span class="nt">true</span>
+<span class="o">(</span><span class="nt">Optional</span><span class="o">)</span> <span class="nt">pig</span><span class="nc">.tmpfilecompression.codec</span> <span class="o">=</span> <span class="nt">snappy</span></code></pre></figure>
+
+<ul>
+  <li>Hive</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">hive</span><span class="nc">.exec.compress.intermediate</span> <span class="o">=</span> <span class="nt">true</span>
+<span class="nt">hive</span><span class="nc">.exec.compress.output</span> <span class="o">=</span> <span class="nt">true</span></code></pre></figure>
+</p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/sivan.consult@gmail.com" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a href="#">sivan.consult@gmail.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>+91-999-545-5746</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    Karyavattam<br />
+					
+					
+					    Trivandrum,
+					
+					
+					    Kerala 
+					
+					
+					    695581<br />
+					
+					
+					    India
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+				<li><a href="https://twitter.com/sivansasidharan" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+				
+				
+				
+				<li><a href="https:facebook.com/sivansasidharan" class="icon alt fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+				
+				
+				
+				
+				
+				
+				<li><a href="https://github.com/sivansasidharan/" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+				
+				
+				
+				<li><a href="https://www.linkedin.com/in/sivansasidharan/" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; TECHNOLOGY PRÉCIS!   by Sivan Sasidharan</li>
+				<li>Design: HTML5 UP</li>
+				<li>Powered by: Jekyll & GitHub</li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="http://localhost:4000/assets/js/jquery.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrolly.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrollex.min.js"></script>
+	<script src="http://localhost:4000/assets/js/skel.min.js"></script>
+	<script src="http://localhost:4000/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="http://localhost:4000/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="http://localhost:4000/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

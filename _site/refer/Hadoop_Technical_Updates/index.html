@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>TECHNOLOGY PRÉCIS!</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="http://localhost:4000//" class="logo"><strong>TECHNOLOGY PRÉCIS!</strong> <span>by Sivan Sasidharan</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+        
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000//">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/all_posts/">WriteUps</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/freferences/">References</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/generic/">Experience</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/landingnews/">News Feeds</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/zlanding/">Webinars</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="#" class="button special fit">Get Started</a></li>
+		<li><a href="#" class="button fit">Log In</a></li>
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<header class="major">
+			<h1>Hadoop Technical Updates / 17-11-2014</h1>
+		</header>
+		
+		<p><h3 id="technical-updates">Technical Updates</h3>
+
+<p>The Cloudera blog has a guest post from Cerner about integrating Apache Kafka with HBase and Storm for real-time processing. The post describes how adopting Kafka helped reduce load on HBase (which was previously used for queuing) and improve performance. This style of Kafka-based architecture seems to be more and more common, but it’s always interesting to hear how folks are putting together the pieces of the Hadoop ecosystem.</p>
+
+<ul>
+  <li><a href="http://blog.cloudera.com/blog/2014/11/how-cerner-uses-cdh-with-apache-kafka/">http://blog.cloudera.com/blog/2014/11/how-cerner-uses-cdh-with-apache-kafka/</a></li>
+</ul>
+
+<p>The MapR blog has a post on using the recently-released Apache Drill 0.6.0-incubating to analyze Yelp’s public data set. The data, which is a JSON file, can be queried directly via SQL in Drill without first declaring the data’s schema (drill auto-detects it). The post has a number of sample queries which you can use to get started analyzing this or any other data set.</p>
+
+<ul>
+  <li><a href="https://www.mapr.com/blog/how-turn-raw-data-yelp-insights-minutes-apache-drill">https://www.mapr.com/blog/how-turn-raw-data-yelp-insights-minutes-apache-drill</a></li>
+</ul>
+
+<p>The Cloudera blog has a second guest post, this time from Dell, on the new Oracle direct-mode in Sqoop 1.4.5. The post describes several of the implemented optimizations in the Oracle direct mode and includes an analysis of performance improvements the connector provides.</p>
+
+<ul>
+  <li><a href="http://blog.cloudera.com/blog/2014/11/how-apache-sqoop-1-4-5-improves-oracle-databaseapache-hadoop-integration/">http://blog.cloudera.com/blog/2014/11/how-apache-sqoop-1-4-5-improves-oracle-databaseapache-hadoop-integration/</a></li>
+</ul>
+
+<p>The Hortonworks blog has a post on using Apache Pig with the Python Scikit-learn package in order predict flight delays using logistic regression and random forests. The post is a bit light in details, but there is a linked IPython notebook which has a very detailed overview and description of the entire process.  Given that Python is often a data scientist’s top choice for machine learning on small data sets, it’s useful to see how to extend it to larger data sets with Pig.</p>
+
+<ul>
+  <li><a href="http://hortonworks.com/blog/data-science-apacheh-hadoop-predicting-airline-delays/">http://hortonworks.com/blog/data-science-apacheh-hadoop-predicting-airline-delays/</a></li>
+</ul>
+
+<p>The ingest.tips blog has a post on Sqoop1 support for Parquet, which leverages the Kite SDK to generate Parquet files during import. The post serves as a good introduction to Sqoop1, which can both import data to HDFS and update the Hive metastore with information about the data. There are examples demonstrating how to use Parquet support.</p>
+
+<ul>
+  <li><a href="http://ingest.tips/2014/11/10/parquet-support-arriving-in-sqoop/">http://ingest.tips/2014/11/10/parquet-support-arriving-in-sqoop/</a></li>
+</ul>
+
+<p>Tephra is a open-source system that provides globally-consistent transactions for Apache HBase. Cask, the makers of Tephra, have written a blog post describing the requirements and design of Tephra. Tephra is designed in such a way that it can be used with systems other than HBase, and it is even designed to support transactions spanning multiple data stores.</p>
+
+<ul>
+  <li><a href="http://blog.cask.co/2014/11/how-we-built-it-designing-a-globally-consistent-transaction-engine/">http://blog.cask.co/2014/11/how-we-built-it-designing-a-globally-consistent-transaction-engine/</a></li>
+</ul>
+
+<p>This presentation focusses on Spark streaming, the micro-batch component of Apache Spark. The slides give an introduction to both Spark and Spark streaming, describe several use cases (claiming there are 40+ known production use cases), give an overview of several integrations (Cassandra, Kafka, Elastic Search, and more), and look ahead to some upcoming features and improvements in the development pipeline.</p>
+
+<ul>
+  <li><a href="http://www.slideshare.net/pacoid/tiny-batches-in-the-wine-shiny-new-bits-in-spark-streaming">http://www.slideshare.net/pacoid/tiny-batches-in-the-wine-shiny-new-bits-in-spark-streaming</a></li>
+</ul>
+
+<p><strong>Reference : <a href="http://hadoopweekly.com">Hadoop Weekly Publication</a></strong></p>
+</p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/sivan.consult@gmail.com" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a href="#">sivan.consult@gmail.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>+91-999-545-5746</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    Karyavattam<br />
+					
+					
+					    Trivandrum,
+					
+					
+					    Kerala 
+					
+					
+					    695581<br />
+					
+					
+					    India
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+				<li><a href="https://twitter.com/sivansasidharan" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+				
+				
+				
+				<li><a href="https:facebook.com/sivansasidharan" class="icon alt fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+				
+				
+				
+				
+				
+				
+				<li><a href="https://github.com/sivansasidharan/" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+				
+				
+				
+				<li><a href="https://www.linkedin.com/in/sivansasidharan/" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; TECHNOLOGY PRÉCIS!   by Sivan Sasidharan</li>
+				<li>Design: HTML5 UP</li>
+				<li>Powered by: Jekyll & GitHub</li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="http://localhost:4000/assets/js/jquery.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrolly.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrollex.min.js"></script>
+	<script src="http://localhost:4000/assets/js/skel.min.js"></script>
+	<script src="http://localhost:4000/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="http://localhost:4000/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="http://localhost:4000/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

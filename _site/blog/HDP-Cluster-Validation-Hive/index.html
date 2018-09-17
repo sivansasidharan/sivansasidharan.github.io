@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>TECHNOLOGY PRÉCIS!</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="http://localhost:4000//" class="logo"><strong>TECHNOLOGY PRÉCIS!</strong> <span>by Sivan Sasidharan</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+        
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000//">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/all_posts/">WriteUps</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/freferences/">References</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/generic/">Experience</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/landingnews/">News Feeds</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/zlanding/">Webinars</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="#" class="button special fit">Get Started</a></li>
+		<li><a href="#" class="button fit">Log In</a></li>
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<header class="major">
+			<h1>Cluster Validation - Hive - HDP</h1>
+		</header>
+		
+		<p><p>For every PS engagement that involves installation, upgrade, or migration, it is your responsibility to ensure that the installation validation checklist is completely executed.This will ensure:</p>
+<ul>
+  <li>Proper configuration of the cluster</li>
+  <li>Increased customer satisfaction</li>
+  <li>Decreased volume to the Technical Support team</li>
+</ul>
+
+<blockquote>
+  <p>The Importance of the Checklist</p>
+</blockquote>
+
+<p>The installation validation checklist is a tool that you should refer to throughout the duration of your engagement.It was assembled by the Technical Support team and contains information and best practices gathered while working on multiple projects with multiple clients.The checklists provide information on key areas that you should focus on to ensure proper configuration of the components of your cluster. This will result in an operational Customer Environment.</p>
+
+<hr />
+
+<h4 id="locating-the-validation-scripts">Locating the Validation Scripts</h4>
+
+<p>You can download the scripts from GitHub using the links below:
+Scripts Used to Test and Validate Hive:</p>
+<ul>
+  <li>Download the hdp-hive-validation.tgz file using the link below. It contains all the scripts and required libraries and needs to be copied to an edge node on the cluster that is being validated.
+    <blockquote>
+      <p>https://github.com/dstreev/hdp-validation/tree/master/dist</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p>Hortonworks Data Platform Data Generation Tool:</p>
+<ul>
+  <li>Download the Hortonworks Data Platform Data Generation Tool. It is used to generate sample datasets used by the validation scripts. It is included in the above referenced tarball, but the sources can be downloaded using the link below.</li>
+</ul>
+
+<blockquote>
+  <p>https://github.com/dstreev/hdp-data-gen</p>
+</blockquote>
+
+<hr />
+
+<h4 id="1-running-the-hdp-configuration-utility">1. Running the HDP Configuration Utility</h4>
+
+<p>Before you start any testing and before the cluster is turned over to the customer, run the HDP Configuration Utility with the clusters specification and apply the settings. The utility is a python script so it can be run on your local laptop to get the appropriate settings.These settings can then be applied to the cluster through Ambari.</p>
+
+<p>You will need to provide these settings to the customer as a baseline for future support. 
+The utility can be downloaded from GitHub using the link below:</p>
+<blockquote>
+  <p>HDP Configuration Utility:
+    https://github.com/hortonworks/hdp-configuration-utils</p>
+</blockquote>
+
+<hr />
+
+<h4 id="2-hive-metastore-and-hs2-validation">2. Hive Metastore and HS2 Validation</h4>
+
+<p>The hive heap size by default is set to 1024, but for clusters that are more than a simple POC, this is not usually enough. If the system is going to have concurrent users (against HS2), the Hive Metastore and HiveServer2 daemons should be setup with at least 4 GB of memory. This will give the HS2 server the room it needs to handle this load.</p>
+
+<p>If the user will be extracting LARGE datasets through the HS2 interface, this value may need to be higher, as HS2 is the conduit for channeling all of that data back to the client. With concurrent user requests, HS2 can quickly become the bottleneck.</p>
+
+<p><strong>Note</strong>
+Changing this value WILL effect ALL “hive cli” clients, which will start with the same memory settings. It is suggested that you create a Managed Config Group in Ambari to set these values for the HS2 server, independently.</p>
+
+<blockquote>
+  <p>To validate this, use the Ambari REST API via the Ambari “config.sh” script:
+    cd /var/lib/ambari-server/resources/scripts
+    ./configs.sh -u <ambari-user> -p <ambari-password> get <AMBARI_HOST> <CLUSTER_NAME> hive-site | grep hive.heapsize</CLUSTER_NAME></AMBARI_HOST></ambari-password></ambari-user></p>
+</blockquote>
+
+<p>The value returned after running the script should be greater than 4096.</p>
+
+<hr />
+
+<h4 id="3-verifying-hiveserver2-is-running-in-embedded-metastore-mode">3. Verifying HiveServer2 is Running in Embedded Metastore Mode</h4>
+<p>There are several best practices that you can follow to verify that HiveServer2 is running in embedded metastore mode:</p>
+<ul>
+  <li>It is important to use netstat to check if the process is making a call to 9083.</li>
+  <li>HiveServer2 startup via Ambari uses a template file to override the values you will see for <code class="highlighter-rouge">hive.metastore.uris</code> set in the Ambari UI for <code class="highlighter-rouge">hive-site.xml</code>. This file is located in the Ambari Resource Stack if you would like to examine the contents.</li>
+</ul>
+
+<p>** Patch for HS2 Embedded Metastore **</p>
+<blockquote>
+  <p>For Ambari versions previous to 1.7.0, you will not be able to get HS2 to run with an Embedded Metastore</p>
+</blockquote>
+
+<p>Apply the following patch :</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">diff</span> <span class="nt">--git</span> <span class="nt">a</span><span class="o">/</span><span class="nt">ambari-server</span><span class="o">/</span><span class="nt">src</span><span class="o">/</span><span class="nt">main</span><span class="o">/</span><span class="nt">resources</span><span class="o">/</span><span class="nt">stacks</span><span class="o">/</span><span class="nt">HDP</span><span class="o">/</span><span class="nt">2</span><span class="nc">.0.6</span><span class="o">/</span><span class="nt">services</span><span class="o">/</span><span class="nt">HIVE</span><span class="o">/</span><span class="nt">package</span><span class="o">/</span><span class="nt">templates</span><span class="o">/</span><span class="nt">startHiveserver2</span><span class="nc">.sh.j2</span> <span class="nt">b</span><span class="o">/</span><span class="nt">ambari-server</span><span class="o">/</span><span class="nt">src</span><span class="o">/</span><span class="nt">main</span><span class="o">/</span><span class="nt">resources</span><span class="o">/</span><span class="nt">stacks</span><span class="o">/</span><span class="nt">HDP</span><span class="o">/</span><span class="nt">2</span><span class="nc">.0.6</span><span class="o">/</span><span class="nt">services</span><span class="o">/</span><span class="nt">HIVE</span><span class="o">/</span><span class="nt">package</span><span class="o">/</span><span class="nt">templates</span><span class="o">/</span><span class="nt">startHiveserver2</span><span class="nc">.sh.j2</span>
+<span class="nt">index</span> <span class="nt">62ab19e</span><span class="o">.</span><span class="nc">.a8fe21c</span> <span class="nt">100644</span>
+<span class="nt">---</span> <span class="nt">a</span><span class="o">/</span><span class="nt">ambari-server</span><span class="o">/</span><span class="nt">src</span><span class="o">/</span><span class="nt">main</span><span class="o">/</span><span class="nt">resources</span><span class="o">/</span><span class="nt">stacks</span><span class="o">/</span><span class="nt">HDP</span><span class="o">/</span><span class="nt">2</span><span class="nc">.0.6</span><span class="o">/</span><span class="nt">services</span><span class="o">/</span><span class="nt">HIVE</span><span class="o">/</span><span class="nt">package</span><span class="o">/</span><span class="nt">templates</span><span class="o">/</span><span class="nt">startHiveserver2</span><span class="nc">.sh.j2</span>
+<span class="o">+++</span> <span class="nt">b</span><span class="o">/</span><span class="nt">ambari-server</span><span class="o">/</span><span class="nt">src</span><span class="o">/</span><span class="nt">main</span><span class="o">/</span><span class="nt">resources</span><span class="o">/</span><span class="nt">stacks</span><span class="o">/</span><span class="nt">HDP</span><span class="o">/</span><span class="nt">2</span><span class="nc">.0.6</span><span class="o">/</span><span class="nt">services</span><span class="o">/</span><span class="nt">HIVE</span><span class="o">/</span><span class="nt">package</span><span class="o">/</span><span class="nt">templates</span><span class="o">/</span><span class="nt">startHiveserver2</span><span class="nc">.sh.j2</span>
+<span class="o">@@</span> <span class="nt">-19</span><span class="o">,</span><span class="nt">11</span> <span class="o">+</span><span class="nt">19</span><span class="o">,</span><span class="nt">11</span> <span class="o">@@</span>
+ <span class="err">#</span>
+ <span class="err">#</span>
+  
+<span class="nt">-HIVE_SERVER2_OPTS</span><span class="o">=</span><span class="s1">" -hiveconf hive.metastore.uris=\" \" -hiveconf hive.log.file=hiveserver2.log -hiveconf hive.log.dir=$5"</span>
+<span class="o">+</span><span class="nt">HIVE_SERVER2_OPTS</span><span class="o">=</span><span class="s1">" -hiveconf hive.log.file=hiveserver2.log -hiveconf hive.log.dir=$5"</span>
+ 
+  
+<span class="nt">-HIVE_CONF_DIR</span><span class="o">=</span><span class="err">$</span><span class="nt">4</span> <span class="o">/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib</span><span class="o">/</span><span class="nt">hive</span><span class="o">/</span><span class="nt">bin</span><span class="o">/</span><span class="nt">hiveserver2</span> <span class="err">$</span><span class="p">{</span><span class="err">HIVE_SERVER2_OPTS</span><span class="p">}</span> <span class="o">&gt;</span> <span class="err">$</span><span class="nt">1</span> <span class="nt">2</span><span class="o">&gt;</span> <span class="err">$</span><span class="nt">2</span> <span class="o">&amp;</span>
+<span class="o">+</span><span class="nt">HIVE_CONF_DIR</span><span class="o">=</span><span class="err">$</span><span class="nt">4</span> <span class="o">/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib</span><span class="o">/</span><span class="nt">hive</span><span class="o">/</span><span class="nt">bin</span><span class="o">/</span><span class="nt">hiveserver2</span> <span class="nt">-hiveconf</span> <span class="nt">hive</span><span class="nc">.metastore.uris</span><span class="o">=</span><span class="s1">" "</span> <span class="err">$</span><span class="p">{</span><span class="err">HIVE_SERVER2_OPTS</span><span class="p">}</span> <span class="o">&gt;</span> <span class="err">$</span><span class="nt">1</span> <span class="nt">2</span><span class="o">&gt;</span> <span class="err">$</span><span class="nt">2</span> <span class="o">&amp;</span>
+ <span class="nt">echo</span> <span class="err">$</span><span class="o">!|</span><span class="nt">cat</span><span class="o">&gt;</span><span class="err">$</span><span class="nt">3</span></code></pre></figure>
+
+<blockquote>
+  <p>For Ambari 1.7.0 and above, a simple validation test can be performed by, “Shutting Down” the Hive Metastore instance and then trying to connect to HS2 via Beeline. You can then run a few commands to exercise metastore access. Remember to restart the Hive Metastore to support Hive CLI calls.</p>
+</blockquote>
+
+<hr />
+
+<p>** Connectivity Check From Hive Server to Metastore Database **
+When starting the Hive Metastore, if you receive any error( issues in connecting to DB ), you should check that the Metatstore database is reachable from the replacement host.</p>
+
+<p>You can run the following from the command line on the replacement host to check connectivity to the Metastore database. Correct any errors and then attempt to start the Hive Metastore again:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="o">/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib</span><span class="o">/</span><span class="nt">hive</span><span class="o">/</span><span class="nt">bin</span><span class="o">/</span><span class="nt">schematool</span> <span class="nt">-initSchema</span> <span class="nt">-dbType</span> <span class="nt">mysql</span> <span class="nt">-dryRun</span> <span class="nt">-verbose</span> <span class="nt">-userName</span> <span class="nt">hive</span> <span class="nt">-passWord</span> <span class="nt">hivepwd</span></code></pre></figure>
+
+<hr />
+
+<h4 id="4-setting-up-an-additional-queue-for-hive-testing">4. Setting Up an Additional Queue for Hive Testing</h4>
+
+<p>An additional queue should be set up so that it can be used later to ensure that Hive can run jobs against a queue other than the default queue. In Ambari, add an additional entry for an “Alt” queue. Be sure to restart YARN and validate that the queue has been registered via the Resource Manager interface.
+Below are the Capacity Schedule Settings that you should use via Ambari:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">yarn</span><span class="nc">.scheduler.capacity.maximum-am-resource-percent</span><span class="o">=</span><span class="nt">0</span><span class="nc">.2</span>
+<span class="nt">yarn</span><span class="nc">.scheduler.capacity.maximum-applications</span><span class="o">=</span><span class="nt">10000</span>
+<span class="nt">yarn</span><span class="nc">.scheduler.capacity.node-locality-delay</span><span class="o">=</span><span class="nt">40</span>
+<span class="nt">yarn</span><span class="nc">.scheduler.capacity.root.acl_administer_queue</span><span class="o">=*</span>
+<span class="nt">yarn</span><span class="nc">.scheduler.capacity.root.alt.acl_administer_jobs</span><span class="o">=*</span>
+<span class="nt">yarn</span><span class="nc">.scheduler.capacity.root.alt.acl_submit_applications</span><span class="o">=*</span>
+<span class="nt">yarn</span><span class="nc">.scheduler.capacity.root.alt.capacity</span><span class="o">=</span><span class="nt">20</span>
+<span class="nt">yarn</span><span class="nc">.scheduler.capacity.root.alt.maximum-capacity</span><span class="o">=</span><span class="nt">50</span>
+<span class="nt">yarn</span><span class="nc">.scheduler.capacity.root.alt.state</span><span class="o">=</span><span class="nt">RUNNING</span>
+<span class="nt">yarn</span><span class="nc">.scheduler.capacity.root.alt.user-limit-factor</span><span class="o">=</span><span class="nt">1</span>
+<span class="nt">yarn</span><span class="nc">.scheduler.capacity.root.capacity</span><span class="o">=</span><span class="nt">100</span>
+<span class="nt">yarn</span><span class="nc">.scheduler.capacity.root.default.acl_administer_jobs</span><span class="o">=*</span>
+<span class="nt">yarn</span><span class="nc">.scheduler.capacity.root.default.acl_submit_applications</span><span class="o">=*</span>
+<span class="nt">yarn</span><span class="nc">.scheduler.capacity.root.default.capacity</span><span class="o">=</span><span class="nt">80</span>
+<span class="nt">yarn</span><span class="nc">.scheduler.capacity.root.default.maximum-capacity</span><span class="o">=</span><span class="nt">100</span>
+<span class="nt">yarn</span><span class="nc">.scheduler.capacity.root.default.state</span><span class="o">=</span><span class="nt">RUNNING</span>
+<span class="nt">yarn</span><span class="nc">.scheduler.capacity.root.default.user-limit-factor</span><span class="o">=</span><span class="nt">1</span>
+<span class="nt">yarn</span><span class="nc">.scheduler.capacity.root.queues</span><span class="o">=</span><span class="nt">default</span><span class="o">,</span><span class="nt">alt</span>
+<span class="nt">yarn</span><span class="nc">.scheduler.capacity.root.unfunded.capacity</span><span class="o">=</span><span class="nt">50</span> </code></pre></figure>
+
+<hr />
+
+<h4 id="5-hive-ecosystem-validation-preparation">5. Hive Ecosystem Validation Preparation</h4>
+
+<p>Listed below are some of the steps you can take in order to prepare the Hive Ecosystem for validation:</p>
+
+<ul>
+  <li>Select an edge node or some cluster machine to prepare the test datasets</li>
+  <li>Download the <code class="highlighter-rouge">hdp-hive-validation.tgz</code>  package (https://wiki.hortonworks.com/download/attachments/7310572/hdp-hive-validation.tgz?version=2&amp;modificationDate=1418506590000&amp;api=v2)</li>
+  <li>Copy the home directory of the “Hive” user on the edge node</li>
+  <li>Unzip the <code class="highlighter-rouge">hdp-hive-validation.tgz</code> package in the Hive users home directory</li>
+</ul>
+
+<p>The <code class="highlighter-rouge">hdp-hive-validation.tgz</code> package contains several scripts and tools that can be used to create a large dataset and also build tables to test the various parts of Hive.</p>
+
+<p>After you have unzipped the package, edit the <code class="highlighter-rouge">validation-env.sh</code> file and set the values for the HS2 server. Based on your cluster size, you will need to uncomment/comment out the section used to control the size of the validation dataset. Below is a table that provides details regarding generated files based on cluster size:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cluster Size</th>
+      <th>NumberofRecords</th>
+      <th>NumberOfMappers</th>
+      <th>Approx Total Dataset Size</th>
+      <th>Notes About Generated Files</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>5</td>
+      <td>100000000</td>
+      <td>5</td>
+      <td>1G</td>
+      <td>5 files, each UNDER the block size</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>500000000</td>
+      <td>20</td>
+      <td>5G</td>
+      <td>20 files, each just over the block size</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>1000000000</td>
+      <td>50</td>
+      <td>10G</td>
+      <td>50 files, each over the block size</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h5 id="51-data-generation-and-global-function-testing">5.1 Data Generation and Global Function Testing</h5>
+<p>After you have downloaded all of the files, the script below should be run. Be sure to run the script below as the “hdfs” user to create hdfs directories that will be used to store shared libraries:</p>
+
+<p><code class="highlighter-rouge">./0-run-as-hdfs.sh</code></p>
+
+<p>Next, run the script that will copy a jar file with custom UDFs for Hive to the cluster. It will then register those functions to run some tests to prove that the function is globally available permanently.
+The second part of the script will generate the dataset that will be used to test Hive at some scale.
+The process below should be run as the “hive” user to minimize user setup and permission issues:</p>
+
+<blockquote>
+  <p>Change to directory where the above package expanded to.</p>
+</blockquote>
+
+<p><code class="highlighter-rouge">./1-validation-setup.sh &gt; / tmp /step-1.txt</code></p>
+
+<hr />
+
+<h4 id="6-hive-checklist-items">6. Hive Checklist Items</h4>
+<p>There are multiple items that should be checked to ensure that Hive is configured properly. The table below provides the key areas of focus, along with the rationale behind them:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Verify</th>
+      <th>Notes/Rationale</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>The Hive Metastore and HiveServer2 daemons are set up with at least 4 GB of memory</td>
+      <td>The Hive heap size by default is set to 1024. For clusters beyond a simple POC, this is not usually enough. For additional information, please refer to section of this lesson section titled, “Hive Metatstore and HS2 Validation.”</td>
+    </tr>
+    <tr>
+      <td>The HiveServer2 is running in embedded metastore mode</td>
+      <td>Check with netstat if the process is making a call to 9083. For additional information, please refer to the section of this lesson title, “Verifying HiveServer 2 is Running in Embedded Metastore Mode.”</td>
+    </tr>
+    <tr>
+      <td>All Hive clients/edge nodes can connect via remote metastore</td>
+      <td>On each Hive client, run:hive –e ‘show databases;The result should yield at least the ‘default’ database on a new cluster.</td>
+    </tr>
+    <tr>
+      <td>You have created a partition table, loaded data, and run a query that kicks off MR/Tez jobs from Hive CLI</td>
+      <td>Use Beeline to test HS2 functionality. Review /tmp/step-2.txt to confirm after running the 2-hive-test.sh script.</td>
+    </tr>
+    <tr>
+      <td>You have run a map join query in the Hive Client and Beeline</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>The ODBC/JDBC connections and query are validated, especially in kerberized cluster</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>You can perform “DDL” and “DML” queries with CLI and Beeline</td>
+      <td>Review /tmp/step-2.txt to confirm after running the 2-hive-test.sh script. The scripts should create and drop a table via Hive CLI and Beeline.</td>
+    </tr>
+    <tr>
+      <td>You can perform “DDL” and “DML” queries in both execution engines (MapReduce and Tez)</td>
+      <td>Review /tmp/step-2.txt to confirm after running the 2-hive-test.sh script. The scripts should create and drop a table via “mr” and “tez.”</td>
+    </tr>
+    <tr>
+      <td>You are able to create an ORC table and run queries</td>
+      <td>Show “Create Table” for the ORC table and look for ORC formats. Print the header, index, etc. from one of the ORC files. For additional information, refer to the section of this lesson titled, “Verifying the Ability to Create ORC Files.”</td>
+    </tr>
+    <tr>
+      <td>That statistics are automatically gathered</td>
+      <td>The last two queries run in “build-ptn-tbl.sql” while running with Tez should return in under 1-2 seconds.</td>
+    </tr>
+    <tr>
+      <td>Compression</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>That unsupported configuration, CDH, and MapR jars are not present in the cluster</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Queries can run concurrently in different queues</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>That partitioned data is at least 128 MB</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h4 id="7-testing-performance-of-the-hive-server">7. Testing Performance of the Hive Server</h4>
+
+<p>To test performance of the Hive Server, run the queries below:</p>
+
+<p>To get a list of values that you can run targeted queries with, from either Beeline or Hive CLI, run the following and select 20 items from the list as testing parameters:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">--</span> <span class="nt">Use</span> <span class="nt">this</span> <span class="nt">query</span> <span class="nt">to</span> <span class="nt">locate</span> <span class="nt">a</span> <span class="nt">distinct</span> <span class="nt">search</span> <span class="nt">value</span> <span class="nt">for</span> <span class="nt">testing</span><span class="o">.</span>
+<span class="nt">--</span> <span class="nt">The</span> <span class="nt">generated</span> <span class="nt">data</span> <span class="nt">will</span> <span class="nt">start</span> <span class="nt">with</span> <span class="nt">any</span> <span class="nt">of</span> <span class="nt">these</span> <span class="nt">characters</span>
+<span class="nt">--</span>    <span class="nt">ABDEF12345</span>
+<span class="nt">--</span> <span class="nt">The</span> <span class="nt">eligible</span> <span class="nt">partitions</span> <span class="nt">will</span> <span class="nt">be</span> <span class="nt">by</span> <span class="nt">day</span> <span class="nt">in</span> <span class="nt">Feb</span> <span class="nt">of</span> <span class="nt">2013</span><span class="o">.</span>
+<span class="nt">select</span> 
+    <span class="nt">distinct</span> <span class="nt">nm</span> 
+<span class="nt">from</span> 
+    <span class="nt">validation_partition_table</span> 
+<span class="nt">where</span> 
+    <span class="nt">my_part</span> <span class="o">&gt;=</span> <span class="s2">'2013-02-10'</span> <span class="nt">and</span> <span class="nt">my_part</span> <span class="o">&lt;=</span> <span class="s2">'2014-02-20'</span> 
+    <span class="nt">and</span> <span class="s2">'D'</span> <span class="o">=</span> <span class="nt">substr</span><span class="o">(</span><span class="nt">nm</span><span class="o">,</span><span class="nt">1</span><span class="o">,</span><span class="nt">1</span><span class="o">);</span></code></pre></figure>
+
+<hr />
+
+<p>The query below should be run to perform an assortment of performance tests. The partition, “my_part” is valid between ‘2013-02-01’ and ‘2013-02-28’. Be sure to use the 20 items you selected from the above script as replacements for your query:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">--</span> <span class="nt">tez</span> <span class="nt">or</span> <span class="nt">mr</span>
+<span class="nt">set</span> <span class="nt">hive</span><span class="nc">.execution.engine</span><span class="o">=</span><span class="err">$</span><span class="p">{</span><span class="err">EXEC_ENGINE</span><span class="p">}</span><span class="o">;</span>
+<span class="nt">--</span> <span class="nt">default</span> <span class="nt">or</span> <span class="nt">alt</span>
+<span class="nt">set</span> <span class="nt">set</span> <span class="nt">tez</span><span class="nc">.queue.name</span><span class="o">=</span><span class="err">$</span><span class="p">{</span><span class="err">QUEUE_NAME</span><span class="p">}</span><span class="o">;</span>
+ 
+<span class="nt">select</span> 
+    <span class="nt">start_dtm</span><span class="o">,</span> <span class="nt">nm</span><span class="o">,</span> <span class="nt">some_int</span> 
+<span class="nt">from</span> 
+    <span class="nt">validation_partition_table</span> 
+<span class="nt">where</span> 
+    <span class="nt">my_part</span> <span class="o">&gt;=</span><span class="s2">'${from}'</span> <span class="nt">and</span> <span class="nt">my_part</span> <span class="o">&lt;=</span> <span class="s2">'${to}'</span>
+    <span class="nt">and</span> <span class="nt">nm</span> <span class="o">=</span> <span class="s2">'${nm}'</span><span class="o">;</span></code></pre></figure>
+
+<p>The query should be run with the following combinations:</p>
+<ul>
+  <li>Default queue with execution engine of ‘mr’</li>
+  <li>Default queue with execution engine of ‘tez’</li>
+  <li>Alt queue with execution engine of ‘mr’</li>
+  <li>Alt queue with execution engine of ‘tez’</li>
+</ul>
+
+<hr />
+
+<p>Finally, be sure to look for the following items while testing the performance of the Hive server:</p>
+
+<ul>
+  <li>
+    <p>Look for warmed Application Masters. With “hive.execution.engine=tez”, queries after the first should be significantly faster (10 seconds faster) because the Application Master is being reused.</p>
+  </li>
+  <li>
+    <p>Review the Application Masters in the Resource Manager and check that the queries are attaching to the ‘alt’ queue when specified.</p>
+  </li>
+</ul>
+
+<hr />
+
+<h4 id="8-verifying-the-ability-to-create-orc-files">8. Verifying the Ability to Create ORC Files</h4>
+
+<p>As part of your validation testing, you should verify that ability to create ORC files. To do this, run the command below:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">beeline</span> <span class="nt">-u</span> <span class="nt">jdbc</span><span class="nd">:hive2</span><span class="o">://&lt;</span><span class="nt">host</span><span class="o">&gt;:&lt;</span><span class="nt">port</span><span class="o">&gt;</span> <span class="nt">-n</span> <span class="err">$</span><span class="nt">USER</span> <span class="nt">-e</span> <span class="s2">'use hdp_validation'</span> <span class="err">\</span>
+    <span class="nt">-e</span> <span class="s2">'show table create validation_partition_table'</span> <span class="nt">-e</span> <span class="s2">'show partitions validation_partition_table'</span>
+<span class="nt">hive</span> <span class="nt">--service</span> <span class="nt">orcfiledump</span> <span class="nt">hdfs</span><span class="o">:///</span><span class="nt">tmp</span><span class="o">/</span><span class="nt">validation_partition_table_orc</span><span class="o">/</span><span class="nt">my_part</span><span class="o">=</span><span class="nt">2013-02-04</span><span class="o">/</span><span class="nt">000000_0</span></code></pre></figure>
+
+<hr />
+
+<p><strong>Reference - www.hortonworks.com</strong></p>
+</p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/sivan.consult@gmail.com" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a href="#">sivan.consult@gmail.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>+91-999-545-5746</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    Karyavattam<br />
+					
+					
+					    Trivandrum,
+					
+					
+					    Kerala 
+					
+					
+					    695581<br />
+					
+					
+					    India
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+				<li><a href="https://twitter.com/sivansasidharan" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+				
+				
+				
+				<li><a href="https:facebook.com/sivansasidharan" class="icon alt fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+				
+				
+				
+				
+				
+				
+				<li><a href="https://github.com/sivansasidharan/" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+				
+				
+				
+				<li><a href="https://www.linkedin.com/in/sivansasidharan/" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; TECHNOLOGY PRÉCIS!   by Sivan Sasidharan</li>
+				<li>Design: HTML5 UP</li>
+				<li>Powered by: Jekyll & GitHub</li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="http://localhost:4000/assets/js/jquery.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrolly.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrollex.min.js"></script>
+	<script src="http://localhost:4000/assets/js/skel.min.js"></script>
+	<script src="http://localhost:4000/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="http://localhost:4000/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="http://localhost:4000/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

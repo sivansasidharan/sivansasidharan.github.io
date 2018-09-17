@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>TECHNOLOGY PRÉCIS!</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="http://localhost:4000//" class="logo"><strong>TECHNOLOGY PRÉCIS!</strong> <span>by Sivan Sasidharan</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+        
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000//">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/all_posts/">WriteUps</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/freferences/">References</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/generic/">Experience</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/landingnews/">News Feeds</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/zlanding/">Webinars</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="#" class="button special fit">Get Started</a></li>
+		<li><a href="#" class="button fit">Log In</a></li>
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<header class="major">
+			<h1>Optimize Hive queries for Hadoop</h1>
+		</header>
+		
+		<p><p>Hadoop clusters are not optimized for performance. Here we try to cover a few of the most common Hive performance optimization methods that you can apply to your queries.</p>
+
+<hr />
+
+<h4 id="scale-out-worker-nodes">Scale out worker nodes</h4>
+
+<p>Increasing the number of worker nodes in a cluster can leverage more mappers and reducers to be run in parallel. This could be done at the provision time or at the run time.</p>
+
+<hr />
+
+<h4 id="enable-tez">Enable Tez</h4>
+
+<p>Apache Tez is an alternative execution engine to the MapReduce engine:
+Apache Tez provides a developer API and framework to write native YARN applications that bridge the spectrum of interactive and batch workloads. It allows those data access applications to work with petabytes of data over thousands nodes. The Apache Tez component library allows developers to create Hadoop applications that integrate natively with Apache Hadoop YARN and perform well within mixed workload clusters.</p>
+
+<p><img src="http://localhost:4000/downloads/H1H2Tez.png" alt="HDP Reference" /></p>
+
+<p>Tez is faster because:</p>
+
+<ul>
+  <li>
+    <p>Express, model and execute processing logic: Tez models data processing as a dataflow graph, with the graph vertices representing application logic and its edges representing movement of data. A rich data flow definition API allows users to intuitively express complex query logic. The API fits well with query plans produced by higher-level declarative applications like Apache Hive and Apache Pig.
+http://hortonworks.com/blog/apache-tez-a-new-chapter-in-hadoop-data-processing/</p>
+  </li>
+  <li>
+    <p>Execute Directed Acyclic Graph (DAG) as a single job in the MapReduce engine, the DAG that is expressed requires each set of mappers to be followed by one set of reducers. This causes multiple MapReduce jobs to be spun off for each Hive query. Tez does not have such constraint and can process complex DAG as one job thus minimizing job startup overhead.</p>
+  </li>
+  <li>
+    <p>Avoids unnecessary writes: Due to multiple jobs being spun for the same Hive query in the MapReduce engine, the output of each job is written to HDFS for intermediate data. Since Tez minimizes number of jobs for each Hive query it is able to avoid unnecessary write.</p>
+  </li>
+  <li>
+    <p>Minimizes start-up delays: Tez is better able to minimize start-up delay by reducing the number of mappers it needs to start and also improving optimization throughout.</p>
+  </li>
+  <li>
+    <p>Reuses containers Whenever possible: Tez is able to reuse containers to ensure that latency due to starting up containers is reduced.Tez follows the traditional Hadoop model of dividing a job into individual tasks, all of which are run as processes via YARN, on the users’ behalf. This model comes with inherent costs for process startup and initialization, handling stragglers and allocating each container via the YARN resource manager.</p>
+  </li>
+  <li>
+    <p>Continuous optimization techniques: Traditionally optimization was done during compilation phase. However more information about the inputs is available that allow for better optimization during runtime. Tez uses continous optimization techniques that allows it to optimize the plan further into the runtime phase.</p>
+  </li>
+  <li>
+    <p>Optimize performance and resource management: YARN manages resources in a Hadoop cluster, based on cluster capacity and load. The Tez execution engine framework efficiently acquires resources from YARN and reuses every component in the pipeline such that no operation is duplicated unnecessarily.
+http://hortonworks.com/blog/introducing-tez-sessions/</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>Hive query Tez enabled</p>
+</blockquote>
+
+<p>You can make any Hive query Tez enabled by prefixing the query with the setting below:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">set</span> <span class="nt">hive</span><span class="nc">.execution.engine</span><span class="o">=</span><span class="nt">tez</span><span class="o">;</span></code></pre></figure>
+
+<hr />
+
+<h4 id="hive-partitioning">Hive partitioning</h4>
+
+<p>I/O operation is the major performance bottleneck for running Hive queries.The performance can be improved if the amount of data that needs to be read can be reduced. By default, Hive queries scan entire Hive tables. This is great for queries like table scans, however for queries that only need to scan a small amount of data (e.g. queries with filtering), this creates unnecessary overhead. Hive partitioning allows Hive queries to access only the necessary amount of data in Hive tables.</p>
+
+<p>Hive partitioning is implemented by reorganizing the raw data into new directories with each partition having its own directory - where the partition is defined by the user. 
+The following diagram illustrates partitioning a Hive table by the column Year.A new directory is created for each year.</p>
+
+<p><img src="http://localhost:4000/downloads/Hive-partitioning_1.png" alt="Hive partitioning sample :" /></p>
+
+<p>Some partitioning considerations:</p>
+
+<ul>
+  <li>
+    <p>Do not under-partition - Partitioning on columns with only a few values can cause very few partitions. For example, partitioning on gender will only create two partitions to be created (male and female), thus only reduce the latency by a maximum of half.</p>
+  </li>
+  <li>
+    <p>Do not over-partition - On the other extreme, creating a partition on a column with a unique value (e.g. userid) will cause multiple partitions causing a lot of stress on the cluster namenode as it will have to handle the large amount of directories.</p>
+  </li>
+  <li>
+    <p>Avoid data skew - Choose your partitioning key wisely so that all partitions are even size. An example is partitioning on State may cause the number of records under California to be almost 30x that of Vermont due to the difference in population.</p>
+  </li>
+</ul>
+
+<p>Once the partitioned table is created, you can either create:</p>
+<blockquote>
+  <p>Static partitioning</p>
+</blockquote>
+
+<p>Static partitioning means that you have already sharded data in the appropriate directories and you can ask Hive partitions manually based on the directory location.</p>
+
+<blockquote>
+  <p>Dynamic partitioning.</p>
+</blockquote>
+
+<p>Dynamic partitioning means that you want Hive to create partitions automatically for you. Since we have already created the partitioning table from the staging table, all we need to do is insert data to the partitioned table.</p>
+
+<p>To create a partition table, use the Partitioned By clause:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">CREATE</span> <span class="nt">TABLE</span> <span class="nt">lineitem_part</span>
+    <span class="o">(</span><span class="nt">L_ORDERKEY</span> <span class="nt">INT</span><span class="o">,</span> <span class="nt">L_PARTKEY</span> <span class="nt">INT</span><span class="o">,</span> <span class="nt">L_SUPPKEY</span> <span class="nt">INT</span><span class="o">,</span><span class="nt">L_LINENUMBER</span> <span class="nt">INT</span><span class="o">,</span>
+     <span class="nt">L_QUANTITY</span> <span class="nt">DOUBLE</span><span class="o">,</span> <span class="nt">L_EXTENDEDPRICE</span> <span class="nt">DOUBLE</span><span class="o">,</span> <span class="nt">L_DISCOUNT</span> <span class="nt">DOUBLE</span><span class="o">,</span>
+     <span class="nt">L_TAX</span> <span class="nt">DOUBLE</span><span class="o">,</span> <span class="nt">L_RETURNFLAG</span> <span class="nt">STRING</span><span class="o">,</span> <span class="nt">L_LINESTATUS</span> <span class="nt">STRING</span><span class="o">,</span>
+     <span class="nt">L_SHIPDATE_PS</span> <span class="nt">STRING</span><span class="o">,</span> <span class="nt">L_COMMITDATE</span> <span class="nt">STRING</span><span class="o">,</span> <span class="nt">L_RECEIPTDATE</span>        <span class="nt">STRING</span><span class="o">,</span> <span class="nt">L_SHIPINSTRUCT</span> <span class="nt">STRING</span><span class="o">,</span> <span class="nt">L_SHIPMODE</span> <span class="nt">STRING</span><span class="o">,</span>
+     <span class="nt">L_COMMENT</span> <span class="nt">STRING</span><span class="o">)</span>
+<span class="nt">PARTITIONED</span> <span class="nt">BY</span><span class="o">(</span><span class="nt">L_SHIPDATE</span> <span class="nt">STRING</span><span class="o">)</span>
+<span class="nt">ROW</span> <span class="nt">FORMAT</span> <span class="nt">DELIMITED</span> <span class="nt">FIELDS</span> <span class="nt">TERMINATED</span> <span class="nt">BY</span> <span class="s2">'\t'</span>
+<span class="nt">STORED</span> <span class="nt">AS</span> <span class="nt">TEXTFILE</span><span class="o">;</span></code></pre></figure>
+
+<p>Static partitioning:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">INSERT</span> <span class="nt">OVERWRITE</span> <span class="nt">TABLE</span> <span class="nt">lineitem_part</span>
+<span class="nt">PARTITION</span> <span class="o">(</span><span class="nt">L_SHIPDATE</span> <span class="o">=</span> <span class="err">‘</span><span class="nt">5</span><span class="o">/</span><span class="nt">23</span><span class="o">/</span><span class="nt">1996</span> <span class="nt">12</span><span class="nd">:00:00</span> <span class="nt">AM</span><span class="err">’</span><span class="o">)</span>
+<span class="nt">SELECT</span> <span class="o">*</span> <span class="nt">FROM</span> <span class="nt">lineitem</span> 
+<span class="nt">WHERE</span> <span class="nt">lineitem</span><span class="nc">.L_SHIPDATE</span> <span class="o">=</span> <span class="err">‘</span><span class="nt">5</span><span class="o">/</span><span class="nt">23</span><span class="o">/</span><span class="nt">1996</span> <span class="nt">12</span><span class="nd">:00:00</span> <span class="nt">AM</span><span class="err">’</span>
+<span class="nt">ALTER</span> <span class="nt">TABLE</span> <span class="nt">lineitem_part</span> <span class="nt">ADD</span> <span class="nt">PARTITION</span> <span class="o">(</span><span class="nt">L_SHIPDATE</span> <span class="o">=</span> <span class="err">‘</span><span class="nt">5</span><span class="o">/</span><span class="nt">23</span><span class="o">/</span><span class="nt">1996</span> <span class="nt">12</span><span class="nd">:00:00</span> <span class="nt">AM</span><span class="err">’</span><span class="o">))</span>
+<span class="nt">LOCATION</span> <span class="err">‘</span><span class="nt">wasb</span><span class="o">://</span><span class="nt">sampledata</span><span class="k">@ignitedemo</span><span class="p">.</span><span class="n">blob</span><span class="p">.</span><span class="n">core</span><span class="p">.</span><span class="n">windows</span><span class="p">.</span><span class="n">net</span><span class="p">/</span><span class="n">partitions</span><span class="p">/</span><span class="m">5</span><span class="n">_23_1996</span><span class="p">/</span><span class="err">'</span></code></pre></figure>
+
+<p>Dynamic partitioning:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">SET</span> <span class="nt">hive</span><span class="nc">.exec.dynamic.partition</span> <span class="o">=</span> <span class="nt">true</span><span class="o">;</span>
+<span class="nt">SET</span> <span class="nt">hive</span><span class="nc">.exec.dynamic.partition.mode</span> <span class="o">=</span> <span class="nt">nonstrict</span><span class="o">;</span>
+<span class="nt">INSERT</span> <span class="nt">INTO</span> <span class="nt">TABLE</span> <span class="nt">lineitem_part</span>
+<span class="nt">PARTITION</span> <span class="o">(</span><span class="nt">L_SHIPDATE</span><span class="o">)</span>
+<span class="nt">SELECT</span> <span class="nt">L_ORDERKEY</span> <span class="nt">as</span> <span class="nt">L_ORDERKEY</span><span class="o">,</span> <span class="nt">L_PARTKEY</span> <span class="nt">as</span> <span class="nt">L_PARTKEY</span> <span class="o">,</span> 
+     <span class="nt">L_SUPPKEY</span> <span class="nt">as</span> <span class="nt">L_SUPPKEY</span><span class="o">,</span> <span class="nt">L_LINENUMBER</span> <span class="nt">as</span> <span class="nt">L_LINENUMBER</span><span class="o">,</span>
+     <span class="nt">L_QUANTITY</span> <span class="nt">as</span> <span class="nt">L_QUANTITY</span><span class="o">,</span> <span class="nt">L_EXTENDEDPRICE</span> <span class="nt">as</span> <span class="nt">L_EXTENDEDPRICE</span><span class="o">,</span>
+     <span class="nt">L_DISCOUNT</span> <span class="nt">as</span> <span class="nt">L_DISCOUNT</span><span class="o">,</span> <span class="nt">L_TAX</span> <span class="nt">as</span> <span class="nt">L_TAX</span><span class="o">,</span> <span class="nt">L_RETURNFLAG</span> <span class="nt">as</span>       <span class="nt">L_RETURNFLAG</span><span class="o">,</span> <span class="nt">L_LINESTATUS</span> <span class="nt">as</span> <span class="nt">L_LINESTATUS</span><span class="o">,</span> <span class="nt">L_SHIPDATE</span> <span class="nt">as</span>       <span class="nt">L_SHIPDATE_PS</span><span class="o">,</span> <span class="nt">L_COMMITDATE</span> <span class="nt">as</span> <span class="nt">L_COMMITDATE</span><span class="o">,</span> <span class="nt">L_RECEIPTDATE</span> <span class="nt">as</span>   <span class="nt">L_RECEIPTDATE</span><span class="o">,</span> <span class="nt">L_SHIPINSTRUCT</span> <span class="nt">as</span> <span class="nt">L_SHIPINSTRUCT</span><span class="o">,</span> <span class="nt">L_SHIPMODE</span> <span class="nt">as</span>     <span class="nt">L_SHIPMODE</span><span class="o">,</span> <span class="nt">L_COMMENT</span> <span class="nt">as</span> <span class="nt">L_COMMENT</span><span class="o">,</span> <span class="nt">L_SHIPDATE</span> <span class="nt">as</span> <span class="nt">L_SHIPDATE</span> <span class="nt">FROM</span> <span class="nt">lineitem</span><span class="o">;</span></code></pre></figure>
+
+<p>https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-PartitionedTables</p>
+
+<hr />
+
+<p>####Use the ORCFile format</p>
+
+<p>Hive supports different file formats. For example:</p>
+
+<ul>
+  <li>Text: this is the default file format and works with most scenarios</li>
+  <li>Avro: works well for interoperability scenarios</li>
+  <li>ORC/Parquet: best suited for performance
+ORC (Optimized Row Columnar) format is a highly efficient way to store Hive data.Compared to other formats, ORC has the following advantages:
+    <ul>
+      <li>support for complex types including DateTime and complex and semi-structured types</li>
+      <li>up to 70% compression</li>
+      <li>indexes every 10,000 rows which allow skipping rows</li>
+      <li>a significant drop in run-time execution</li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <p>To enable ORC format</p>
+</blockquote>
+
+<p>First create a table with the clause Stored as ORC:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">CREATE</span> <span class="nt">TABLE</span> <span class="nt">lineitem_orc_part</span>
+    <span class="o">(</span><span class="nt">L_ORDERKEY</span> <span class="nt">INT</span><span class="o">,</span> <span class="nt">L_PARTKEY</span> <span class="nt">INT</span><span class="o">,</span><span class="nt">L_SUPPKEY</span> <span class="nt">INT</span><span class="o">,</span> <span class="nt">L_LINENUMBER</span> <span class="nt">INT</span><span class="o">,</span>
+     <span class="nt">L_QUANTITY</span> <span class="nt">DOUBLE</span><span class="o">,</span> <span class="nt">L_EXTENDEDPRICE</span> <span class="nt">DOUBLE</span><span class="o">,</span> <span class="nt">L_DISCOUNT</span> <span class="nt">DOUBLE</span><span class="o">,</span>
+     <span class="nt">L_TAX</span> <span class="nt">DOUBLE</span><span class="o">,</span> <span class="nt">L_RETURNFLAG</span> <span class="nt">STRING</span><span class="o">,</span> <span class="nt">L_LINESTATUS</span> <span class="nt">STRING</span><span class="o">,</span>
+     <span class="nt">L_SHIPDATE_PS</span> <span class="nt">STRING</span><span class="o">,</span> <span class="nt">L_COMMITDATE</span> <span class="nt">STRING</span><span class="o">,</span> <span class="nt">L_RECEIPTDATE</span> <span class="nt">STRING</span><span class="o">,</span>
+     <span class="nt">L_SHIPINSTRUCT</span> <span class="nt">STRING</span><span class="o">,</span> <span class="nt">L_SHIPMODE</span> <span class="nt">STRING</span><span class="o">,</span> <span class="nt">L_COMMENT</span>     <span class="nt">STRING</span><span class="o">)</span>
+<span class="nt">PARTITIONED</span> <span class="nt">BY</span><span class="o">(</span><span class="nt">L_SHIPDATE</span> <span class="nt">STRING</span><span class="o">)</span>
+<span class="nt">STORED</span> <span class="nt">AS</span> <span class="nt">ORC</span><span class="o">;</span></code></pre></figure>
+
+<p>Next, you insert data to the ORC table from the staging table. For example:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">INSERT</span> <span class="nt">INTO</span> <span class="nt">TABLE</span> <span class="nt">lineitem_orc</span>
+<span class="nt">SELECT</span> <span class="nt">L_ORDERKEY</span> <span class="nt">as</span> <span class="nt">L_ORDERKEY</span><span class="o">,</span> 
+       <span class="nt">L_PARTKEY</span> <span class="nt">as</span> <span class="nt">L_PARTKEY</span> <span class="o">,</span> 
+       <span class="nt">L_SUPPKEY</span> <span class="nt">as</span> <span class="nt">L_SUPPKEY</span><span class="o">,</span>
+       <span class="nt">L_LINENUMBER</span> <span class="nt">as</span> <span class="nt">L_LINENUMBER</span><span class="o">,</span>
+       <span class="nt">L_QUANTITY</span> <span class="nt">as</span> <span class="nt">L_QUANTITY</span><span class="o">,</span> 
+       <span class="nt">L_EXTENDEDPRICE</span> <span class="nt">as</span> <span class="nt">L_EXTENDEDPRICE</span><span class="o">,</span>
+       <span class="nt">L_DISCOUNT</span> <span class="nt">as</span> <span class="nt">L_DISCOUNT</span><span class="o">,</span>
+       <span class="nt">L_TAX</span> <span class="nt">as</span> <span class="nt">L_TAX</span><span class="o">,</span>
+       <span class="nt">L_RETURNFLAG</span> <span class="nt">as</span> <span class="nt">L_RETURNFLAG</span><span class="o">,</span>
+       <span class="nt">L_LINESTATUS</span> <span class="nt">as</span> <span class="nt">L_LINESTATUS</span><span class="o">,</span>
+       <span class="nt">L_SHIPDATE</span> <span class="nt">as</span> <span class="nt">L_SHIPDATE</span><span class="o">,</span>
+       <span class="nt">L_COMMITDATE</span> <span class="nt">as</span> <span class="nt">L_COMMITDATE</span><span class="o">,</span>
+       <span class="nt">L_RECEIPTDATE</span> <span class="nt">as</span> <span class="nt">L_RECEIPTDATE</span><span class="o">,</span> 
+       <span class="nt">L_SHIPINSTRUCT</span> <span class="nt">as</span> <span class="nt">L_SHIPINSTRUCT</span><span class="o">,</span>
+       <span class="nt">L_SHIPMODE</span> <span class="nt">as</span> <span class="nt">L_SHIPMODE</span><span class="o">,</span>
+       <span class="nt">L_COMMENT</span> <span class="nt">as</span> <span class="nt">L_COMMENT</span>
+<span class="nt">FROM</span> <span class="nt">lineitem</span><span class="o">;</span></code></pre></figure>
+
+<p>More on ORC - https://cwiki.apache.org/confluence/display/Hive/LanguageManual+ORC</p>
+
+<hr />
+
+<p>####Vectorization</p>
+
+<p>Vectorized query execution is a Hive feature that greatly reduces the CPU usage for typical query operations like scans, filters, aggregates, and joins.
+Vectorization allows Hive to process a batch of 1024 rows together instead of processing one row at a time. This means that simple operations are done faster because less internal code needs to run.</p>
+
+<p>To enable vectorization prefix your Hive query with the following setting:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">set</span> <span class="nt">hive</span><span class="nc">.vectorized.execution.enabled</span> <span class="o">=</span> <span class="nt">true</span><span class="o">;</span></code></pre></figure>
+
+<p>More info - https://cwiki.apache.org/confluence/display/Hive/Vectorized+Query+Execution</p>
+
+<hr />
+
+<h4 id="other-optimization-methods">Other optimization methods</h4>
+<p>There are more optimization methods, for example:</p>
+
+<ul>
+  <li>
+    <p>Hive bucketing: a technique that allows to cluster or segment large sets of data to optimize query performance.</p>
+  </li>
+  <li>
+    <p>Join optimization: optimization of Hive’s query execution planning to improve the efficiency of joins and reduce the need for user hints. 
+https://cwiki.apache.org/confluence/display/Hive/LanguageManual+JoinOptimization#LanguageManualJoinOptimization-JoinOptimization.</p>
+  </li>
+  <li>
+    <p>Increase Reducers</p>
+  </li>
+</ul>
+
+<hr />
+
+<p>References - 
+<strong>http://hortonworks.com/hadoop/tez/</strong>
+<strong>https://azure.microsoft.com/en-in/documentation/services/hdinsight/</strong></p>
+</p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/sivan.consult@gmail.com" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a href="#">sivan.consult@gmail.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>+91-999-545-5746</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    Karyavattam<br />
+					
+					
+					    Trivandrum,
+					
+					
+					    Kerala 
+					
+					
+					    695581<br />
+					
+					
+					    India
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+				<li><a href="https://twitter.com/sivansasidharan" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+				
+				
+				
+				<li><a href="https:facebook.com/sivansasidharan" class="icon alt fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+				
+				
+				
+				
+				
+				
+				<li><a href="https://github.com/sivansasidharan/" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+				
+				
+				
+				<li><a href="https://www.linkedin.com/in/sivansasidharan/" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; TECHNOLOGY PRÉCIS!   by Sivan Sasidharan</li>
+				<li>Design: HTML5 UP</li>
+				<li>Powered by: Jekyll & GitHub</li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="http://localhost:4000/assets/js/jquery.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrolly.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrollex.min.js"></script>
+	<script src="http://localhost:4000/assets/js/skel.min.js"></script>
+	<script src="http://localhost:4000/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="http://localhost:4000/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="http://localhost:4000/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

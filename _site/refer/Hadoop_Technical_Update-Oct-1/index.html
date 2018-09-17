@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>TECHNOLOGY PRÉCIS!</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="http://localhost:4000//" class="logo"><strong>TECHNOLOGY PRÉCIS!</strong> <span>by Sivan Sasidharan</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+        
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000//">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/all_posts/">WriteUps</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/freferences/">References</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/generic/">Experience</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/landingnews/">News Feeds</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/zlanding/">Webinars</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="#" class="button special fit">Get Started</a></li>
+		<li><a href="#" class="button fit">Log In</a></li>
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<header class="major">
+			<h1>Hadoop Technical Updates / 11-10-2015</h1>
+		</header>
+		
+		<p><h3 id="technical-updates">Technical Updates</h3>
+
+<p>Spark is the topic of over half of the technical articles this week. As evidenced by new features and companies sharing practical knowledge, it is maturing (and gaining plenty of adoption) as a product. Aside from the great articles on Spark, I highly recommend the visualization covering the fundamentals of Raft’s distributed consensus algorithm.</p>
+
+<p>In Spark 1.5, SparkR gained support for distributed computation of generalized linear models. This tutorial shows how to use the SparkR APIs to perform to build a linear model for predicting airline delays.</p>
+
+<ul>
+  <li><a href="https://databricks.com/blog/2015/10/05/generalized-linear-models-in-sparkr-and-r-formula-support-in-mllib.html">https://databricks.com/blog/2015/10/05/generalized-linear-models-in-sparkr-and-r-formula-support-in-mllib.html</a></li>
+</ul>
+
+<p>This tutorial describes how to build a Apache Spark cluster on Amazon Web Services using spot instances (which provide a significant cost savings). The instructions describe using the AWS web console, installing Spark using a recent release, and configuring Spark’s important settings.</p>
+
+<ul>
+  <li><a href="http://blog.insightdatalabs.com/spark-cluster-step-by-step/">http://blog.insightdatalabs.com/spark-cluster-step-by-step/</a></li>
+</ul>
+
+<p>The MapR blog has a guide to Spark Streaming, which discusses Spark Streaming’s API and streaming model (microbatch). It also describes processing semantics (at least once, exactly once, at most once), which vary depending on the input source for Spark Streaming.</p>
+
+<ul>
+  <li><a href="https://www.mapr.com/blog/quick-guide-spark-streaming">https://www.mapr.com/blog/quick-guide-spark-streaming</a></li>
+</ul>
+
+<p>Datanami has an article describing how Uber has migrated from a data system built on Amazon EMR and Celery/Python ETL to a new system built on Spark and Kafka. Uber makes heavy use of Spark Streaming and Spark SQL, and they’ve built two Spark-based tools to keep the system running smoothly. The first, called Paricon, is used to validate data contracts when schema’s change, and the second, called Komondor, takes care of common ingestion pieces (like dedup).</p>
+
+<ul>
+  <li><a href="http://www.datanami.com/2015/10/05/how-uber-uses-spark-and-hadoop-to-optimize-customer-experience/">http://www.datanami.com/2015/10/05/how-uber-uses-spark-and-hadoop-to-optimize-customer-experience/</a></li>
+</ul>
+
+<p>Compared to other distributed systems, Kafka is relatively easy to configure and operate. But that’s not to say it never has problems—this presentation describes several situations where folks have experienced trouble.</p>
+
+<ul>
+  <li><a href="http://www.slideshare.net/gwenshap/nyc-kafka-meetup-2015-when-bad-things-happen-to-good-kafka-clusters">http://www.slideshare.net/gwenshap/nyc-kafka-meetup-2015-when-bad-things-happen-to-good-kafka-clusters</a></li>
+</ul>
+
+<p>The Stitch Fix blog has a post describing their experience with Spark. It covers how they think about when to use Spark, the Spark Data Source API, caching, the DataFrame API, and SparkSQL. There are some good tips and anecdotes—e.g. that Stick Fix converted some Python jobs to use the DataFrame API and saw 6x performance improvements.</p>
+
+<ul>
+  <li><a href="http://multithreaded.stitchfix.com/blog/2015/10/06/spark-for-data-science/">http://multithreaded.stitchfix.com/blog/2015/10/06/spark-for-data-science/</a></li>
+</ul>
+
+<p>This post describes some statistical tests added to Spark’s MLlib for Goodness-of-Fit. It contains some background on the tests, and how they’re implemented in Spark.</p>
+
+<ul>
+  <li><a href="http://blog.cloudera.com/blog/2015/10/continuous-distribution-goodness-of-fit-in-mllib-kolmogorov-smirnov-testing-in-apache-spark/">http://blog.cloudera.com/blog/2015/10/continuous-distribution-goodness-of-fit-in-mllib-kolmogorov-smirnov-testing-in-apache-spark/</a></li>
+</ul>
+
+<p>The MapR blog has a recap of the three talks given at the recent Bay Area Apache Flink Meetup. The talks covered stateful distributed stream processing, Gelly (the Flink graph processing API), and the future of Apache Flink.</p>
+
+<ul>
+  <li><a href="https://www.mapr.com/blog/distributed-stream-and-graph-processing-apache-flink">https://www.mapr.com/blog/distributed-stream-and-graph-processing-apache-flink</a></li>
+</ul>
+
+<p>Kudu, the new distributed storage engine from Cloudera, includes APIs in Java, C++, and Python (in alpha). These articles give an overview and introduction to the Kudu APIs in Python and Java.</p>
+
+<ul>
+  <li><a href="http://peter-hoffmann.com/2015/getting-started-with-the-cloudera-kudu-storage-engine-in-python.html">http://peter-hoffmann.com/2015/getting-started-with-the-cloudera-kudu-storage-engine-in-python.html</a></li>
+  <li><a href="http://harshj.com/writing-a-simple-kudu-java-api-program/">http://harshj.com/writing-a-simple-kudu-java-api-program/</a></li>
+</ul>
+
+<p>Sparkling Water is a library for combining H2O.ai’s machine learning APIs and UI with Apache Spark. This post describes how Spark and H2O work together (both the API and architecture) and walks through an example of building a deep learning model using Sparkling Water.</p>
+
+<ul>
+  <li><a href="http://blog.cloudera.com/blog/2015/10/how-to-build-a-machine-learning-app-using-sparkling-water-and-apache-spark/">http://blog.cloudera.com/blog/2015/10/how-to-build-a-machine-learning-app-using-sparkling-water-and-apache-spark/</a></li>
+</ul>
+
+<p>This visualization provides an excellent introduction to the Raft distributed consensus algorithm. During the visualization (which lasts about 5 minutes), several animations describe leader election and log replication. If you’re a visual learner (or even if not), this is one of the best ways to learn the fundamentals of Raft.</p>
+
+<ul>
+  <li><a href="http://thesecretlivesofdata.com/raft/">http://thesecretlivesofdata.com/raft/</a></li>
+</ul>
+
+<p><strong>Reference : <a href="http://hadoopweekly.com">Hadoop Weekly Publication</a></strong></p>
+</p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/sivan.consult@gmail.com" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a href="#">sivan.consult@gmail.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>+91-999-545-5746</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    Karyavattam<br />
+					
+					
+					    Trivandrum,
+					
+					
+					    Kerala 
+					
+					
+					    695581<br />
+					
+					
+					    India
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+				<li><a href="https://twitter.com/sivansasidharan" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+				
+				
+				
+				<li><a href="https:facebook.com/sivansasidharan" class="icon alt fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+				
+				
+				
+				
+				
+				
+				<li><a href="https://github.com/sivansasidharan/" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+				
+				
+				
+				<li><a href="https://www.linkedin.com/in/sivansasidharan/" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; TECHNOLOGY PRÉCIS!   by Sivan Sasidharan</li>
+				<li>Design: HTML5 UP</li>
+				<li>Powered by: Jekyll & GitHub</li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="http://localhost:4000/assets/js/jquery.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrolly.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrollex.min.js"></script>
+	<script src="http://localhost:4000/assets/js/skel.min.js"></script>
+	<script src="http://localhost:4000/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="http://localhost:4000/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="http://localhost:4000/assets/js/main.js"></script>
+
+
+</body>
+
+</html>
