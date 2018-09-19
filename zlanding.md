@@ -16,7 +16,7 @@ nav-menu: true
 		<h3>Graph Connect - Connecting Data to Drive Innovation</h3>
 	</header>
 <div> 
-    <object type="text/html" data="https://graphconnect.com/?_ga=2.231332191.1993486388.1536901374-856148542.1508310613#about" width="80%" height="700px" style="overflow:auto;border:1px ridge grey">
+    <object type="text/html" data="https://graphconnect.com/?_ga=2.231332191.1993486388.1536901374-856148542.1508310613#about" width="80%" height="700" style="overflow:auto;border:1px ridge grey">
     </object>
  </div>
 </div>
@@ -29,7 +29,7 @@ nav-menu: true
 		<h3>A Deep Learning Webinar Series from Databricks</h3>
 	</header>
 <div> 
-    <object type="text/html" data="https://pages.databricks.com/201809-US-WB-Intro-NeuralNetworks.html?utm_source=databricks&utm_medium=email&utm_campaign=701610000008eAWAAY&mkt_tok=eyJpIjoiWlRobVltSTVaakZqWkdJNSIsInQiOiJxRmM4enlGd2JSTHBhWlwvQnI3elpkWUZ1SGYrMzFHZ2I2NjBab1wvblp4bmxDR1F0eGZMSlRRa0FGN1FOXC9sMmlNcXB0WnJSem5GU053b3kxb0hCRkZHdTlQXC9BbktIZ0pnRG1YUnJEOHFKS3NhYmlWWUJEMEd3Y0NUZFdPd2s2aGkifQ%3D%3D" width="80%" height="700px" style="overflow:auto;border:1px ridge grey">
+    <object type="text/html" data="https://pages.databricks.com/201809-US-WB-Intro-NeuralNetworks.html?utm_source=databricks&utm_medium=email&utm_campaign=701610000008eAWAAY&mkt_tok=eyJpIjoiWlRobVltSTVaakZqWkdJNSIsInQiOiJxRmM4enlGd2JSTHBhWlwvQnI3elpkWUZ1SGYrMzFHZ2I2NjBab1wvblp4bmxDR1F0eGZMSlRRa0FGN1FOXC9sMmlNcXB0WnJSem5GU053b3kxb0hCRkZHdTlQXC9BbktIZ0pnRG1YUnJEOHFKS3NhYmlWWUJEMEd3Y0NUZFdPd2s2aGkifQ%3D%3D" width="80%" height="700" style="overflow:auto;border:1px ridge grey">
     </object>
  </div>
 </div>
@@ -46,7 +46,7 @@ nav-menu: true
 			<li><a href="generic.html" class="button next">Get Started</a></li>
 		</ul> -->
 <div> 
-    <object type="text/html" data="https://info.microsoft.com/IN-AZUREPLAT-WBNR-FY19-09Sep-18-MakeIntelligentBotsfromscratchwithAzureAppservices-MCW0008741_01Registration-ForminBody.html?ls=Email&mkt_tok=eyJpIjoiT0RNNU9ESmhOek14WVdOaCIsInQiOiJTckhCd0pKUzAzTzJST0ZQdnhObnd1VDRQR3VWM3kwVFwvR0lHMmVCT3llWGh6R0EzeDYxSlp3M0tlamhiZlhcL2JKdzFqZTRROXIwd0JRTys3c1N5VHBoSEFlRVJTcXFVSGNFT3Y1TDVpZ3pLWWhEa2t6WXZCam8zekxURGN0dXQxUTNRS1dVejk3WGkxUWlKV2dUK0lOQT09In0%3D" width="80%" height="700px" style="overflow:auto;border:1px ridge grey">
+    <object type="text/html" data="https://info.microsoft.com/IN-AZUREPLAT-WBNR-FY19-09Sep-18-MakeIntelligentBotsfromscratchwithAzureAppservices-MCW0008741_01Registration-ForminBody.html?ls=Email&mkt_tok=eyJpIjoiT0RNNU9ESmhOek14WVdOaCIsInQiOiJTckhCd0pKUzAzTzJST0ZQdnhObnd1VDRQR3VWM3kwVFwvR0lHMmVCT3llWGh6R0EzeDYxSlp3M0tlamhiZlhcL2JKdzFqZTRROXIwd0JRTys3c1N5VHBoSEFlRVJTcXFVSGNFT3Y1TDVpZ3pLWWhEa2t6WXZCam8zekxURGN0dXQxUTNRS1dVejk3WGkxUWlKV2dUK0lOQT09In0%3D" width="80%" height="700" style="overflow:auto;border:1px ridge grey">
     </object>
  </div>
 	</div>	
