@@ -11,16 +11,9 @@ nav-menu: true
 <section id="one">
 	<div class="inner">
 		<header class="major">
-			<h3> Medium</h3>
+			<h3>Latest Stories On..</h3>
 		</header>
 
-<h4> <a href="https://medium.com/mit-technology-review"> Latest Blog Posts from MIT Technology Review </a></h4>
+<h4><a href="https://medium.com/airbnb-engineering/ai/home"># AI & MACHINE LEARNING </a></h4>
 
-{% for e in site.medium_posts %}
-
-<div>
-<a href="{{e.medium_link}}" title="{{ e.title }}">{{ e.title }}</a>
-      <p>{{ e.feed_content | strip_html | truncate: 160 }}</p>
-  {% endfor %}
-
-</div>
+<h4><a href="https://flipboard.com/topic/technology"># TECHNOLOGY </a></h4>

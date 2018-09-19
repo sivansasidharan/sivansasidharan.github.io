@@ -35,3 +35,6 @@ collections:
   - medium_posts
 
 permalink: /:categories/:title/
+
+MEDIUM_USERNAME: MITTechReview
+
