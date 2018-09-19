@@ -1,6 +1,6 @@
 ---
 layout: page
-title: News Feeds
+title: Medium
 nav-menu: true
 ---
 
