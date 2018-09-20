@@ -19,11 +19,12 @@ Azure Data Factory is a tool for visually designing and running ETLs between var
 
 Hike shares their experiences in moving from a Hive-based ad hoc analytics system to Google BigQuery. They saw good speedups, especially after making use of clustered tables. They detail their tooling and why they enabled require_partition_filter as a guard rail. Overall, they're seeing 50x speedups and half the cost.
 
-[More Info] (https://blog.hike.in/moving-to-bigquery-data-at-our-fingertips-2273a71252ce)
+[More Info](https://blog.hike.in/moving-to-bigquery-data-at-our-fingertips-2273a71252ce)
 
 ***
 
 Clio recently went through the process of sharding their online MySQL database, and they've documented the details of the transition. Among these, they applied a regex to detect which operations contained joins and transactions that might be problematic. Lots of practical advice if you're facing something similar.
+
 [More Info](https://labs.clio.com/sharding-clios-database-part-1-710ec8f4861c)
 
 ***
@@ -35,6 +36,7 @@ Keystone is Netflix's platform for real-time stream processing for analytics. It
 ***
 
 The AWS blog has published a sample Complex Event Processing application built on Apache Flink and EMR. It's built to detect brush fires based on sensor data.
+
 [Apache Flink and EMR](https://aws.amazon.com/blogs/big-data/real-time-bushfire-alerting-with-complex-event-processing-in-apache-flink-on-amazon-emr-and-iot-sensor-network/)
 
 ***
