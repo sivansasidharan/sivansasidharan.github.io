@@ -1,7 +1,7 @@
 ---
 layout: post
 category: refer
-title: "Hadoop Technical Updates - 16 September 2018"
+title: "Technical Updates - 16 September 2018"
 excerpt: "Bigdata Technical updates for September 2018"
 tags: [bigdata, hadoop, apache, hortonworks, cloudera, mapr, databricks, spark]
 comments: true
