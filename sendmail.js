@@ -10,8 +10,8 @@ var transporter = nodemailer.createTransport({
        ciphers:'SSLv3'
     },
     auth: {
-        user: 'sivan.sasidharan@xe04.ey.com',
-        pass: 'KrishnaAug@2018'
+        user: 'sample@gmail.com',
+        pass: ''
     }
 });
 
@@ -28,8 +28,8 @@ transporter.verify(function(error, success) {
 
 // setup e-mail data
 var mailOptions = {
-    from: '"Our Code World " <aipractice@xe04.ey.com>', // sender address (who sends)
-    to: 'sivan.sasidharan@xe04.ey.com', // list of receivers (who receives)
+    from: '"Our Code World " <aipractice@sample.com>', // sender address (who sends)
+    to: 'sample@gmail.com', // list of receivers (who receives)
     subject: 'Hello', // Subject line
     text: 'Hello world ', // plaintext body
     html: '<b>Hello world </b><br> This is the first email sent with Nodemailer in Node.js' // html body
