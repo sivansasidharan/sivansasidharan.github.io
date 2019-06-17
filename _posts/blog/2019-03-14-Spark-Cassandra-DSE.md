@@ -3,7 +3,7 @@
 
 ---
 
-<h1 id="spark-cassandra-reference-guide">Spark Cassandra Reference Guide</h1>
+<h1 id="spark-cassandra-reference-guide">Spark Cassandra Reference Guide </h1>
 <h3 id="resources">Resources</h3>
 <p>By default, spark will launch new jobs using all cluster resources.  It’s often a best practice to reduce the default configuration of the number of core and memory used to avoid having a long running job (spark shell or sql) stealing all resources.<br>
 Finding the best amount of memory and cores for a job isn’t always easy. The following can help define a good default value.</p>
