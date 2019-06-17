@@ -2,7 +2,6 @@
 layout: post
 category: blog
 title: Spark - DSE Cassandra Reference Guide
-excerpt: Spark - DSE Cassandra Reference
 tags: [bigdata, hadoop, apache spark, SPSS, Datastax,DSE,IBM]
 comments: true
 
