@@ -38,3 +38,5 @@ permalink: /:categories/:title/
 
 MEDIUM_USERNAME: MITTechReview
 
+
+theme: jekyll-theme-minimal
